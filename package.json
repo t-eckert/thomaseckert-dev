@@ -15,6 +15,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.0",
     "@nuxtjs/axios": "^5.3.6",
+    "mongodb": "^3.5.5",
     "nuxt": "^2.0.0",
     "vuex-module-decorators": "^0.16.1"
   },
