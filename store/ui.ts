@@ -7,10 +7,7 @@ import { Breadcrumb } from "@/types/breadcrumb";
   namespaced: true
 })
 export default class UI extends VuexModule {
-  breadcrumbs: Breadcrumb[] = [
-    { emoji: "🏡", name: "Home", link: "/" },
-    { emoji: "💁‍♂️", name: "About", link: "/about" }
-  ];
+  breadcrumbs: Breadcrumb[] = [{ emoji: "🏡", name: "Home", link: "/" }];
 
   @Mutation
   setBreadcrumbs(path: Breadcrumb[]) {
