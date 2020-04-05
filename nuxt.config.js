@@ -23,7 +23,12 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["@/styles/--var.css", "@/styles/base.css"],
+  css: [
+    "@/styles/--var.css",
+    "@/styles/base.css",
+    "@/styles/layout.css",
+    "@/styles/typography.css"
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -57,4 +62,4 @@ export default {
      */
     extend(config, ctx) {}
   }
-}
+};

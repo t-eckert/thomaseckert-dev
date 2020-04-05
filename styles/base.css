@@ -20,11 +20,12 @@ html {
 }
 
 .breadcrumbs {
-  margin-left: 1rem;
-  margin-top: 0.5rem;
   display: inline-flex;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  background-color: var(--page-background);
 }
 
-.breadcrumb-link {
+a {
   text-decoration: underline;
 }
