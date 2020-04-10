@@ -13,7 +13,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^0.4.0",
+    "@nuxt/typescript-runtime": "^0.4.4",
     "@nuxtjs/axios": "^5.3.6",
     "mongodb": "^3.5.5",
     "nuxt": "^2.0.0",
