@@ -1,0 +1,18 @@
+button,
+.btn {
+  background-color: rgba(69, 75, 78, 0.3);
+  padding: 0.5rem 1.75rem;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  line-height: inherit;
+}
+
+button:hover,
+.btn:hover {
+  background-color: rgba(111, 120, 124, 0.3);
+}
+
+.btn-transparent {
+  background-color: transparent;
+}

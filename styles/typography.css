@@ -3,5 +3,36 @@ h1 {
 }
 
 h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
   font-size: 1.5rem;
+}
+
+.hero-text {
+  background: radial-gradient(
+    circle,
+    var(--green) 0%,
+    var(--yellow) 15%,
+    var(--orange) 30%,
+    var(--red) 50%,
+    var(--purple) 70%,
+    var(--blue) 80%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 600%;
+  animation: gradient 60s linear infinite alternate;
+  font-weight: 400;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }

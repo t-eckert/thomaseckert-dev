@@ -19,13 +19,44 @@ html {
   margin: 0;
 }
 
+::selection {
+  background: var(--purple);
+  color: var(--text-primary);
+}
+
+hr {
+  border-color: #ffffff50;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 1rem;
+}
+
 .breadcrumbs {
   display: inline-flex;
-  padding: 0.5rem 1rem;
   width: 100%;
   background-color: var(--page-background);
 }
 
+.breadcrumbs > li {
+  padding-right: 0.5rem;
+}
+
 a {
   text-decoration: underline;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.scroll {
+  margin: 4px, 4px;
+  padding: 4px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-x: auto;
+  text-align: justify;
 }

@@ -1,4 +1,14 @@
 :root {
+  /* Neutrals */
   --page-background: #313437;
+  --dark-background: #222425;
   --text-primary: #ffffff;
+
+  /* Highlights */
+  --red: #fc5c65;
+  --blue: #4b7bec;
+  --yellow: #fed330;
+  --purple: #a55eea;
+  --orange: #fd9644;
+  --green: #1dd176;
 }
