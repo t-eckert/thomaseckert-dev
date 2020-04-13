@@ -1,65 +1,62 @@
+require("dotenv").config();
+const MonacoEditorPlugin = require("monaco-editor-webpack-plugin");
+
 export default {
   mode: "universal",
-  /*
-   ** Headers of the page
-   */
+
   head: {
-    title: process.env.npm_package_name || "",
+    title: "Thomas Eckert",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
-      }
+        content: process.env.npm_package_description || "",
+      },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
-  /*
-   ** Customize the progress-bar color
-   */
+
   loading: { color: "#fff" },
-  /*
-   ** Global CSS
-   */
+
   css: [
     "@/styles/--var.css",
     "@/styles/base.css",
+    "@/styles/button.css",
     "@/styles/layout.css",
-    "@/styles/typography.css"
+    "@/styles/pill.css",
+    "@/styles/typography.css",
   ],
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [],
-  /*
-   ** Nuxt.js dev-modules
-   */
+
+  plugins: [
+    // new MonacoEditorPlugin({
+    //   languages: ["markdown", "css", "html", "typescript"],
+    // }),
+  ],
+
   buildModules: [
     "@nuxt/typescript-build",
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/dotenv",
+    "@nuxtjs/tailwindcss",
   ],
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios"
-  ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
+
+  modules: ["@nuxtjs/axios", "@nuxtjs/auth"],
+
   axios: {},
-  /*
-   ** Build configuration
-   */
+
+  auth: {
+    strategies: {
+      github: {
+        client_id: process.env.GITHUB_CLIENT_ID,
+        client_secret: process.env.GITHUB_CLIENT_SECRET,
+      },
+    },
+  },
+
+  serverMiddleware: ["@/api/index"],
+
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
-  }
+    extend(config, ctx) {},
+  },
 };
