@@ -1,16 +1,12 @@
-import { Module, VuexModule, Mutation } from "vuex-module-decorators";
-import { Breadcrumb } from "@/types/breadcrumb";
+import { MutationTree } from "vuex";
+import Breadcrumb from "~/interfaces/Breadcrumb";
 
-@Module({
-  name: "ui",
-  stateFactory: true,
-  namespaced: true
-})
-export default class UI extends VuexModule {
-  breadcrumbs: Breadcrumb[] = [{ emoji: "🏡", name: "Home", link: "/" }];
+export const state = () => ({
+  breadcrumbs: [],
+});
 
-  @Mutation
-  setBreadcrumbs(path: Breadcrumb[]) {
-    this.breadcrumbs = path;
-  }
-}
+export type UIState = ReturnType<typeof state>;
+
+export const mutations: MutationTree<UIState> = {
+  SET_BREADCRUMBS: (state, breadcrumbs) => (state.breadcrumbs = breadcrumbs),
+};
