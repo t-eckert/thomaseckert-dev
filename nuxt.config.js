@@ -27,6 +27,7 @@ export default {
     "@/styles/layout.css",
     "@/styles/pill.css",
     "@/styles/typography.css",
+    "@/styles/prism.css",
   ],
 
   plugins: [
