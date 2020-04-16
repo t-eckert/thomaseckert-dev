@@ -33,3 +33,8 @@
 .flex-meta > * {
   margin-right: 0.5rem;
 }
+
+.layout-post {
+  margin: 4rem auto;
+  max-width: 46rem;
+}

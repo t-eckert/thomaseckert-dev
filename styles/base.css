@@ -60,3 +60,7 @@ a {
   overflow-x: auto;
   text-align: justify;
 }
+
+.shadow {
+  box-shadow: var(--shadow);
+}
