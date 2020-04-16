@@ -4,6 +4,7 @@ import Post from "~/interfaces/Post";
 
 export const state = () => ({
   posts: [],
+  current: "",
 });
 
 export type PostsState = ReturnType<typeof state>;
@@ -11,11 +12,16 @@ export type PostsState = ReturnType<typeof state>;
 export const getters: GetterTree<PostsState, PostsState> = {
   publishedPosts: (state) =>
     state.posts.filter((post: Post) => post.isPublished),
+  getCurrent: (state) =>
+    state.posts.find((post: Post) => state.current === post.slug),
 };
 
 export const mutations: MutationTree<PostsState> = {
   UPDATE_POSTS: (state, posts) => {
     state.posts = posts;
+  },
+  SET_CURRENT: (state, current) => {
+    state.current = current;
   },
 };
 
