@@ -10,7 +10,18 @@ postsRouter.get("/", async (req, res) => {
     const posts = await PostModel.find();
     res.json(posts);
   } catch (err) {
-    console.log(err);
+    console.error(err);
+  }
+});
+
+postsRouter.get("/:slug", async (req, res) => {
+  const slug = req.params["slug"];
+
+  try {
+    const post = await PostModel.findOne({ slug: slug });
+    res.json(post);
+  } catch (err) {
+    console.error(err);
   }
 });
 
@@ -22,6 +33,7 @@ postsRouter.post("/save", (req, res) => {
   } else {
     const postModel = new PostModel({
       title: post.title,
+      slug: post.slug,
       publishDate: post.publishDate.toString(),
       tags: post.tags,
       emoji: post.emoji,
