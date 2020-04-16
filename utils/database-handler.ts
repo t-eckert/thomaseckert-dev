@@ -11,7 +11,7 @@ const connection = mongoose.connection;
 
 connection.on("error", console.error.bind(console, "connection error:"));
 connection.once("open", function() {
-  console.info("Connected to Cosmos DB");
+  console.info("Connected to 🌌 Cosmos DB");
 });
 
 export default connection;
