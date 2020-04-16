@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="card-login text-center">
+    <section class="card-login text-center shadow">
       <img
         :src="
           nasaImageUrl !== ''
@@ -54,9 +54,10 @@ export default Vue.extend({
 <style scoped>
 .card-login {
   background-color: var(--dark-background);
-  max-width: 40rem;
+  max-width: 30rem;
   margin: auto;
   margin-top: 4rem;
+  margin-bottom: 2rem;
   border-radius: 0.25rem;
   padding-bottom: 1.5rem;
 }
