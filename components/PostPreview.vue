@@ -2,7 +2,7 @@
   <section>
     <h3>{{ post.emoji }}</h3>
     <h2 class="mb-2">
-      <nuxt-link to="/">{{ post.title }}</nuxt-link>
+      <nuxt-link :to="'/' + post.slug">{{ post.title }}</nuxt-link>
     </h2>
     <div class="flex-meta mb-2">
       <div>{{ formatDate(post.publishDate) }}</div>
