@@ -8,9 +8,11 @@ export const validatePostStructure = (post: Post): boolean => {
     "isPublished",
     "preview",
     "publishDate",
+    "slug",
     "tags",
     "title",
   ];
+
   const keys = Object.keys(post).sort();
 
   return expectedKeys.toString() === keys.toString();
