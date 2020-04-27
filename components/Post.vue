@@ -1,17 +1,20 @@
 <template>
   <section>
-    <h2>{{ post.emoji }}</h2>
-    <h1 class="mb-4">{{ post.title }}</h1>
+    <h2>{{ post.metadata.emoji }}</h2>
+    <h1 class="mb-4">{{ post.metadata.title }}</h1>
     <div class="flex-meta mb-4">
-      <div>{{ formatDate(post.publishDate) }}</div>
+      <div>{{ formatDate(post.metadata.publishDate) }}</div>
       <div
-        v-for="(tag, index) in post.tags"
+        v-for="(tag, index) in post.metadata.tags"
         :key="index"
         class="pill pill-blue"
       >
         {{ tag }}
       </div>
     </div>
+    <p>
+      {{ post }}
+    </p>
     <article class="mb-8" v-html="body"></article>
     <hr />
     <script src="/prism.js" />
@@ -34,7 +37,7 @@ export default Vue.extend({
 
   data() {
     return {
-      body: marked(this.post.content)
+      body: marked(this.post.content.content || "")
     }
   },
 

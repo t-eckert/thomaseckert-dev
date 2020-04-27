@@ -1,10 +1,7 @@
+import PostMetadata from "@/interfaces/PostMetadata";
+import PostContent from "@/interfaces/PostContent";
+
 export default interface Post {
-  title: string;
-  slug: string;
-  publishDate: Date;
-  tags: string[];
-  emoji: string;
-  isPublished: boolean;
-  preview: string;
-  content: string;
+  metadata: PostMetadata;
+  content: PostContent;
 }

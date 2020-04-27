@@ -20,12 +20,12 @@ export default Vue.extend({
   },
 
   computed: {
-    ...mapGetters({ posts: "publishedPosts" }),
+    ...mapGetters({ posts: "publishedPostsMetadata" }),
   },
 
   beforeCreate() {
-    if (this.$store.state.posts.posts.length === 0) {
-      this.$store.dispatch("posts/hydrate");
+    if (this.$store.state.posts.postsMetadata.length === 0) {
+      this.$store.dispatch("posts/loadMetadata");
     }
   },
 });

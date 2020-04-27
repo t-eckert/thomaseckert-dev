@@ -1,24 +1,32 @@
 <template>
   <div class="container layout-post">
-    <Post v-if="post" :post="post" />
+    <p>{{ post }}</p>
+    <PostComponent v-if="post.metadata && post.content" :post="post" />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";
-import Post from "@/components/Post.vue";
+import PostComponent from "@/components/Post.vue";
 import { createNamespacedHelpers } from "vuex";
+import { Post } from "../interfaces";
 
 const { mapGetters } = createNamespacedHelpers("posts");
 
 export default Vue.extend({
   components: {
-    Post,
+    PostComponent,
   },
 
   computed: {
-    ...mapGetters({ post: "getCurrent" }),
+    ...mapGetters({ postGetter: "post" }),
+    slug(): string {
+      return this.$route.params.post;
+    },
+    post(): Post {
+      return this.postGetter(this.slug);
+    },
   },
 
   watch: {
@@ -26,8 +34,8 @@ export default Vue.extend({
       this.$store.commit("ui/SET_BREADCRUMBS", [
         { emoji: "🏡", name: "Home", link: "/" },
         {
-          emoji: this.post.emoji,
-          name: this.post.title,
+          emoji: this.post?.metadata?.emoji,
+          name: this.post?.metadata?.title,
           link: "/",
         },
       ]);
@@ -35,21 +43,32 @@ export default Vue.extend({
   },
 
   mounted() {
-    const homeBreadcrumb = { emoji: "🏡", name: "Home", link: "/" };
-    this.$store.commit("posts/SET_CURRENT", this.$route.params.post);
+    this.$store.commit("ui/SET_BREADCRUMBS", [
+      { emoji: "🏡", name: "Home", link: "/" },
+    ]);
 
-    if (this.$store.getters["posts/getCurrent"] === undefined) {
-      this.$store.dispatch("posts/hydrate");
-      this.$store.commit("ui/SET_BREADCRUMBS", [homeBreadcrumb]);
+    const slug = this.slug;
+    const post = this.postGetter(slug);
+
+    console.log("post: " + post);
+
+    if (post.metadata === undefined) {
+      console.log(post + " metadata undefined");
+      this.$store.dispatch("posts/loadMetadata");
     } else {
       this.$store.commit("ui/SET_BREADCRUMBS", [
-        homeBreadcrumb,
+        { emoji: "🏡", name: "Home", link: "/" },
         {
-          emoji: this.post.emoji,
-          name: this.post.title,
+          emoji: post.metadata.emoji,
+          name: post.metadata.title,
           link: "/",
         },
       ]);
+    }
+
+    if (post.content === undefined) {
+      console.log(post + " content undefined");
+      this.$store.dispatch("posts/loadContent", slug);
     }
   },
 });
