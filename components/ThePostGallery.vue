@@ -1,16 +1,17 @@
 <template>
-  <section class="grid-post">
-    <PostPreview v-for="(post, index) in posts" :key="index" :post="post" />
+  <section class="grid g-fit gg-4">
+    <PostPreview
+      v-for="(postMetadata, index) in postsMetadata"
+      :key="index"
+      :postMetadata="postMetadata"
+    />
   </section>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import axios from "axios";
-import { createNamespacedHelpers } from "vuex";
 import PostPreview from "@/components/PostPreview.vue";
-
-const { mapGetters } = createNamespacedHelpers("posts");
+import { Post, PostMetadata } from "@/interfaces";
 
 export default Vue.extend({
   name: "ThePostGallery",
@@ -19,14 +20,8 @@ export default Vue.extend({
     PostPreview,
   },
 
-  computed: {
-    ...mapGetters({ posts: "publishedPostsMetadata" }),
-  },
-
-  beforeCreate() {
-    if (this.$store.state.posts.postsMetadata.length === 0) {
-      this.$store.dispatch("posts/loadMetadata");
-    }
+  props: {
+    postsMetadata: Array as () => PostMetadata[],
   },
 });
 </script>
