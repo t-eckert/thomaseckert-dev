@@ -1,8 +1,10 @@
-# thomaseckert-dev
+# `thomaseckert-dev` <!-- omit in toc -->
 
-> Blog website thomaseckert.dev
+> Blog website [https://thomaseckert.dev](https://thomaseckert.dev)
 
-## Build Setup
+- [Run it yourself](#run-it-yourself)
+
+## Run it yourself
 
 ```bash
 # install dependencies
