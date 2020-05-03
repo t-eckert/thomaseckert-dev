@@ -12,9 +12,6 @@
         {{ tag }}
       </div>
     </div>
-    <p>
-      {{ post }}
-    </p>
     <article class="mb-8" v-html="body"></article>
     <hr />
     <script src="/prism.js" />
@@ -27,7 +24,7 @@ import { formatDate } from "@/functions";
 import marked from "marked";
 
 export default Vue.extend({
-  name: "Post",
+  name: "PostView",
 
   props: {
     post: {
@@ -37,7 +34,7 @@ export default Vue.extend({
 
   data() {
     return {
-      body: marked(this.post.content.content || "")
+      body: marked(this.post.content.markdown || "")
     }
   },
 
