@@ -1,5 +1,4 @@
 import { MutationTree } from "vuex";
-import Breadcrumb from "~/interfaces/Breadcrumb";
 
 export const state = () => ({
   breadcrumbs: [],
