@@ -34,7 +34,6 @@ postsRouter.get("/content/:slug", async (req, res) => {
 
   try {
     const postContent = await PostContentModel.findOne({ slug });
-    console.log("");
     res.json(postContent);
   } catch (err) {
     console.log(err);
