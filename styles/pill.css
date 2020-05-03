@@ -14,3 +14,36 @@
 .pill-blue {
   --background: var(--blue);
 }
+
+.pill-yellow {
+  --background: var(--yellow);
+}
+
+.pill-purple {
+  --background: var(--purple);
+}
+
+.pill-orange {
+  --background: var(--orange);
+}
+
+.pill-green {
+  --background: var(--green);
+}
+
+.pill-dark {
+  --background: var(--dark-background);
+}
+
+.pill-outline {
+  border: 1px solid var(--text-primary);
+}
+
+.pill-button {
+  cursor: pointer;
+  --background: var(--dark-background);
+}
+
+.pill-button:hover {
+  --background: var(--dark-hover);
+}

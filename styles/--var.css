@@ -1,7 +1,17 @@
 :root {
   /* Neutrals */
+  --neutral-010: #ffffff10;
+  --neutral-020: #ffffff20;
+  --neutral-030: #ffffff30;
+  --neutral-040: #ffffff40;
+  --neutral-050: #ffffff50;
+  --neutral-060: #ffffff60;
+  --neutral-070: #ffffff70;
+  --neutral-080: #ffffff80;
+
   --page-background: #313437;
   --dark-background: #222425;
+  --dark-hover: rgba(111, 120, 124, 0.3);
   --text-primary: #ffffff;
 
   /* Highlights */
@@ -13,5 +23,6 @@
   --green: #1dd176;
 
   /* Decorations */
-  --shadow: rgba(15, 15, 15, 0.2) 0px 0px 0px 1px, rgba(15, 15, 15, 0.2) 0px 2px 4px;
+  --shadow: rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+    rgba(15, 15, 15, 0.2) 0px 2px 4px;
 }

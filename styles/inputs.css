@@ -1,0 +1,4 @@
+input[type="text"] {
+  background-color: var(--neutral-010);
+  padding: 0.5rem 0.75rem;
+}

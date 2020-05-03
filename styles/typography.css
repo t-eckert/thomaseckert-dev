@@ -22,6 +22,15 @@ pre {
   margin-bottom: 1rem;
 }
 
+.display-1 {
+  font-size: 20rem;
+  font-weight: 200;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
 .hero-text {
   background: radial-gradient(
     circle,
