@@ -24,6 +24,7 @@ export default {
     "@/styles/--var.css",
     "@/styles/base.css",
     "@/styles/button.css",
+    "@/styles/inputs.css",
     "@/styles/layout.css",
     "@/styles/pill.css",
     "@/styles/typography.css",
