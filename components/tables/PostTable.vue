@@ -1,7 +1,7 @@
 <template>
-  <div class="card">
+  <div class="card shadow">
     <h2 class="mb-4">📮 Posts</h2>
-    <table class="table-auto">
+    <table class="table-auto mb-8">
       <thead>
         <tr>
           <th class="py-1 text-left">Title</th>
@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(post, index) in posts" :key="index">
+        <tr v-for="(post, index) in postsMetadata" :key="index">
           <td class="py-1">
             {{ post.emoji }}&nbsp;<nuxt-link :to="post.slug">{{
               post.title
@@ -30,38 +30,33 @@
             </span>
           </td>
           <td class="px-6 py-1">
-            <button><nuxt-link to="/admin/edit">Edit</nuxt-link></button>
+            <nuxt-link class="btn" :to="'/admin/edit/' + post.slug"
+              >Edit</nuxt-link
+            >
           </td>
         </tr>
       </tbody>
     </table>
+    <button>New</button>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import { createNamespacedHelpers } from "vuex";
 import { formatDate } from "@/functions";
-
-const { mapGetters } = createNamespacedHelpers("posts");
+import { PostMetadata } from "../../interfaces";
 
 export default Vue.extend({
   name: "PostTable",
+
+  props: {
+    postsMetadata: Array as () => PostMetadata[],
+  },
 
   methods: {
     formatDate(date: string): string {
       return formatDate(date);
     },
-  },
-
-  computed: {
-    ...mapGetters({ posts: "publishedPostsMetadata" }),
-  },
-
-  beforeCreate() {
-    if (this.$store.state.posts.postsMetadata.length === 0) {
-      this.$store.dispatch("posts/loadMetadata");
-    }
   },
 });
 </script>
