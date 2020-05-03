@@ -1,15 +1,21 @@
 <template>
   <section>
-    <h1 class="mb-2 hero-text">Thomas Eckert</h1>
+    <h1 class="mb-4 hero-text">Thomas Eckert</h1>
+    <div class="links mb-4">
+      <div>✨&nbsp;<nuxt-link to="/favorites">Favorites</nuxt-link></div>
+      <!-- <div>🛰&nbsp;<nuxt-link to="/uses">Things I use</nuxt-link></div> -->
+      <!-- <div>💁‍♂️&nbsp;<nuxt-link to="/about">About me</nuxt-link></div> -->
+    </div>
     <p class="mb-4">
       I am a software engineer on Azure at Microsoft with a background in
-      Nuclear Physics. <nuxt-link to="/about">Learn more about me</nuxt-link>.
+      Nuclear Physics.
     </p>
     <p class="mb-8">
-      Outside of work, I paint watercolors.
-      <nuxt-link to="/favorites">
-        View a collection of my favorite things</nuxt-link
-      >.
+      You can find me on
+      <a href="https://twitter.com/thomaseckert_">Twitter</a>,
+      <a href="https://github.com/t-eckert">GitHub</a>,
+      <a href="https://www.linkedin.com/in/thomas-eckert/">LinkedIn</a>, and
+      <a href="https://www.twitch.tv/thomaseckert">Twitch</a>.
     </p>
     <hr class="mb-8" />
   </section>
