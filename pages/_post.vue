@@ -1,75 +1,68 @@
 <template>
   <div class="container layout-post">
-    <p>{{ post }}</p>
-    <PostComponent v-if="post.metadata && post.content" :post="post" />
+    <PostView v-if="loadStatus === 'LOADED'" :post="post" />
+    <div v-else-if="loadStatus === 'NOT FOUND'">
+      <Template404 />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";
-import PostComponent from "@/components/Post.vue";
+import PostView from "@/components/PostView.vue";
+import Template404 from "@/components/templates/Template404.vue";
 import { createNamespacedHelpers } from "vuex";
 import { Post } from "../interfaces";
+import { LoadStatus } from "../constants";
 
 const { mapGetters } = createNamespacedHelpers("posts");
 
 export default Vue.extend({
   components: {
-    PostComponent,
+    PostView,
+    Template404,
   },
 
-  computed: {
-    ...mapGetters({ postGetter: "post" }),
-    slug(): string {
-      return this.$route.params.post;
-    },
-    post(): Post {
-      return this.postGetter(this.slug);
-    },
+  async asyncData({ params }) {
+    const metadata = await axios.get(
+      `http://localhost:3000/api/posts/metadata/${params.post}`,
+    );
+    const content = await axios.get(
+      `http://localhost:3000/api/posts/content/${params.post}`,
+    );
+
+    const loadStatus = content.data ? LoadStatus.Loaded : LoadStatus.NotFound;
+
+    const post = { metadata: metadata.data, content: content.data };
+    return { post, loadStatus };
   },
 
-  watch: {
-    post() {
-      this.$store.commit("ui/SET_BREADCRUMBS", [
-        { emoji: "🏡", name: "Home", link: "/" },
-        {
-          emoji: this.post?.metadata?.emoji,
-          name: this.post?.metadata?.title,
-          link: "/",
-        },
-      ]);
+  data() {
+    return {
+      post: undefined,
+      loadStatus: LoadStatus.Loading,
+    };
+  },
+
+  methods: {
+    setBreadcrumbs(post?: Post) {
+      const breadcrumbs = post?.metadata
+        ? [
+            { emoji: "🏡", name: "Home", link: "/" },
+            {
+              emoji: post.metadata?.emoji,
+              name: post.metadata?.title,
+              link: `/${post.metadata?.slug}`,
+            },
+          ]
+        : [{ emoji: "🏡", name: "Home", link: "/" }];
+      this.$store.commit("ui/SET_BREADCRUMBS", breadcrumbs);
     },
   },
 
   mounted() {
-    this.$store.commit("ui/SET_BREADCRUMBS", [
-      { emoji: "🏡", name: "Home", link: "/" },
-    ]);
-
-    const slug = this.slug;
-    const post = this.postGetter(slug);
-
-    console.log("post: " + post);
-
-    if (post.metadata === undefined) {
-      console.log(post + " metadata undefined");
-      this.$store.dispatch("posts/loadMetadata");
-    } else {
-      this.$store.commit("ui/SET_BREADCRUMBS", [
-        { emoji: "🏡", name: "Home", link: "/" },
-        {
-          emoji: post.metadata.emoji,
-          name: post.metadata.title,
-          link: "/",
-        },
-      ]);
-    }
-
-    if (post.content === undefined) {
-      console.log(post + " content undefined");
-      this.$store.dispatch("posts/loadContent", slug);
-    }
+    this.setBreadcrumbs(this.post);
   },
 });
 </script>
