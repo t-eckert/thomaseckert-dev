@@ -1,16 +1,9 @@
 <template>
   <div>
-    <input
-      class="mb-4 px-2 py-1 max-width"
-      type="text"
-      name=""
-      id=""
-      placeholder="Title"
-    />
-
     <MonacoEditor
-      class="editor"
-      v-model="code"
+      class="the-editor"
+      v-model="value"
+      @change="$emit('input', value)"
       language="markdown"
       :options="options"
       theme="vs-dark"
@@ -27,10 +20,8 @@ export default {
     MonacoEditor
   },
 
-  data() {
-    return {
-      code: ''
-    }
+  props: {
+    value: ""
   },
 
   computed: {
@@ -42,9 +33,13 @@ export default {
 </script>
 
 <style>
-.editor {
+.the-editor {
   width: 100%;
-  height: 90vh;
+  height: 80vh;
+}
+
+.monaco-editor,
+.overflow-guard {
   border-radius: 0.5rem;
 }
 </style>
