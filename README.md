@@ -1,5 +1,7 @@
 # `thomaseckert-dev` <!-- omit in toc -->
 
+![.github/workflows/azure.yml](https://github.com/t-eckert/thomaseckert-dev/workflows/.github/workflows/azure.yml/badge.svg?branch=master&event=deployment)
+
 > Blog website [https://thomaseckert.dev](https://thomaseckert.dev)
 
 - [Run it yourself](#run-it-yourself)
