@@ -37,7 +37,7 @@
     "@nuxt/typescript-build": "^0.6.6",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "^1.0.2",
-    "@nuxtjs/eslint-module": "^1.2.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@types/nuxtjs__auth": "^4.8.4",
     "@vue/test-utils": "^1.0.0-beta.33",
