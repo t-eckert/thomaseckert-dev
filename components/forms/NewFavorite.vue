@@ -18,6 +18,8 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { Favorite } from "~/interfaces";
+import { slugify } from "~/functions";
 
 export default Vue.extend({
   data() {
@@ -28,7 +30,15 @@ export default Vue.extend({
 
   methods: {
     create() {
-      this.$store.dispatch("db/createNewFavorite", this.title);
+      const title = this.title;
+      this.$store.dispatch("db/saveFavorite", {
+        favorite: {
+          title,
+          slug: slugify(title),
+          markdown: "",
+        },
+        uid: this.$auth.user.id,
+      });
       this.$emit("created");
     },
   },
