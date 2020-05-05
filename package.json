@@ -28,7 +28,7 @@
     "jsonwebtoken": "^8.5.1",
     "marked": "^1.0.0",
     "monaco-editor-webpack-plugin": "^1.9.0",
-    "mongoose": "^5.9.11",
+    "mongoose": "^5.9.12",
     "nuxt": "^2.12.2",
     "typescript": "^3.8.3",
     "vue-monaco": "^1.2.0"
