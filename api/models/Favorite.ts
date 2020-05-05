@@ -10,7 +10,7 @@ const FavoriteSchema = new mongoose.Schema(
   { collection: "Favorites" },
 );
 
-// Prevent duplication of PostModel
+// Prevent duplication of Favorite
 if (connection.modelNames().includes("Favorite")) {
   connection.deleteModel("Favorite");
 }
