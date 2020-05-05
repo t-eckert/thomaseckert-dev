@@ -1,6 +1,7 @@
 import express from "express";
-import FavoriteModel from "../../models/Favorite";
+import FavoriteModel from "../models/Favorite";
 import Favorite from "../../interfaces/Favorite";
+import verify from "../utils/verify";
 
 const favoritesRouter = express.Router();
 
@@ -24,13 +25,9 @@ favoritesRouter.get("/:slug", async (req, res) => {
   }
 });
 
-favoritesRouter.put("/:uid", async (req, res) => {
-  const uid = req.params["uid"];
+// Upsert a Favorite into the DB
+favoritesRouter.put("/", verify, async (req, res) => {
   const favorite = <Favorite>req.body;
-
-  if (uid !== process.env.UID) {
-    res.sendStatus(403);
-  }
 
   const favoriteModel = new FavoriteModel({
     slug: favorite.slug,

@@ -1,8 +1,9 @@
 import express from "express";
 import { validatePostStructure } from "../../functions";
 import Post from "../../interfaces/Post";
-import PostContentModel from "../../models/PostContent";
-import PostMetadataModel from "../../models/PostMetadata";
+import PostContentModel from "../models/PostContent";
+import PostMetadataModel from "../models/PostMetadata";
+import verify from "../utils/verify";
 
 const postsRouter = express.Router();
 
@@ -51,17 +52,13 @@ postsRouter.get("/content", async (req, res) => {
 });
 
 /** Saves a post to the database */
-postsRouter.put("/:uid", async (req, res) => {
-  const uid = req.params["uid"];
+postsRouter.put("/", async (req, res) => {
+  const key = req.headers["key"];
   const post = <Post>req.body;
 
-  if (uid !== process.env.UID) {
+  if (key !== process.env.KEY) {
     res.sendStatus(403);
   }
-
-  // if (!validatePostStructure(post)) {
-  //   res.sendStatus(400);
-  // }
 
   const { metadata, content } = post;
 
