@@ -8,6 +8,7 @@
       <h2 class="subtitle">
         Blog website
       </h2>
+      <p>Using nuxt-ts</p>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
           Documentation
