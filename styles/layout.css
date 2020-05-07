@@ -1,0 +1,11 @@
+.gc-1-3 {
+  grid-template-columns: 1fr 3fr;
+}
+
+.gg-4 {
+  gap: 1rem;
+}
+
+.gg-8 {
+  gap: 2rem;
+}
