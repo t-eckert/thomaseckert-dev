@@ -1,8 +1,10 @@
+require("dotenv").config();
+
 export default {
   mode: "universal",
 
   head: {
-    title: process.env.npm_package_name || "",
+    title: "Thomas Eckert",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -26,9 +28,15 @@ export default {
 
   plugins: [],
 
-  buildModules: ["@nuxt/typescript-build", "@nuxtjs/tailwindcss"],
+  serverMiddleware: ["~/api"],
 
-  modules: ["@nuxtjs/dotenv"],
+  buildModules: [
+    "@nuxt/typescript-build",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/dotenv",
+  ],
+
+  // modules: ["@nuxtjs/dotenv"],
 
   build: {
     extend(config, ctx) {},
