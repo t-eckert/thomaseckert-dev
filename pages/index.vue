@@ -7,6 +7,8 @@
 
 <script lang="ts">
 import Vue from "vue";
+import axios from "axios";
+import { host, routes } from "~/constants";
 import TheIntroduction from "~/components/TheIntroduction.vue";
 import ThePostGallery from "~/components/ThePostGallery.vue";
 
@@ -18,19 +20,12 @@ export default Vue.extend({
     ThePostGallery,
   },
 
-  data() {
+  async asyncData() {
+    const { data: postsMetadata } = await axios.get(
+      host + routes.POSTS_METADATA
+    );
     return {
-      postsMetadata: [
-        {
-          slug: "test",
-          emoji: "🎈",
-          title: "This Post is a Test",
-          tags: ["Test", "Exam"],
-          publishDate: new Date(2020, 5, 5),
-          preview:
-            "Qui incididunt consectetur consequat deserunt minim laboris officia in. Duis aliquip aliqua enim dolore velit et id ullamco anim laboris minim. Adipisicing fugiat duis qui nostrud incididunt pariatur ut consectetur anim sunt non ex est eiusmod.",
-        },
-      ],
+      postsMetadata,
     };
   },
 });
