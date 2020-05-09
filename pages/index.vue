@@ -8,7 +8,7 @@
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";
-import { host, routes } from "~/constants";
+import { getHost, routes } from "~/constants";
 import TheIntroduction from "~/components/TheIntroduction.vue";
 import ThePostGallery from "~/components/ThePostGallery.vue";
 
@@ -22,7 +22,7 @@ export default Vue.extend({
 
   async asyncData() {
     const { data: postsMetadata } = await axios.get(
-      host + routes.POSTS_METADATA
+      getHost() + routes.POSTS_METADATA
     );
     return {
       postsMetadata,
