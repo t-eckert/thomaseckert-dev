@@ -1,0 +1,31 @@
+.pill {
+  border-radius: 1rem;
+  padding: 0.25rem 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.75px;
+  background-color: var(--pill-color);
+}
+
+.pill-red {
+  --pill-color: var(--red);
+}
+
+.pill-blue {
+  --pill-color: var(--blue);
+}
+
+.pill-yellow {
+  --pill-color: var(--yellow);
+}
+
+.pill-purple {
+  --pill-color: var(--purple);
+}
+
+.pill-orange {
+  --pill-color: var(--orange);
+}
+
+.pill-green {
+  --pill-color: var(--green);
+}

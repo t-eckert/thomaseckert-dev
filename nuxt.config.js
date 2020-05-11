@@ -23,6 +23,7 @@ export default {
     "~/styles/--vars.css",
     "~/styles/layout.css",
     "~/styles/main.css",
+    "~/styles/pills.css",
     "~/styles/typography.css",
   ],
 
