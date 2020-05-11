@@ -1,7 +1,7 @@
 <template>
-  <nav>
-    <ul class="breadcrumbs">
-      <li v-for="(crumb, index) in breadcrumbs" :key="index">
+  <nav class="p-2">
+    <ul class="flex">
+      <li v-for="(crumb, index) in breadcrumbs" :key="index" class="mr-2">
         {{ crumb.emoji }}
         <nuxt-link :to="crumb.link">{{ crumb.name }}</nuxt-link>
         <span>&#47;</span>
