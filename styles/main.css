@@ -1,17 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono&display=swap");
+
 html {
   background-color: var(--page-background);
   color: var(--text-primary);
-  font-size: 16px;
+  font-size: 18px;
+  font-family: "Oxygen", sans-serif;
+}
+
+code {
+  font-family: "Oxygen Mono", monospace;
+  font-size: 0.9rem;
 }
 
 a {
   text-decoration: underline;
 }
 
-nav {
-  padding: 0.5rem;
+hr {
+  border-color: var(--neutral-50);
 }
 
+/* Extends `.container` from Tailwind */
 .container {
   margin-left: auto;
   margin-right: auto;
