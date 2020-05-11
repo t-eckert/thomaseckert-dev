@@ -1,21 +1,30 @@
 <template>
-  <section>
-    <h1>Thomas Eckert</h1>
-    <p>
-      Nulla aliquip pariatur veniam ea quis pariatur id non qui velit mollit
-      minim ut. Cillum culpa dolor deserunt aute adipisicing. Consectetur fugiat
-      ut aliqua laborum. Tempor aliqua magna sit excepteur reprehenderit labore.
-      Eu enim esse enim ullamco cillum cupidatat. Amet aute dolor proident id
-      cupidatat. Adipisicing dolore aute est excepteur eu reprehenderit culpa
-      quis.
+  <section class="mnw-80 mxw-88 px-4">
+    <h1 class="mb-4">Thomas Eckert</h1>
+    <div class="links">
+      <!-- <div>✨&nbsp;<nuxt-link to="/favorites">Favorites</nuxt-link></div> -->
+      <!-- <div>🛰&nbsp;<nuxt-link to="/uses">Things I use</nuxt-link></div> -->
+      <!-- <div>💁‍♂️&nbsp;<nuxt-link to="/about">About me</nuxt-link></div> -->
+    </div>
+    <p class="mb-4">
+      I am a software engineer on Azure at Microsoft with a background in
+      Nuclear Physics.
     </p>
+    <p class="mb-8">
+      You can find me on
+      <a href="https://twitter.com/thomaseckert_">Twitter</a>,
+      <a href="https://github.com/t-eckert">GitHub</a>,
+      <a href="https://www.linkedin.com/in/thomas-eckert/">LinkedIn</a>, and
+      <a href="https://www.twitch.tv/thomaseckert">Twitch</a>.
+    </p>
+    <hr class="mb-8" />
   </section>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 
 export default Vue.extend({
-  name: 'TheIntroduction'
-})
+  name: "TheIntroduction",
+});
 </script>
