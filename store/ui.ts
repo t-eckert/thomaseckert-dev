@@ -1,7 +1,7 @@
 import { GetterTree, MutationTree } from "vuex";
 
 export const state = () => ({
-  breadcrumbs: [{ emoji: "🎈", name: "Home", link: "/" }],
+  breadcrumbs: [],
 });
 
 export type UIState = ReturnType<typeof state>;
