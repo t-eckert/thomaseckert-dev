@@ -6,12 +6,13 @@
         postMetadata.title
       }}</nuxt-link>
     </h2>
-    <div class="flex items-baseline mb-2">
-      <div class="mr-4">{{ formatDate(postMetadata.publishDate) }}</div>
+    <div class="flex flex-wrap items-baseline mb-2">
+      <div class="mr-4 mb-2">{{ formatDate(postMetadata.publishDate) }}</div>
       <Pill
         v-for="(tag, index) in postMetadata.tags"
         :text="tag"
         :key="index"
+        class="mb-2"
       />
     </div>
     <p>{{ postMetadata.preview }}</p>
