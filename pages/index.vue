@@ -1,5 +1,5 @@
 <template>
-  <div class="container grid gc-1-3 gg-8 mt-8">
+  <div class="container flex flex-wrap mt-8">
     <TheIntroduction />
     <ThePostGallery :postsMetadata="postsMetadata" />
   </div>
@@ -27,6 +27,12 @@ export default Vue.extend({
     return {
       postsMetadata,
     };
+  },
+
+  mounted() {
+    this.$store.commit("ui/SET_BREADCRUMBS", [
+      { emoji: "🏡", name: "Home", link: "/" },
+    ]);
   },
 });
 </script>
