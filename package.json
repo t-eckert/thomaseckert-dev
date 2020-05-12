@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.6",
     "@nuxtjs/dotenv": "^1.4.1",
-    "@types/mongoose": "^5.7.15",
+    "@types/mongoose": "^5.7.16",
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "mongoose": "^5.9.12",
