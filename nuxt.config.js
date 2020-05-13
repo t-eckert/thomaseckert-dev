@@ -24,6 +24,7 @@ export default {
     "~/styles/layout.css",
     "~/styles/main.css",
     "~/styles/pills.css",
+    "~/styles/prism.css",
     "~/styles/typography.css",
   ],
 

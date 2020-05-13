@@ -1,6 +1,6 @@
 <template>
   <article class="mt-8">
-    <section class="center mxw-128">
+    <section class="center mxw-160">
       <h2 class="mb-2">{{ postMetadata.emoji }}</h2>
       <h1 class="mb-4">{{ postMetadata.title }}</h1>
       <div class="flex items-center mb-8">
@@ -12,9 +12,10 @@
         />
       </div>
     </section>
-    <section class="mxw-128 center mb-4" v-html="body"></section>
+    <section class="mxw-160 center mb-4 markdown" v-html="body"></section>
     <hr class="mb-4" />
     <div>🏡&nbsp;<nuxt-link to="/">Return home</nuxt-link></div>
+    <script src="/prism.js" />
   </article>
 </template>
 
