@@ -21,9 +21,7 @@ export default Vue.extend({
   },
 
   async asyncData() {
-    const { data: postsMetadata } = await axios.get(
-      getHost() + routes.POSTS_METADATA
-    );
+    const { data: postsMetadata } = await axios.get(routes.POSTS_METADATA);
     return {
       postsMetadata,
     };

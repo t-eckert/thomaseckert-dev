@@ -21,10 +21,10 @@ export default Vue.extend({
   async asyncData({ params, store }) {
     // Call to the API to get post data
     const { data: postMetadata } = await axios.get(
-      getHost() + routes.POSTS_METADATA + params.post
+      routes.POSTS_METADATA + params.post
     );
     const { data: postContent } = await axios.get(
-      getHost() + routes.POSTS_CONTENT + params.post
+      routes.POSTS_CONTENT + params.post
     );
 
     // Set the navbar breadcrumbs
