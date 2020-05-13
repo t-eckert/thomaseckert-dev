@@ -1,7 +1,7 @@
 <template>
   <div class="container flex flex-wrap mt-8">
     <TheIntroduction />
-    <ThePostGallery :postsMetadata="postsMetadata" />
+    <ThePostGallery class="mxw-128" :postsMetadata="postsMetadata" />
   </div>
 </template>
 
