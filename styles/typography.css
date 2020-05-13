@@ -25,9 +25,101 @@ h6 {
 }
 
 p {
-  margin-bottom: 2rem;
+  line-height: 1.5;
+  margin-bottom: var(--text-spacer);
 }
 
 .minutae {
   font-size: 0.9rem;
+}
+
+blockquote {
+  padding: 1rem;
+  background-color: var(--neutral-10);
+  margin-bottom: var(--text-spacer);
+  border-radius: 0.25rem;
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+/* Code display (excluding syntax highlighting which is handled in `prism.css`) */
+p code {
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+  background-color: var(--neutral-20);
+  border-radius: 0.25em;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+  padding: 0.1em 0.4em;
+  font-size: 85%;
+  background-color: var(--neutral-20);
+  border-radius: 0.25em;
+}
+
+.code-toolbar {
+  font-size: 0.9rem;
+  margin-bottom: var(--text-spacer);
+}
+
+pre code {
+  font-size: 0.9rem;
+  padding: 1rem;
+  background-color: var(--neutral-10);
+  margin-bottom: var(--text-spacer);
+  border-radius: 0.25rem;
+}
+
+/* Markdown specific formatting */
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--neutral-20);
+}
+
+.markdown table thead tr th {
+  padding: 0.25rem 1rem;
+  font-weight: 400;
+  border-bottom: solid 1px var(--opaque-divider);
+  border-top: solid 1px var(--opaque-divider);
+}
+
+.markdown table thead tr th {
+  border-left: solid 1px var(--opaque-divider);
+}
+
+.markdown table thead tr th:first-of-type {
+  border-left: none;
+}
+
+.markdown table tbody tr td {
+  padding: 0.25rem 1rem;
+  font-weight: 400;
+  border-bottom: solid 1px var(--opaque-divider);
+}
+
+.markdown table tbody tr td {
+  border-left: solid 1px var(--opaque-divider);
+}
+
+.markdown table tbody tr td:first-of-type {
+  border-left: none;
+}
+
+.markdown table {
+  margin: auto;
+  margin-bottom: var(--text-spacer);
 }
