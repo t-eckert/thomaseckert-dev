@@ -16,8 +16,30 @@ nav {
   height: 44.8px;
 }
 
+nav ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
 /* Extends `.container` from Tailwind */
 .container {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Set list styling (unset by Tailwind) */
+ul {
+  list-style: disc;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  margin-bottom: var(--text-spacer);
+}
+
+ol {
+  list-style: decimal;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  margin-bottom: var(--text-spacer);
 }
