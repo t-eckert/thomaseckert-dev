@@ -27,6 +27,10 @@
   max-width: 64rem;
 }
 
+.mxw-160 {
+  max-width: 40rem;
+}
+
 .mxw-128 {
   max-width: 32rem;
 }
