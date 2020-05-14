@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <button>Login</button>
+  <div class="container">
+    <div class="card mxw-88 mt-64 h-center flex justify-around">
+      <button>🔒&nbsp;Login</button>
+      <nuxt-link class="btn btn-transparent" to="/"
+        >🏡&nbsp;Return home</nuxt-link
+      >
+    </div>
   </div>
 </template>
 
