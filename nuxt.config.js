@@ -39,16 +39,16 @@ export default {
     "@nuxtjs/dotenv",
   ],
 
-  modules: ["@nuxtjs/dotenv", "@nuxtjs/axios", "@nuxtjs/auth"],
+  modules: ["@nuxtjs/dotenv", "@nuxtjs/axios"],
 
-  auth: {
-    strategies: {
-      auth0: {
-        domain: "thomaseckert.auth0.com",
-        client_id: process.env.AUTH_0_CLIENT_ID,
-      },
-    },
-  },
+  // auth: {
+  //   strategies: {
+  //     auth0: {
+  //       domain: "thomaseckert.auth0.com",
+  //       client_id: process.env.AUTH_0_CLIENT_ID,
+  //     },
+  //   },
+  // },
 
   build: {
     extend(config, ctx) {},
