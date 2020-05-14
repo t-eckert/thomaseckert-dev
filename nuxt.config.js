@@ -42,7 +42,9 @@ export default {
   modules: ["@nuxtjs/dotenv", "@nuxtjs/axios", "@nuxtjs/auth"],
 
   auth: {
+    redirect: { login: "/login", callback: "/admin" },
     strategies: {
+      local: false,
       auth0: {
         domain: "thomaseckert.auth0.com",
         client_id: process.env.AUTH_0_CLIENT_ID,
