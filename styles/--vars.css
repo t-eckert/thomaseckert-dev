@@ -24,10 +24,15 @@
 
   /* Elements */
   --page-background: #313437;
+  --card-background: #232425;
   --text-primary: var(--neutral);
   --text-secondary: var(--neutral-80);
   --text-tertiary: var(--neutral-50);
 
   /* Layouts */
   --text-spacer: 1.5rem;
+
+  /* Shadows */
+  --shadow-primary: rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+    rgba(15, 15, 15, 0.2) 0px 2px 4px;
 }
