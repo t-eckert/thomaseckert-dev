@@ -23,6 +23,20 @@ nav ul {
   margin-bottom: 0;
 }
 
+nav ul li a {
+  text-decoration: none;
+}
+
+nav ul li {
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+nav ul li:hover {
+  background-color: var(--neutral-10);
+}
+
 /* Extends `.container` from Tailwind */
 .container {
   margin-left: auto;
