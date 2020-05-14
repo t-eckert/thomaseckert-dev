@@ -37,6 +37,11 @@ nav ul li:hover {
   background-color: var(--neutral-10);
 }
 
+.h-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Extends `.container` from Tailwind */
 .container {
   margin-left: auto;
