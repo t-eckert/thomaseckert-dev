@@ -1,0 +1,19 @@
+button,
+.btn {
+  text-decoration: none;
+  line-height: normal;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--neutral-10);
+}
+
+.btn-transparent {
+  background-color: transparent;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--card-background);
+  box-shadow: var(--shadow-primary);
+}
