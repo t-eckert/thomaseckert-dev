@@ -1,7 +1,7 @@
 html {
   background-color: var(--page-background);
   color: var(--text-primary);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 a {
