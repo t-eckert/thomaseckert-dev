@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.6",
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/dotenv": "^1.4.1",
     "@types/mongoose": "^5.7.19",
     "axios": "^0.19.2",
