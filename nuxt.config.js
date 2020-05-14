@@ -21,6 +21,7 @@ export default {
 
   css: [
     "~/styles/--vars.css",
+    "~/styles/components.css",
     "~/styles/layout.css",
     "~/styles/main.css",
     "~/styles/pills.css",
