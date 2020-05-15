@@ -1,6 +1,6 @@
 <template>
   <section class="container p-4">
-    <PostView :postMetadata="postMetadata" :postContent="postContent" />
+    <PostView :post="post" />
   </section>
 </template>
 
@@ -9,7 +9,6 @@ import Vue from "vue";
 import axios from "axios";
 import PostView from "~/components/PostView.vue";
 import { getHost, routes } from "@/constants";
-import { PostMetadata } from "../interfaces";
 
 export default Vue.extend({
   name: "ThePostRoute",
@@ -20,27 +19,21 @@ export default Vue.extend({
 
   async asyncData({ params, store }) {
     // Call to the API to get post data
-    const { data: postMetadata } = await axios.get(
-      routes.POSTS_METADATA + params.post
-    );
-    const { data: postContent } = await axios.get(
-      routes.POSTS_CONTENT + params.post
-    );
+    const { data: post } = await axios.get(routes.POSTS + params.post);
 
     // Set the navbar breadcrumbs
     store.commit("ui/SET_BREADCRUMBS", [
       { emoji: "🏡", name: "Home", link: "/" },
       {
-        emoji: postMetadata.emoji,
-        name: postMetadata.title,
-        link: `/${postMetadata.slug}`,
+        emoji: post.emoji,
+        name: post.title,
+        link: `/${post.slug}`,
       },
     ]);
 
     // Merge async data into component data
     return {
-      postMetadata,
-      postContent,
+      post,
     };
   },
 });

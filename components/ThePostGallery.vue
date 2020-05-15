@@ -1,17 +1,13 @@
 <template>
   <section class="grid g-fit gg-4">
-    <PostPreview
-      v-for="(postMetadata, index) in postsMetadata"
-      :key="index"
-      :postMetadata="postMetadata"
-    />
+    <PostPreview v-for="(post, index) in posts" :key="index" :post="post" />
   </section>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import PostPreview from "~/components/PostPreview.vue";
-import { PostMetadata } from "~/interfaces";
+import { Post } from "~/interfaces";
 
 export default Vue.extend({
   name: "ThePostGallery",
@@ -21,7 +17,7 @@ export default Vue.extend({
   },
 
   props: {
-    postsMetadata: Array as () => PostMetadata[],
+    posts: Array as () => Post[],
   },
 });
 </script>

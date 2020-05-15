@@ -1,7 +1,7 @@
 <template>
   <div class="container flex flex-wrap mt-8">
     <TheIntroduction />
-    <ThePostGallery class="mxw-128" :postsMetadata="postsMetadata" />
+    <ThePostGallery class="mxw-128" :posts="posts" />
   </div>
 </template>
 
@@ -21,9 +21,9 @@ export default Vue.extend({
   },
 
   async asyncData() {
-    const { data: postsMetadata } = await axios.get(routes.POSTS_METADATA);
+    const { data: posts } = await axios.get(routes.POSTS);
     return {
-      postsMetadata,
+      posts,
     };
   },
 

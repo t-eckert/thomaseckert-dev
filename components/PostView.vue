@@ -1,15 +1,11 @@
 <template>
   <article class="mt-8">
     <section class="center mxw-160">
-      <h2 class="mb-2">{{ postMetadata.emoji }}</h2>
-      <h1 class="mb-4">{{ postMetadata.title }}</h1>
+      <h2 class="mb-2">{{ post.emoji }}</h2>
+      <h1 class="mb-4">{{ post.title }}</h1>
       <div class="flex items-center mb-8">
-        <div class="mr-4">{{ formatDate(postMetadata.publishDate) }}</div>
-        <Pill
-          v-for="(tag, index) in postMetadata.tags"
-          :text="tag"
-          :key="index"
-        />
+        <div class="mr-4">{{ formatDate(post.publishDate) }}</div>
+        <Pill v-for="(tag, index) in post.tags" :text="tag" :key="index" />
       </div>
     </section>
     <section class="mxw-160 center mb-4 markdown" v-html="body"></section>
@@ -23,7 +19,7 @@
 import Vue from "vue";
 import Pill from "~/components/Pill.vue";
 import { formatDate, formatMarkdown } from "~/functions";
-import { PostMetadata, PostContent } from "~/interfaces";
+import { Post } from "../interfaces";
 
 export default Vue.extend({
   name: "PostView",
@@ -31,13 +27,12 @@ export default Vue.extend({
   components: { Pill },
 
   props: {
-    postMetadata: Object as () => PostMetadata,
-    postContent: Object as () => PostContent,
+    post: Object as () => Post,
   },
 
   data() {
     return {
-      body: formatMarkdown(this.postContent.markdown),
+      body: formatMarkdown(this.post.markdown),
     };
   },
 
