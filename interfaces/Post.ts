@@ -1,9 +1,11 @@
-import PostMetadata from "./PostMetadata";
-import PostContent from "./PostContent";
-
 interface Post {
-  metadata: PostMetadata;
-  content: PostContent;
+  slug: string;
+  emoji: string;
+  title: string;
+  tags: string[];
+  publishDate: Date;
+  preview: string;
+  markdown: string;
 }
 
 export default Post;
