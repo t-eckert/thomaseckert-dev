@@ -46,3 +46,7 @@
 .mnw-80 {
   min-width: 20rem;
 }
+
+.height-fill {
+  height: calc(100vh - 44.8px - 6rem);
+}
