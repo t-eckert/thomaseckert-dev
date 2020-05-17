@@ -7,13 +7,26 @@ button,
   background-color: var(--neutral-10);
 }
 
+button:hover {
+  background-color: var(--neutral-20);
+}
+
+.btn-small {
+  padding: 0.25rem 1rem;
+}
+
 .btn-transparent {
   background-color: transparent;
 }
 
 .card {
   padding: 1rem;
+  width: fit-content;
   border-radius: 0.25rem;
   background-color: var(--card-background);
   box-shadow: var(--shadow-primary);
+}
+
+.scrollable {
+  overflow: scroll;
 }

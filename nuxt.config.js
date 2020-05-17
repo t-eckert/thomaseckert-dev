@@ -1,4 +1,5 @@
 require("dotenv").config();
+import MonacoWebpackPlugin from "monaco-editor-webpack-plugin";
 
 export default {
   mode: "spa",
@@ -22,6 +23,7 @@ export default {
   css: [
     "~/styles/--vars.css",
     "~/styles/components.css",
+    "~/styles/inputs.css",
     "~/styles/layout.css",
     "~/styles/main.css",
     "~/styles/pills.css",
@@ -29,7 +31,14 @@ export default {
     "~/styles/typography.css",
   ],
 
-  plugins: [],
+  chainWebpack: (config) => {
+    config.plugin("monaco-editor").use(MonacoWebpackPlugin, [
+      {
+        // Languages are loaded on demand at runtime
+        languages: ["markdown"],
+      },
+    ]);
+  },
 
   serverMiddleware: ["~/api"],
 
@@ -44,10 +53,12 @@ export default {
   auth: {
     redirect: { login: "/login", callback: "/auth" },
     strategies: {
-      local: false,
-      auth0: {
-        domain: "thomaseckert.auth0.com",
-        client_id: process.env.AUTH_0_CLIENT_ID,
+      local: {
+        login: {
+          url: "/api/auth/login",
+          method: "post",
+          propertyName: "token",
+        },
       },
     },
   },
