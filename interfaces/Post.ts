@@ -4,6 +4,7 @@ interface Post {
   title: string;
   tags: string[];
   publishDate: Date;
+  isPublished: boolean;
   preview: string;
   markdown: string;
 }
