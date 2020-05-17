@@ -20,6 +20,6 @@ if (connection.modelNames().includes("Post")) {
   connection.deleteModel("Post");
 }
 
-const PostModel = mongoose.model("PostMetadata", PostSchema);
+const PostModel = mongoose.model("Post", PostSchema);
 
 export default PostModel;
