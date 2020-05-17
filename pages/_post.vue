@@ -1,6 +1,8 @@
 <template>
   <section class="container p-4">
-    <PostView :post="post" />
+    <PostView :post="post" class="mt-8" />
+    <hr class="mb-4" />
+    <div>🏡&nbsp;<nuxt-link to="/">Return home</nuxt-link></div>
   </section>
 </template>
 
