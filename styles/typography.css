@@ -71,10 +71,45 @@ h6 code {
 
 pre code {
   font-size: 0.9rem;
-  padding: 1rem;
   background-color: var(--neutral-10);
   margin-bottom: var(--text-spacer);
   border-radius: 0.25rem;
+}
+
+/* Table */
+table thead tr th {
+  padding: 0.25rem 1rem;
+  font-weight: 500;
+  text-align: left;
+  vertical-align: baseline;
+  border-bottom: solid 1px var(--opaque-divider);
+  border-top: solid 1px var(--opaque-divider);
+}
+
+table thead tr th {
+  border-left: solid 1px var(--opaque-divider);
+}
+
+table thead tr th:first-of-type {
+  border-left: none;
+}
+
+table tbody tr td {
+  padding: 0.25rem 1rem;
+  font-weight: 400;
+  vertical-align: baseline;
+  border-bottom: solid 1px var(--opaque-divider);
+}
+
+table tbody tr td {
+  border-left: solid 1px var(--opaque-divider);
+}
+
+table tbody tr td:first-of-type {
+  border-left: none;
+}
+
+table {
 }
 
 /* Markdown specific formatting */

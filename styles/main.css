@@ -14,6 +14,7 @@ hr {
 
 nav {
   height: 44.8px;
+  background-color: var(--page-background);
 }
 
 nav ul {
@@ -23,18 +24,27 @@ nav ul {
   margin-bottom: 0;
 }
 
-nav ul li a {
-  text-decoration: none;
+.link-display a {
+  text-decoration: unset;
 }
 
-nav ul li {
+.link-display {
   cursor: pointer;
   padding: 0.2rem 0.4rem;
   border-radius: 0.25rem;
 }
 
-nav ul li:hover {
+.link-display:hover {
   background-color: var(--neutral-10);
+}
+
+.borderless {
+  border: transparent;
+}
+
+.h-center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Extends `.container` from Tailwind */
@@ -56,4 +66,27 @@ ol {
   margin-left: 1rem;
   padding-left: 1rem;
   margin-bottom: var(--text-spacer);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  margin: 54px 0 53px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-10);
+  border-radius: 10px;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.55);
 }

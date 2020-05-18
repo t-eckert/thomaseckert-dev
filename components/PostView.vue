@@ -1,5 +1,5 @@
 <template>
-  <article class="mt-8">
+  <article>
     <section class="center mxw-160">
       <h2 class="mb-2">{{ post.emoji }}</h2>
       <h1 class="mb-4">{{ post.title }}</h1>
@@ -8,9 +8,10 @@
         <Pill v-for="(tag, index) in post.tags" :text="tag" :key="index" />
       </div>
     </section>
-    <section class="mxw-160 center mb-4 markdown" v-html="body"></section>
-    <hr class="mb-4" />
-    <div>🏡&nbsp;<nuxt-link to="/">Return home</nuxt-link></div>
+    <section
+      class="mxw-160 center mb-4 markdown"
+      v-html="formatMarkdown(post.markdown)"
+    ></section>
     <script src="/prism.js" />
   </article>
 </template>
@@ -30,15 +31,12 @@ export default Vue.extend({
     post: Object as () => Post,
   },
 
-  data() {
-    return {
-      body: formatMarkdown(this.post.markdown),
-    };
-  },
-
   methods: {
     formatDate(dateString: string): string {
       return formatDate(dateString);
+    },
+    formatMarkdown(markdown: string): string {
+      return formatMarkdown(markdown);
     },
   },
 });
