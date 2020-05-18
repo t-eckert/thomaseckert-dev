@@ -5,4 +5,5 @@ export const getHost = (): string =>
 
 export const routes = {
   POSTS: "/api/posts/",
+  BOOKMARKS: "/api/bookmarks/",
 };
