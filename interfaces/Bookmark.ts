@@ -1,7 +1,8 @@
 interface Bookmark {
-  category: string;
   addedDate: Date;
   link: string;
   linkText: string;
   description?: string;
 }
+
+export default Bookmark;
