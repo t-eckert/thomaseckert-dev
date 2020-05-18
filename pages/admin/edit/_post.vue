@@ -27,7 +27,6 @@ import Vue from "vue";
 import axios from "axios";
 import MonacoEditor from "monaco-editor-vue";
 import { routes } from "~/constants";
-import TheEditor from "~/components/TheEditor.vue";
 import PostView from "~/components/PostView.vue";
 
 export default Vue.extend({
