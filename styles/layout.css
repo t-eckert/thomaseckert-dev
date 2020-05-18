@@ -6,6 +6,10 @@
 }
 
 /* Grids */
+.grid-grow {
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
 .gc-1-3 {
   grid-template-columns: 1fr 3fr;
 }
