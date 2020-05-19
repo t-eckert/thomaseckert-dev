@@ -59,10 +59,16 @@ export default {
     redirect: { login: "/login", callback: "/auth" },
     strategies: {
       local: {
-        login: {
-          url: "/api/auth/login",
-          method: "post",
-          propertyName: "token",
+        endpoints: {
+          login: {
+            url: `/api/auth/login`,
+            method: "post",
+            propertyName: "token",
+          },
+          logout: {
+            url: `/api/auth/logout`,
+            method: "post",
+          },
         },
       },
     },
