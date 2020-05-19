@@ -48,7 +48,12 @@ export default {
     "@nuxtjs/dotenv",
   ],
 
-  modules: ["@nuxtjs/dotenv", "@nuxtjs/axios", "@nuxtjs/auth"],
+  modules: [
+    "@nuxtjs/dotenv",
+    "@nuxtjs/axios",
+    "@nuxtjs/auth",
+    "@nuxtjs/sitemap",
+  ],
 
   auth: {
     redirect: { login: "/login", callback: "/auth" },
@@ -61,6 +66,18 @@ export default {
         },
       },
     },
+  },
+
+  sitemap: {
+    hostname: "https://thomaseckert.dev",
+    gzip: true,
+    generate: false,
+    exclude: ["/admin", "/admin/**", "/login"],
+    routes: [
+      "/logging-execution-time-in-python",
+      "/basketball-for-nerds",
+      "/encryption-and-decryption-with-python-azure-functions",
+    ],
   },
 
   build: {
