@@ -17,6 +17,7 @@
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/sitemap": "^2.3.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.7.19",
