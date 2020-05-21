@@ -32,7 +32,12 @@ authRouter.post("/login", async (req, res) => {
 
 /** User */
 authRouter.get("/user", async (req, res) => {
-  res.send({ user: "Thomas" });
+  res.send({ user: "Admin" });
+});
+
+/** Logout */
+authRouter.get("/logout", async (req, res) => {
+  res.sendStatus(200);
 });
 
 export default authRouter;
