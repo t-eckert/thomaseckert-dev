@@ -1,24 +1,57 @@
 <template>
-  <div class="p-4 grid grid-cols-2 height-fill">
-    <div>
-      <input
-        v-model="post.title"
-        type="text"
-        name="title"
-        id=""
-        class="mb-4 mnw-80"
-      />
-      <MonacoEditor
-        class="editor mb-4"
-        v-model="post.markdown"
-        language="markdown"
-        :options="options"
-        theme="vs-dark"
-      >
-      </MonacoEditor>
-      <div><button class="btn-small">Save</button></div>
+  <div class="container">
+    <div class="grid grid-cols-4 gg-4 py-4 v-fill">
+      <div class="card self-start min-w-full">
+        <div class="flex flex-col">
+          <label for="title" class="mb-2">Title</label>
+          <input
+            v-model="post.title"
+            type="text"
+            name="title"
+            id="title"
+            class="mb-4"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="tags" class="mb-2">Tags</label>
+          <input
+            v-model="post.tags"
+            type="text"
+            name="tags"
+            id="tags"
+            class="mb-4"
+          />
+        </div>
+      </div>
+
+      <div class="col-span-2">
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          v-model="post.markdown"
+        ></textarea>
+
+        <!-- <MonacoEditor
+          class="editor"
+          v-model="post.markdown"
+          language="markdown"
+          :options="options"
+          theme="vs-dark"
+        >
+        </MonacoEditor> -->
+      </div>
+      <div class="card self-end min-w-full">
+        <div class="flex flex-col">
+          <code class="mb-2"
+            >{{ calculateReadingTime(post.markdown) }} minute(s) read</code
+          >
+          <code class="mb-4">{{ post.markdown.length }} chars</code>
+        </div>
+        <button class="btn-small">Save</button>
+      </div>
     </div>
-    <PostView :post="post" class="scrollable" />
   </div>
 </template>
 
@@ -79,6 +112,14 @@ export default Vue.extend({
         wrappingIndent: "same",
         renderLineHighlight: "gutter",
       }
+    }
+  },
+
+  methods: {
+    calculateReadingTime(text) {
+      const wordsPerMinute = 200;
+      const numberOfWords = text.split(" ").length;
+      return Math.ceil(numberOfWords/wordsPerMinute);
     }
   }
 });
