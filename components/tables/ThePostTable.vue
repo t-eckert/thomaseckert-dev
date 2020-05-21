@@ -11,7 +11,7 @@
     <tbody>
       <tr v-for="(post, index) in posts" :key="index">
         <td class="link-display">
-          <nuxt-link :to="`/${post.slug}`">
+          <nuxt-link :to="`/${post.slug}`" class="mr-2">
             {{ post.emoji }}&nbsp;{{ post.title }}
           </nuxt-link>
         </td>
