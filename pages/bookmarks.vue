@@ -1,5 +1,5 @@
 <template>
-  <div class="container grid grid-grow gg-4">
+  <div class="container grid grid-grow gg-4 mt-16">
     <BookmarkCategory
       v-for="(category, index) in bookmarks"
       :key="index"
