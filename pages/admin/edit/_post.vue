@@ -25,48 +25,40 @@
       </div>
 
       <div class="col-span-2">
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          v-model="post.markdown"
-        ></textarea>
-
-        <!-- <MonacoEditor
-          class="editor"
-          v-model="post.markdown"
-          language="markdown"
-          :options="options"
-          theme="vs-dark"
-        >
-        </MonacoEditor> -->
+        <TheEditor v-model="post.markdown" class="min-h-full" />
       </div>
-      <div class="card self-end min-w-full">
-        <div class="flex flex-col">
-          <code class="mb-2"
-            >{{ calculateReadingTime(post.markdown) }} minute(s) read</code
-          >
-          <code class="mb-4">{{ post.markdown.length }} chars</code>
+      <div class="card self-end min-w-full flex flex-col">
+        <code class="mb-2"
+          >{{ calculateReadingTime(post.markdown) }} minute(s) read</code
+        >
+        <code class="mb-2">{{ post.markdown.length }} chars</code>
+        <div class="mb-4">
+          <input
+            v-model="post.isPublished"
+            type="checkbox"
+            name="is-published"
+            id="is-published"
+          />
+          <label for="is-published">Published</label>
         </div>
-        <button class="btn-small">Save</button>
+        <button @click="save()" class="btn-small">Save</button>
       </div>
     </div>
   </div>
 </template>
 
-<script lang="js">
-import Vue from "vue";
+<script lang="ts">
+import { Vue } from "nuxt-property-decorator";
 import axios from "axios";
-import MonacoEditor from "monaco-editor-vue";
 import { routes } from "~/constants";
+import TheEditor from "~/components/TheEditor.vue";
 import PostView from "~/components/PostView.vue";
 
 export default Vue.extend({
   middleware: "auth",
 
   components: {
-    MonacoEditor,
+    TheEditor,
     PostView,
   },
 
@@ -93,34 +85,21 @@ export default Vue.extend({
 
   data() {
     return {
-      options: {
-        fontSize: 14,
-        autoIndent: 2,
-        highlightActiveIndentGuide: true,
-        lineNumbersMinChars: 3,
-        formatOnPaste: true,
-        formateOnType: true,
-        fontFamily: "Cascadia Code, monospace, Consolas, Courier New",
-        fontLigatures: true,
-        minimap: {
-          enabled: true,
-        },
-        overviewRulerBorder: false,
-        renderWhitespace: "boundary",
-        scrollBeyondLastLine: false,
-        wordWrap: "on",
-        wrappingIndent: "same",
-        renderLineHighlight: "gutter",
-      }
-    }
+      post: undefined,
+    };
   },
 
   methods: {
-    calculateReadingTime(text) {
+    save() {
+      const post = this.post;
+      //this.$axios.post(routes.POSTS);
+    },
+
+    calculateReadingTime(text: string): number {
       const wordsPerMinute = 200;
       const numberOfWords = text.split(" ").length;
-      return Math.ceil(numberOfWords/wordsPerMinute);
-    }
-  }
+      return Math.ceil(numberOfWords / wordsPerMinute);
+    },
+  },
 });
 </script>
