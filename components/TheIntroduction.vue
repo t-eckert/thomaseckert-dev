@@ -14,10 +14,12 @@
     </p>
     <p class="mb-8">
       You can find me on
-      <a href="https://twitter.com/thomaseckert_">Twitter</a>,
-      <a href="https://github.com/t-eckert">GitHub</a>,
-      <a href="https://www.linkedin.com/in/thomas-eckert/">LinkedIn</a>, and
-      <a href="https://www.twitch.tv/thomaseckert">Twitch</a>.
+      <a target="_blank" href="https://twitter.com/thomaseckert_">Twitter</a>,
+      <a target="_blank" href="https://github.com/t-eckert">GitHub</a>,
+      <a target="_blank" href="https://www.linkedin.com/in/thomas-eckert/"
+        >LinkedIn</a
+      >, and
+      <a target="_blank" href="https://www.twitch.tv/thomaseckert">Twitch</a>.
     </p>
     <hr class="mb-8" />
   </section>
