@@ -1,39 +1,64 @@
 <template>
-  <div class="p-4 grid grid-cols-2 height-fill">
-    <div>
-      <input
-        v-model="post.title"
-        type="text"
-        name="title"
-        id=""
-        class="mb-4 mnw-80"
-      />
-      <MonacoEditor
-        class="editor mb-4"
-        v-model="post.markdown"
-        language="markdown"
-        :options="options"
-        theme="vs-dark"
-      >
-      </MonacoEditor>
-      <div><button class="btn-small">Save</button></div>
+  <div class="container">
+    <div class="grid grid-cols-4 gg-4 py-4 v-fill">
+      <div class="card self-start min-w-full">
+        <div class="flex flex-col">
+          <label for="title" class="mb-2">Title</label>
+          <input
+            v-model="post.title"
+            type="text"
+            name="title"
+            id="title"
+            class="mb-4"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="tags" class="mb-2">Tags</label>
+          <input
+            v-model="post.tags"
+            type="text"
+            name="tags"
+            id="tags"
+            class="mb-4"
+          />
+        </div>
+      </div>
+
+      <div class="col-span-2">
+        <TheEditor v-model="post.markdown" class="min-h-full" />
+      </div>
+      <div class="card self-end min-w-full flex flex-col">
+        <code class="mb-2"
+          >{{ calculateReadingTime(post.markdown) }} minute(s) read</code
+        >
+        <code class="mb-2">{{ post.markdown.length }} chars</code>
+        <div class="mb-4">
+          <input
+            v-model="post.isPublished"
+            type="checkbox"
+            name="is-published"
+            id="is-published"
+          />
+          <label for="is-published">Published</label>
+        </div>
+        <button @click="save()" class="btn-small">Save</button>
+      </div>
     </div>
-    <PostView :post="post" class="scrollable" />
   </div>
 </template>
 
-<script lang="js">
-import Vue from "vue";
+<script lang="ts">
+import { Vue } from "nuxt-property-decorator";
 import axios from "axios";
-import MonacoEditor from "monaco-editor-vue";
 import { routes } from "~/constants";
+import TheEditor from "~/components/TheEditor.vue";
 import PostView from "~/components/PostView.vue";
 
 export default Vue.extend({
   middleware: "auth",
 
   components: {
-    MonacoEditor,
+    TheEditor,
     PostView,
   },
 
@@ -60,26 +85,21 @@ export default Vue.extend({
 
   data() {
     return {
-      options: {
-        fontSize: 14,
-        autoIndent: 2,
-        highlightActiveIndentGuide: true,
-        lineNumbersMinChars: 3,
-        formatOnPaste: true,
-        formateOnType: true,
-        fontFamily: "Cascadia Code, monospace, Consolas, Courier New",
-        fontLigatures: true,
-        minimap: {
-          enabled: true,
-        },
-        overviewRulerBorder: false,
-        renderWhitespace: "boundary",
-        scrollBeyondLastLine: false,
-        wordWrap: "on",
-        wrappingIndent: "same",
-        renderLineHighlight: "gutter",
-      }
-    }
-  }
+      post: undefined,
+    };
+  },
+
+  methods: {
+    save() {
+      const post = this.post;
+      //this.$axios.post(routes.POSTS);
+    },
+
+    calculateReadingTime(text: string): number {
+      const wordsPerMinute = 200;
+      const numberOfWords = text.split(" ").length;
+      return Math.ceil(numberOfWords / wordsPerMinute);
+    },
+  },
 });
 </script>
