@@ -23,7 +23,7 @@ postsRouter.get("/:slug", async (req, res) => {
     const post = await PostModel.findOne({ slug });
     res.send(post);
   } catch (error) {
-    res.status(404).send("Could not find post metadata");
+    res.status(404).send("Could not find post");
   }
 });
 
