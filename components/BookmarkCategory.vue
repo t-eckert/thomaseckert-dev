@@ -1,21 +1,23 @@
 <template>
   <section>
-    <h2 @click="isExpanded = !isExpanded" class="cursor-pointer">
+    <h3 @click="isExpanded = !isExpanded" class="cursor-pointer mb-2">
       {{ category.name }}
-    </h2>
-    <hr class="mb-4" />
-    <ul v-if="isExpanded">
-      <li
+    </h3>
+    <hr class="mb-2" />
+    <div v-if="isExpanded">
+      <div
         v-for="(bookmark, index) in category.bookmarks"
         :key="index"
-        class="mb-2"
+        class="link-display mb-2"
       >
-        <a target="_blank" :href="bookmark.link">{{ bookmark.linkText }}</a
-        ><span v-if="bookmark.description"
-          >:&nbsp;{{ bookmark.description }}</span
+        <a target="_blank" :href="bookmark.link"
+          >{{ bookmark.linkText
+          }}<span v-if="bookmark.description"
+            >:&nbsp;{{ bookmark.description }}</span
+          ></a
         >
-      </li>
-    </ul>
+      </div>
+    </div>
   </section>
 </template>
 
