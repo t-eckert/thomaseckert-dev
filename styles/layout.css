@@ -58,3 +58,7 @@
 .mnw-80 {
   min-width: 20rem;
 }
+
+.w-fit {
+  width: fit-content;
+}
