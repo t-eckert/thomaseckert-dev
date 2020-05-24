@@ -21,7 +21,12 @@ export default Vue.extend({
 
   async asyncData({ params, store }) {
     // Call to the API to get post data
+
     const { data: post } = await axios.get(routes.POSTS + params.post);
+
+    if (!post) {
+      throw { statusCode: 404 };
+    }
 
     // Set the navbar breadcrumbs
     store.commit("ui/SET_BREADCRUMBS", [
