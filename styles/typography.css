@@ -28,6 +28,10 @@ h6 {
   font-size: 30rem;
 }
 
+.text-secondary {
+  color: var(--text-secondary);
+}
+
 p {
   line-height: 1.5;
   margin-bottom: var(--text-spacer);
