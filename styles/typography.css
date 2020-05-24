@@ -24,6 +24,10 @@ h6 {
   text-transform: uppercase;
 }
 
+.display-1 {
+  font-size: 30rem;
+}
+
 p {
   line-height: 1.5;
   margin-bottom: var(--text-spacer);
