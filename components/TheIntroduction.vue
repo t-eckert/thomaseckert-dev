@@ -2,7 +2,7 @@
   <section class="mnw-80 mxw-88 px-4">
     <h1 class="mb-4">Thomas Eckert</h1>
     <div class="links mb-4">
-      <div class="link-display">
+      <div class="link-display w-fit">
         ✨&nbsp;<nuxt-link to="/bookmarks">Bookmarks</nuxt-link>
       </div>
       <!-- <div>🛰&nbsp;<nuxt-link to="/uses">Things I use</nuxt-link></div> -->
