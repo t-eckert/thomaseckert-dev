@@ -6,8 +6,9 @@
         :key="index"
         class="link-display"
       >
-        {{ crumb.emoji }}
-        <nuxt-link :to="crumb.link">{{ crumb.name }}</nuxt-link>
+        <nuxt-link :to="crumb.link"
+          >{{ crumb.emoji }} {{ crumb.name }}</nuxt-link
+        >
         <span>&#47;</span>
       </li>
     </ul>
