@@ -19,7 +19,9 @@
       "@types/node",
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@types/nuxtjs__auth"
+      "@types/nuxtjs__auth",
+      "@types/jest",
+      "@types/jest-each"
     ]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]

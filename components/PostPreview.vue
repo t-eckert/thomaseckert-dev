@@ -15,14 +15,17 @@
       />
     </div>
     <div>{{ post.preview }}</div>
-    <div class="text-secondary">Updated {{ formatDate(post.publishDate) }}</div>
+    <div class="text-secondary">
+      {{ calculateReadTime(post.markdown) }} read | Updated
+      {{ formatDate(post.publishDate) }}
+    </div>
   </section>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Pill from "~/components/Pill.vue";
-import { formatDate } from "~/functions";
+import { calculateReadTime, formatDate } from "~/functions";
 import { Post } from "~/interfaces";
 
 export default Vue.extend({
@@ -40,6 +43,9 @@ export default Vue.extend({
   methods: {
     formatDate(dateString: string): string {
       return formatDate(dateString);
+    },
+    calculateReadTime(text: string): string {
+      return calculateReadTime(text);
     },
   },
 });
