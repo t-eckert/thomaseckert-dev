@@ -1,19 +1,12 @@
 <template>
-  <div class="p-4">
-    <div class="card h-center mb-4">
-      <h2 class="mb-4">Posts</h2>
-      <ThePostTable class="mb-4" :posts="posts" />
-      <button class="btn-small">New post</button>
-    </div>
-    <div class="card h-center">
-      <h2 class="mb-4">Bookmarks</h2>
-      <div class="flex">
-        <FormAddBookmark class="mr-8" />
-        <div>
-          <TheBookmarksTable class="mb-4" :bookmarkCategories="bookmarks" />
-          <button class="btn-small">New category</button>
-        </div>
+  <div class="container">
+    <div class="grid grid-cols-4 gg-4 mt-4 h-center items-start">
+      <div class="card col-span-3">
+        <h3 class="mb-4">📮 Posts</h3>
+        <ThePostTable class="mb-4" :posts="posts" />
+        <button class="btn-small">New post</button>
       </div>
+      <TheAdminActions class="col-span-1" />
     </div>
   </div>
 </template>
@@ -23,6 +16,7 @@ import Vue from "vue";
 import axios from "axios";
 import { routes } from "~/constants";
 import ThePostTable from "~/components/tables/ThePostTable.vue";
+import TheAdminActions from "~/components/TheAdminActions.vue";
 import FormAddBookmark from "~/components/forms/FormAddBookmark.vue";
 import TheBookmarksTable from "~/components/tables/TheBookmarksTable.vue";
 
@@ -33,6 +27,7 @@ export default Vue.extend({
 
   components: {
     ThePostTable,
+    TheAdminActions,
     FormAddBookmark,
     TheBookmarksTable,
   },
