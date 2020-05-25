@@ -21,7 +21,6 @@ button:hover {
 
 .card {
   padding: 1rem;
-  width: fit-content;
   border-radius: 0.25rem;
   background-color: var(--card-background);
   box-shadow: var(--shadow-primary);
