@@ -1,4 +1,5 @@
-input {
+input,
+textarea {
   padding: 0.25rem 0.5rem;
   background-color: var(--neutral-10);
 }
