@@ -1,8 +1,9 @@
 require("dotenv").config();
 
-const baseUrl = process.env.NODE_ENV === "production"
-  ? "https://thomaseckert.dev/"
-  : process.env.BASE_URL || "http://localhost:3000";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://thomaseckert.dev/"
+    : process.env.BASE_URL || "http://localhost:3000";
 
 export default {
   mode: "spa",
@@ -49,6 +50,10 @@ export default {
     "@nuxtjs/sitemap",
   ],
 
+  axios: {
+    baseUrl,
+  },
+
   auth: {
     redirect: {
       login: "/login",
@@ -58,18 +63,15 @@ export default {
       local: {
         endpoints: {
           login: {
-            baseUrl,
             url: "/api/auth/login",
             method: "post",
             propertyName: "token",
           },
           logout: {
-            baseUrl,
             url: `/api/auth/logout`,
             method: "post",
           },
           user: {
-            baseUrl,
             url: "/api/auth/user",
             method: "get",
             propertyName: "user",
