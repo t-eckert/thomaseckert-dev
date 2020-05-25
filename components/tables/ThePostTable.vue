@@ -1,21 +1,21 @@
 <template>
-  <table>
+  <table class="table-fixed">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Published Date</th>
+        <th class="">Title</th>
+        <th class="w-32">Updated</th>
         <th>Tags</th>
         <th class="borderless"></th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(post, index) in posts" :key="index">
+      <tr v-for="(post, index) in posts" :key="index" class="mb-4">
         <td class="link-display">
           <nuxt-link :to="`/${post.slug}`" class="mr-2">
             {{ post.emoji }}&nbsp;{{ post.title }}
           </nuxt-link>
         </td>
-        <td>
+        <td class="w-32">
           {{ formatDate(post.publishDate) }}
         </td>
         <td class="flex flex-wrap">
