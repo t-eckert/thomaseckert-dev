@@ -1,22 +1,22 @@
 <template>
   <form>
-    <div class="flex justify-between mb-4">
-      <label for="category">Category</label>
-      <input type="url" name="category" id="category" />
+    <div class="flex flex-col justify-between mb-2 items-baseline">
+      <label for="category" class="mb-1">Category</label>
+      <input type="url" name="category" id="category" class="w-full" />
     </div>
-    <div class="flex justify-between mb-4">
-      <label for="link">Link</label>
-      <input type="url" name="link" id="link" />
+    <div class="flex flex-col justify-between mb-2 items-baseline">
+      <label for="link" class="mb-1">Link</label>
+      <input type="url" name="link" id="link" class="w-full" />
     </div>
-    <div class="flex justify-between mb-4">
-      <label for="link-text">Link text</label>
-      <input type="text" name="link-text" id="link-text" />
+    <div class="flex flex-col justify-between mb-2 items-baseline">
+      <label for="title" class="mb-1">Title</label>
+      <input type="text" name="title" id="title" class="w-full" />
     </div>
-    <div class="flex justify-between mb-4">
-      <label for="description" class="mr-4">Description</label>
-      <input type="text" name="description" id="description" />
+    <div class="flex flex-col justify-between mb-2">
+      <label for="description" class="mb-1">Description</label>
+      <textarea name="description" id="description" />
     </div>
-    <button>Add</button>
+    <button class="btn-small">Add</button>
   </form>
 </template>
 
