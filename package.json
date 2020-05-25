@@ -1,7 +1,7 @@
 {
   "name": "thomaseckert-dev",
   "version": "1.0.0",
-  "description": "Blog website",
+  "description": "Personal blog of Thomas Eckert.",
   "author": "Thomas Eckert",
   "private": true,
   "scripts": {
