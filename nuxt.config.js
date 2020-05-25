@@ -1,5 +1,8 @@
 require("dotenv").config();
-import MonacoWebpackPlugin from "monaco-editor-webpack-plugin";
+
+const baseUrl = process.env.NODE_ENV === "production"
+  ? "https://thomaseckert.dev/"
+  : process.env.BASE_URL || "http://localhost:3000";
 
 export default {
   mode: "spa",
@@ -47,18 +50,29 @@ export default {
   ],
 
   auth: {
-    redirect: { login: "/login", callback: "/auth" },
+    redirect: {
+      login: "/login",
+      callback: "/auth",
+    },
     strategies: {
       local: {
         endpoints: {
           login: {
-            url: `/api/auth/login`,
+            baseUrl,
+            url: "/api/auth/login",
             method: "post",
             propertyName: "token",
           },
           logout: {
+            baseUrl,
             url: `/api/auth/logout`,
             method: "post",
+          },
+          user: {
+            baseUrl,
+            url: "/api/auth/user",
+            method: "get",
+            propertyName: "user",
           },
         },
       },
