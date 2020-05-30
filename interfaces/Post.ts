@@ -1,9 +1,11 @@
 interface Post {
+  _id: string;
   slug: string;
   emoji: string;
   title: string;
+  createdOn: Date;
+  updatedOn: Date;
   tags: string[];
-  publishDate: Date;
   isPublished: boolean;
   preview: string;
   markdown: string;

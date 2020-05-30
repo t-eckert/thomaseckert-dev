@@ -3,11 +3,13 @@ import connection from "../utils/database-handler";
 
 const PostSchema = new mongoose.Schema(
   {
+    _id: String,
     slug: String,
-    title: String,
-    publishDate: Date,
-    tags: Array,
     emoji: String,
+    title: String,
+    createdOn: Date,
+    updatedOn: Date,
+    tags: Array,
     isPublished: Boolean,
     preview: String,
     markdown: String,
