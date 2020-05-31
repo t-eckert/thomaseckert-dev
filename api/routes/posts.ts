@@ -83,4 +83,16 @@ postsRouter.put("/", verify, async (req, res) => {
   }
 });
 
+/** Delete a post by its slug */
+postsRouter.delete("/:slug", verify, async (req, res) => {
+  const slug = req.params["slug"];
+
+  try {
+    const post = await PostModel.deleteOne({ slug });
+    res.send(post);
+  } catch (error) {
+    res.status(404).send("Could not find post");
+  }
+});
+
 export default postsRouter;
