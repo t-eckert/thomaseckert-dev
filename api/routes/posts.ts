@@ -29,9 +29,8 @@ postsRouter.get("/", async (req, res) => {
   }
 
   if (req.query.published) {
-    const published =
+    filter.isPublished =
       req.query.published === "true" ? req.query.published : "false";
-    filter.isPublished = req.query.published;
   }
 
   const limit = Number.parseInt(<string>req.query.limit) || 1024;
