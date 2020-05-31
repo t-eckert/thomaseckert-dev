@@ -20,10 +20,10 @@ interface Post {
   title: string;
 
   /** Date when the post was created */
-  createdOn: Date;
+  created: Date;
 
   /** Date when the post was last changed */
-  updatedOn: Date;
+  updated: Date;
 
   /** Tags for categorizing the post (e.g. Python, Programming, Science) */
   tags: string[];
