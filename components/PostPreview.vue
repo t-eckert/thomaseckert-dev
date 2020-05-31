@@ -17,7 +17,7 @@
     <div>{{ post.preview }}</div>
     <div class="text-secondary">
       {{ calculateReadTime(post.markdown) }} read | Updated
-      {{ formatDate(post.publishDate) }}
+      {{ formatDate(post.updated) }}
     </div>
   </section>
 </template>

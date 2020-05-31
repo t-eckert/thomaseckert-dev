@@ -8,7 +8,7 @@
       </div>
       <div class="text-secondary mb-8">
         {{ calculateReadTime(post.markdown) }} read | Updated
-        {{ formatDate(post.publishDate) }}
+        {{ formatDate(post.updated) }}
       </div>
     </section>
     <section
