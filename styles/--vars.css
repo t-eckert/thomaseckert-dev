@@ -22,6 +22,16 @@
   --orange: #fd9644;
   --green: #1dd176;
 
+  --gradient: linear-gradient(
+    90deg,
+    var(--red),
+    var(--blue),
+    var(--yellow),
+    var(--purple),
+    var(--orange),
+    var(--green)
+  );
+
   /* Elements */
   --page-background: #313437;
   --card-background: #232425;

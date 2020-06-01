@@ -25,7 +25,45 @@ h6 {
 }
 
 .display-1 {
-  font-size: 30rem;
+  font-size: clamp(10rem, 30vw, 30rem);
+}
+
+.display-2 {
+  font-size: clamp(8rem, 24vw, 24rem);
+}
+
+.display-3 {
+  font-size: clamp(6rem, 18vw, 18rem);
+}
+
+.display-4 {
+  font-size: clamp(4rem, 12vw, 12rem);
+}
+
+.display-5 {
+  font-size: clamp(2rem, 6vw, 6rem);
+}
+
+.display-6 {
+  font-size: clamp(1rem, 6vw, 6rem);
+}
+
+.shiny {
+  border: 0;
+  background-image: var(--gradient);
+  background-clip: text;
+  color: transparent;
+  background-size: 1000%;
+  animation: bg-animation 100s infinite alternate;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
 
 .text-secondary {
