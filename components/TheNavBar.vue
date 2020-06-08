@@ -9,7 +9,7 @@
         <nuxt-link :to="crumb.link"
           >{{ crumb.emoji }} {{ crumb.name }}</nuxt-link
         >
-        <span>&#47;</span>
+        <span v-if="index !== breadcrumbs.length - 1">&#47;</span>
       </li>
     </ul>
     <div v-if="$auth.loggedIn" class="flex content-center">
