@@ -41,7 +41,7 @@
     "uuid": "^8.1.0"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^1.0.0",
+    "@nuxt/typescript-build": "^1.0.3",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
