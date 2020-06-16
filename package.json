@@ -17,7 +17,7 @@
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/dotenv": "^1.4.1",
-    "@nuxtjs/sitemap": "^2.3.0",
+    "@nuxtjs/sitemap": "^2.3.2",
     "@types/bcryptjs": "^2.4.2",
     "@types/jest": "^25.2.3",
     "@types/jest-each": "^24.3.0",
