@@ -3,7 +3,7 @@
     <div class="">
       <div
         @click="addBookmarkIsExpanded = !addBookmarkIsExpanded"
-        class="link-display"
+        class="link-display w-fit"
       >
         ✨ Add bookmark
       </div>

@@ -16,8 +16,8 @@
     </div>
     <div>{{ post.preview }}</div>
     <div class="text-secondary">
-      {{ calculateReadTime(post.markdown) }} read | Updated
-      {{ formatDate(post.updated) }}
+      {{ calculateReadTime(post.markdown) }} read • Updated
+      <DateDisplay :dateString="post.updated" />
     </div>
   </section>
 </template>
@@ -25,13 +25,17 @@
 <script lang="ts">
 import Vue from "vue";
 import Pill from "~/components/Pill.vue";
-import { calculateReadTime, formatDate } from "~/functions";
+import DateDisplay from "~/components/DateDisplay.vue";
+import { calculateReadTime, formatDate, formatTimespan } from "~/functions";
 import { Post } from "~/interfaces";
 
 export default Vue.extend({
   name: "PostPreview",
 
-  components: { Pill },
+  components: {
+    Pill,
+    DateDisplay,
+  },
 
   props: {
     post: {
@@ -40,9 +44,16 @@ export default Vue.extend({
     },
   },
 
+  data() {
+    return { fullDate: false };
+  },
+
   methods: {
     formatDate(dateString: string): string {
       return formatDate(dateString);
+    },
+    commonDate(dateString: string): string {
+      return formatTimespan(new Date(dateString));
     },
     calculateReadTime(text: string): string {
       return calculateReadTime(text);

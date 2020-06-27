@@ -15,6 +15,9 @@
   --opaque-divider: #5a5a5a;
 
   /* Colors */
+  --grey-medium: #17191d;
+  --grey-1: #1b1d22;
+  --grey-2: #1e2025;
   --red: #fc5c65;
   --blue: #4b7bec;
   --yellow: #fed330;
@@ -33,10 +36,10 @@
   );
 
   /* Elements */
-  --page-background: #313437;
+  --page-background: var(--grey-medium);
   --card-background: #232425;
   --text-primary: var(--neutral);
-  --text-secondary: var(--neutral-80);
+  --text-secondary: var(--neutral-60);
   --text-tertiary: var(--neutral-50);
 
   /* Layouts */
@@ -45,4 +48,12 @@
   /* Shadows */
   --shadow-primary: rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
     rgba(15, 15, 15, 0.2) 0px 2px 4px;
+}
+
+.bg-grey-1 {
+  background-color: var(--grey-1);
+}
+
+.bg-grey-2 {
+  background-color: var(--grey-2);
 }

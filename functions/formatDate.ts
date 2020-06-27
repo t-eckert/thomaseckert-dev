@@ -16,7 +16,7 @@ const formatDate = (dateString: string): string => {
     "December",
   ];
 
-  const day = date.getDay();
+  const day = date.getDate();
   const month = date.getMonth();
   const year = date.getFullYear();
 

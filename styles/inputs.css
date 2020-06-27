@@ -8,3 +8,20 @@ input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear {
   display: none;
 }
+
+.magic-input-emoji {
+  color: var(--text-primary);
+  background-color: transparent;
+  text-align: center;
+  overflow: visible;
+  width: 2rem;
+  padding: 0.2rem 0;
+}
+
+.magic-input-title {
+  color: var(--text-primary);
+  background-color: transparent;
+  text-align: center;
+  overflow: visible;
+  width: 26rem;
+}

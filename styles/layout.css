@@ -39,6 +39,10 @@
   max-width: 64rem;
 }
 
+.mxw-180 {
+  max-width: 45rem;
+}
+
 .mxw-160 {
   max-width: 40rem;
 }
@@ -57,6 +61,22 @@
 
 .mnw-80 {
   min-width: 20rem;
+}
+
+.mnw-48 {
+  min-width: 12rem;
+}
+
+.mnw-44 {
+  min-width: 11rem;
+}
+
+.mnw-40 {
+  min-width: 10rem;
+}
+
+.mnw-36 {
+  min-width: 9rem;
 }
 
 .w-fit {
