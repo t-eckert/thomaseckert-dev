@@ -1,22 +1,5 @@
-# thomaseckert-dev
+# 🌐 [`thomaseckert.dev`](https://thomaseckert.dev)
 
-> Blog website
+This repository is the code for my website and blog [thomaseckert.dev](https://thomaseckert.dev). The goal of the site and its code is to help developers learn and grow (including myself). Please feel free to open an issue or ask questions or fork the code.
 
-## Build Setup
-
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+The site is a [Nuxt](https://nuxtjs.org/) application using [TypeScript](https://www.typescriptlang.org/) and [CosmosDB](https://azure.microsoft.com/en-us/services/cosmos-db/) using a [MongoDB](https://www.mongodb.com/) API.
