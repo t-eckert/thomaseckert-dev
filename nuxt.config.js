@@ -5,7 +5,7 @@ const baseURL =
     ? "https://thomaseckert.dev/"
     : process.env.BASE_URL || "http://localhost:3000";
 
-const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID | "";
+const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || "";
 
 export default {
   mode: "spa",
