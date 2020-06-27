@@ -29,3 +29,15 @@ button:hover {
 .scrollable {
   overflow: scroll;
 }
+
+.editor-bar {
+  background-color: var(--grey-1);
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.editor-height {
+  height: calc(100vh - 44.8px - 2rem);
+}
