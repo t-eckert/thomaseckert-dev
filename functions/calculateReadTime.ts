@@ -9,15 +9,10 @@ const wordsPerMinute = 200;
 const calculateReadTime = (text: string): string => {
   const wordCount = text.split(" ").length;
 
-  const totalMinutes = Math.ceil(wordCount / wordsPerMinute);
+  const minutes = Math.ceil(wordCount / wordsPerMinute);
+  const minuteText = minutes > 0 ? `${minutes} min` : "";
 
-  const hours = Math.floor(totalMinutes / 60);
-  const minutes = totalMinutes % 60;
-
-  const hourText = hours > 0 ? `${hours} hour` : "";
-  const minuteText = minutes > 0 ? `${minutes} minute` : "";
-
-  return (hourText + " " + minuteText).trim();
+  return minuteText;
 };
 
 export default calculateReadTime;
