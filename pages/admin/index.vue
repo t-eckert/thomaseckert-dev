@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="grid grid-cols-4 gg-4 mt-4 h-center items-start">
-      <div class="card col-span-3">
+      <div class="col-span-3">
         <h3 class="mb-4">📮 Posts</h3>
         <ThePostTable class="mb-4" :posts="posts" />
         <button class="btn-small">New post</button>
