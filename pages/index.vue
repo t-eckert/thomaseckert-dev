@@ -1,7 +1,7 @@
 <template>
-  <div class="container flex flex-wrap mt-8">
+  <div class="container flex flex-col my-8 mxw-160">
     <TheIntroduction />
-    <ThePostGallery class="mxw-128" :posts="posts" />
+    <ThePostGallery :posts="posts" />
   </div>
 </template>
 
