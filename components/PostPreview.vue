@@ -2,7 +2,7 @@
   <section class="px-4 mb-4">
     <h3>{{ post.emoji }}</h3>
     <h3 class="mb-2">
-      <nuxt-link :to="'/' + post.slug" class="no-underline">{{
+      <nuxt-link :to="'/posts/' + post.slug" class="no-underline">{{
         post.title
       }}</nuxt-link>
     </h3>

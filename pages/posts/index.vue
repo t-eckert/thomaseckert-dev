@@ -1,6 +1,7 @@
 <template>
-  <div class="container flex flex-wrap mt-8">
-    <TheIntroduction />
+  <div class="container flex flex-col my-8 mxw-160">
+    <h1 class="mb-2">📎 Posts</h1>
+    <hr class="mb-4" />
     <ThePostGallery class="mxw-128" :posts="posts" />
   </div>
 </template>
@@ -30,6 +31,7 @@ export default Vue.extend({
   mounted() {
     this.$store.commit("ui/SET_BREADCRUMBS", [
       { emoji: "🏡", name: "Home", link: "/" },
+      { emoji: "📎", name: "Posts", link: "/posts" },
     ]);
   },
 });
