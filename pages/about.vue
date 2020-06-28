@@ -2,7 +2,11 @@
   <div class="container mt-8">
     <div class="grid grid-cols-4 gg-4">
       <div class="col-start-2 col-span-2">
-        <img src="/self.jpg" class="w-fill object-contain" />
+        <img
+          src="/self.jpg"
+          alt="Thomas and Winona at the park."
+          class="w-fill object-contain"
+        />
       </div>
       <div class="row-start-2 col-start-1 pt-8">
         <div class="link-display mb-2">
