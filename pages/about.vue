@@ -7,7 +7,7 @@
       <div class="row-start-2 col-start-1 pt-8">
         <div class="link-display mb-2">
           <a target="_blank" href="mailto:thomas.james.eckert@gmail.com"
-            >✉ Email</a
+            >✉&nbsp;Email</a
           >
         </div>
         <div class="link-display mb-2">
@@ -31,28 +31,29 @@
       </div>
       <div class="row-start-2 col-start-2 col-span-2">
         <p>
-          I'm a software engineer.
+          Hi 👋, my name is Thomas Eckert. I live in Seattle, Washington with my
+          wife, <a target="_blank" href="https://sophiaross.me/">Sophia</a>, and
+          our corgi, Winona.
         </p>
         <p>
-          Tempor ea culpa qui Lorem velit esse nisi qui tempor exercitation non
-          in eu qui. Et reprehenderit nulla reprehenderit duis magna Lorem.
-          Dolor aliquip Lorem excepteur cillum veniam minim velit eu officia
-          velit dolor velit. Consectetur duis duis voluptate minim. Culpa
-          aliquip proident aliquip occaecat culpa in ad anim excepteur minim.
+          I studied physics, focusing on nuclear interactions for fusion
+          diagnostics. Much of this work involved programming simulations in
+          C++. I wrote a
+          <a
+            target="_blank"
+            href="https://www.houghton.edu/wp-content/uploads/2019/02/physics-thesis-thomas-eckert-2016.pdf"
+            >thesis</a
+          >
+          and a
+          <a target="_blank" href="https://arxiv.org/pdf/1707.09375.pdf"
+            >paper</a
+          >
+          about it.
         </p>
         <p>
-          Tempor ea culpa qui Lorem velit esse nisi qui tempor exercitation non
-          in eu qui. Et reprehenderit nulla reprehenderit duis magna Lorem.
-          Dolor aliquip Lorem excepteur cillum veniam minim velit eu officia
-          velit dolor velit. Consectetur duis duis voluptate minim. Culpa
-          aliquip proident aliquip occaecat culpa in ad anim excepteur minim.
-        </p>
-        <p>
-          Tempor ea culpa qui Lorem velit esse nisi qui tempor exercitation non
-          in eu qui. Et reprehenderit nulla reprehenderit duis magna Lorem.
-          Dolor aliquip Lorem excepteur cillum veniam minim velit eu officia
-          velit dolor velit. Consectetur duis duis voluptate minim. Culpa
-          aliquip proident aliquip occaecat culpa in ad anim excepteur minim.
+          After completing my Masters of Physics at the University of Rochester,
+          I moved to Seattle and started working at Microsoft as an engineer.
+          Today, I build platform tooling for defining SLOs on Azure.
         </p>
       </div>
       <div class="row-start-2 col-start-4"></div>
