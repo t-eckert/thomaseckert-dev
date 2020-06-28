@@ -8,10 +8,10 @@
         </div>
         <!-- <div class="link-display w-fit">
           <nuxt-link to="/uses">🛰&nbsp;Things I use</nuxt-link>
-        </div>
+        </div> -->
         <div class="link-display w-fit">
           <nuxt-link to="/about">👋&nbsp;About me</nuxt-link>
-        </div> -->
+        </div>
       </div>
       <section>
         <p class="mb-4">
