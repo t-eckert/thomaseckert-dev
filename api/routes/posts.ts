@@ -83,26 +83,13 @@ postsRouter.post("/", verify, async (req, res) => {
   }
 });
 
-/** Update a post. */
-postsRouter.patch("/", verify, async (req, res) => {
-  const post = <Post>req.body;
+/** Update a post's markdown */
+postsRouter.patch("/:slug/markdown", verify, async (req, res) => {
+  const slug = req.params["slug"];
+  const markdown = req.body.markdown;
 
   try {
-    const postModel = new PostModel({
-      _id: post._id || uuid(),
-      slug: post.slug,
-      emoji: post.emoji,
-      title: post.title,
-      created: post.created || new Date().toString(),
-      updated: new Date().toString(),
-      tags: post.tags,
-      isPublished: post.isPublished,
-      preview: post.preview,
-      markdown: post.markdown,
-    });
-
-    await postModel.save();
-
+    await PostModel.updateOne({ slug }, { markdown });
     res.sendStatus(200);
   } catch (err) {
     console.log(err);
