@@ -1,8 +1,6 @@
 <template>
   <section class="container p-4">
     <PostView :post="post" class="mt-8" />
-    <hr class="mb-4" />
-    <div>🏡&nbsp;<nuxt-link to="/">Return home</nuxt-link></div>
   </section>
 </template>
 
@@ -21,7 +19,6 @@ export default Vue.extend({
 
   async asyncData({ params, store }) {
     // Call to the API to get post data
-
     const { data: post } = await axios.get(routes.POSTS + params.post);
 
     if (!post) {
@@ -31,6 +28,7 @@ export default Vue.extend({
     // Set the navbar breadcrumbs
     store.commit("ui/SET_BREADCRUMBS", [
       { emoji: "🏡", name: "Home", link: "/" },
+      { emoji: "📎", name: "Posts", link: "/posts" },
       {
         emoji: post.emoji,
         name: post.title,

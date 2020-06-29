@@ -62,8 +62,6 @@
       </div>
       <div class="row-start-2 col-start-4"></div>
     </div>
-    <hr class="mb-4" />
-    <div>🏡&nbsp;<nuxt-link to="/">Return home</nuxt-link></div>
   </div>
 </template>
 

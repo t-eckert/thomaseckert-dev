@@ -1,5 +1,5 @@
 interface Bookmark {
-  addedDate: Date;
+  _id: string;
   link: string;
   linkText: string;
   description?: string;
