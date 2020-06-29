@@ -1,18 +1,23 @@
 <template>
-  <article>
-    <section class="center mxw-160">
+  <article class="mxw-180 center">
+    <section class="mb-4">
       <h2 class="mb-2">{{ post.emoji }}</h2>
-      <h1 class="mb-4">{{ post.title }}</h1>
-      <div class="flex items-center mb-4">
-        <Pill v-for="(tag, index) in post.tags" :text="tag" :key="index" />
+      <h1 class="mb-2">{{ post.title }}</h1>
+      <div class="flex flex-wrap items-baseline">
+        <Pill
+          v-for="(tag, index) in post.tags"
+          :text="tag"
+          :key="index"
+          class="mb-2"
+        />
       </div>
-      <div class="text-secondary mb-8">
-        {{ calculateReadTime(post.markdown) }} read | Updated
-        {{ formatDate(post.updated) }}
+      <div class="text-secondary">
+        {{ calculateReadTime(post.markdown) }} read • Updated
+        <DateDisplay :dateString="post.updated" />
       </div>
     </section>
     <section
-      class="mxw-160 center mb-4 markdown"
+      class="mb-4 markdown"
       v-html="formatMarkdown(post.markdown)"
     ></section>
     <script src="/prism.js" />
@@ -22,13 +27,14 @@
 <script lang="ts">
 import Vue from "vue";
 import Pill from "~/components/Pill.vue";
+import DateDisplay from "~/components/DateDisplay.vue";
 import { calculateReadTime, formatDate, formatMarkdown } from "~/functions";
 import { Post } from "../interfaces";
 
 export default Vue.extend({
   name: "PostView",
 
-  components: { Pill },
+  components: { Pill, DateDisplay },
 
   props: {
     post: Object as () => Post,
