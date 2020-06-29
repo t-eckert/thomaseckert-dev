@@ -45,7 +45,7 @@ postsRouter.get("/", async (req, res) => {
   }
 });
 
-/** Gets one post by its slug */
+/** Gets one post by its slug. */
 postsRouter.get("/:slug", async (req, res) => {
   const slug = req.params["slug"];
 
@@ -57,8 +57,8 @@ postsRouter.get("/:slug", async (req, res) => {
   }
 });
 
-/** Create or overwrite post */
-postsRouter.put("/", verify, async (req, res) => {
+/** Create a new post. */
+postsRouter.post("/", verify, async (req, res) => {
   const post = <Post>req.body;
 
   try {
@@ -83,7 +83,45 @@ postsRouter.put("/", verify, async (req, res) => {
   }
 });
 
-/** Delete a post by its slug */
+/** Update a post. */
+postsRouter.patch("/", verify, async (req, res) => {
+  const post = <Post>req.body;
+
+  try {
+    const postModel = new PostModel({
+      _id: post._id || uuid(),
+      slug: post.slug,
+      emoji: post.emoji,
+      title: post.title,
+      created: post.created || new Date().toString(),
+      updated: new Date().toString(),
+      tags: post.tags,
+      isPublished: post.isPublished,
+      preview: post.preview,
+      markdown: post.markdown,
+    });
+
+    await postModel.save();
+
+    res.sendStatus(200);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+/** Delete a post by its `_id`. */
+postsRouter.delete("/:id", verify, async (req, res) => {
+  const _id = req.params["id"];
+
+  try {
+    const post = await PostModel.deleteOne({ _id });
+    res.send(post);
+  } catch (error) {
+    res.status(404).send("Could not find post");
+  }
+});
+
+/** Delete a post by its `slug`. */
 postsRouter.delete("/:slug", verify, async (req, res) => {
   const slug = req.params["slug"];
 
