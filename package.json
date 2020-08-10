@@ -28,7 +28,7 @@
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-    "jest-each": "^26.0.1",
+    "jest-each": "^26.3.0",
     "jsonwebtoken": "^8.5.1",
     "monaco-editor": "^0.20.0",
     "monaco-editor-vue": "^1.0.10",
