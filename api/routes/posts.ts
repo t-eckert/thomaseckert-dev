@@ -89,7 +89,10 @@ postsRouter.patch("/:slug/markdown", verify, async (req, res) => {
   const markdown = req.body.markdown;
 
   try {
-    await PostModel.updateOne({ slug }, { markdown });
+    await PostModel.updateOne(
+      { slug },
+      { markdown, updated: new Date().toString() }
+    );
     res.sendStatus(200);
   } catch (err) {
     console.log(err);
