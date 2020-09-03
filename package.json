@@ -19,7 +19,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/sitemap": "^2.4.0",
     "@types/bcryptjs": "^2.4.2",
-    "@types/jest": "^26.0.3",
+    "@types/jest": "^26.0.13",
     "@types/jest-each": "^24.3.0",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.7.28",
