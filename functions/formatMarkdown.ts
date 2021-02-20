@@ -3,15 +3,15 @@ import remark from "remark";
 import html from "remark-html";
 
 const formatMarkdown = (markdown: string): string => {
-  let out;
+    let out;
 
-  remark()
-    .use(html)
-    .process(markdown, (err: any, file: any) => {
-      out = String(file);
-    });
+    remark()
+        .use(html)
+        .process(markdown, (err: any, file: any) => {
+            out = String(file);
+        });
 
-  return out || "";
+    return out || "";
 };
 
 export default formatMarkdown;

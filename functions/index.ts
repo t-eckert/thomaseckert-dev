@@ -5,9 +5,9 @@ import formatTimespan from "./formatTimespan";
 import getPillColor from "./getPillColor";
 
 export {
-  calculateReadTime,
-  formatDate,
-  formatMarkdown,
-  formatTimespan,
-  getPillColor,
+    calculateReadTime,
+    formatDate,
+    formatMarkdown,
+    formatTimespan,
+    getPillColor,
 };

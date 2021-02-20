@@ -7,12 +7,12 @@ const wordsPerMinute = 200;
  * with the read time.
  */
 const calculateReadTime = (text: string): string => {
-  const wordCount = text.split(" ").length;
+    const wordCount = text.split(" ").length;
 
-  const minutes = Math.ceil(wordCount / wordsPerMinute);
-  const minuteText = minutes > 0 ? `${minutes} min` : "";
+    const minutes = Math.ceil(wordCount / wordsPerMinute);
+    const minuteText = minutes > 0 ? `${minutes} min` : "";
 
-  return minuteText;
+    return minuteText;
 };
 
 export default calculateReadTime;

@@ -12,6 +12,6 @@ app.use("/bookmarks/", bookmarksRouter);
 app.use("/posts/", postsRouter);
 
 module.exports = {
-  path: "/api/",
-  handler: app,
+    path: "/api/",
+    handler: app,
 };
