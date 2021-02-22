@@ -30,16 +30,15 @@ export default {
         "~/styles/inputs.css",
         "~/styles/layout.css",
         "~/styles/main.css",
-        "~/styles/pills.css",
         "~/styles/prism.css",
         "~/styles/typography.css",
+        "~/styles/utilities.css",
     ],
 
     serverMiddleware: ["~/api"],
 
     buildModules: [
         "@nuxt/typescript-build",
-        "@nuxtjs/tailwindcss",
         "@nuxtjs/dotenv",
     ],
 

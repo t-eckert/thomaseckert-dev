@@ -4,11 +4,6 @@
   margin-right: auto;
 }
 
-/* Fills */
-.v-fill {
-  height: calc(100vh - 44.8px);
-}
-
 /* Grids */
 .grid-grow {
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
@@ -34,51 +29,3 @@
   gap: 3rem;
 }
 
-/* Width and sizing */
-.mxw-266 {
-  max-width: 64rem;
-}
-
-.mxw-180 {
-  max-width: 45rem;
-}
-
-.mxw-160 {
-  max-width: 40rem;
-}
-
-.mxw-128 {
-  max-width: 32rem;
-}
-
-.mxw-100 {
-  max-width: 25rem;
-}
-
-.mxw-88 {
-  max-width: 22rem;
-}
-
-.mnw-80 {
-  min-width: 20rem;
-}
-
-.mnw-48 {
-  min-width: 12rem;
-}
-
-.mnw-44 {
-  min-width: 11rem;
-}
-
-.mnw-40 {
-  min-width: 10rem;
-}
-
-.mnw-36 {
-  min-width: 9rem;
-}
-
-.w-fit {
-  width: fit-content;
-}

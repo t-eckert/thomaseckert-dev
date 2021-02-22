@@ -30,14 +30,86 @@ button:hover {
   overflow: scroll;
 }
 
-.editor-bar {
-  background-color: var(--grey-1);
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.introduction {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
 }
 
-.editor-height {
-  height: calc(100vh - 44.8px - 2rem);
+.introduction--links {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.breadcrumbs {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.breadcrumbs > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-preview {
+  margin-bottom: 1.5rem;
+}
+
+.post-preview--title {
+  text-decoration: none;
+}
+
+.post-preview--title:hover {
+  text-decoration: underline;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.pills > * {
+  margin-right: 0.25rem;
+}
+
+.pill {
+  border-radius: 1rem;
+  padding: 0.15rem 0.65rem;
+  background-color: var(--pill-color);
+}
+
+.pill-red {
+  --pill-color: var(--red);
+}
+
+.pill-blue {
+  --pill-color: var(--blue);
+}
+
+.pill-yellow {
+  --pill-color: var(--yellow);
+}
+
+.pill-purple {
+  --pill-color: var(--purple);
+}
+
+.pill-orange {
+  --pill-color: var(--orange);
+}
+
+.pill-green {
+  --pill-color: var(--green);
+}
+
+.post > section {
+  margin-bottom: 1rem;
+}
+
+footer {
+  padding: 1rem;
+  margin-top: 2rem;
 }

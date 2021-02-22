@@ -1,17 +1,25 @@
 h1 {
   font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 h2 {
   font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 h4 {
   font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
   border-bottom: 1px solid var(--neutral-50);
 }
 
@@ -72,6 +80,7 @@ h6 {
 
 p {
   line-height: 1.5;
+  margin-top: 0;
   margin-bottom: var(--text-spacer);
 }
 
