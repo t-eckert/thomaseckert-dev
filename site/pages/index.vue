@@ -8,7 +8,7 @@
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";
-import { getHost, routes } from "~/constants";
+import { routes } from "~/constants";
 import TheIntroduction from "~/components/TheIntroduction.vue";
 import ThePostGallery from "~/components/ThePostGallery.vue";
 
