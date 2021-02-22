@@ -6,7 +6,7 @@ const baseURL =
         : process.env.BASE_URL || "http://localhost:3000";
 
 export default {
-    mode: "spa",
+    ssr: false,
 
     head: {
         title: "Thomas Eckert",
