@@ -1,21 +1,41 @@
 <template>
-    <section class="container">
-        <PostView :post="post" />
-    </section>
+    <article class="container post">
+        <section>
+            <h1>{{ post.title }}</h1>
+            <div class="pills">
+                <Pill
+                    v-for="(tag, index) in post.tags"
+                    :text="tag"
+                    :key="index"
+                />
+            </div>
+            <div class="text-secondary">
+                {{ calculateReadTime(post.markdown) }} read • Updated
+                <DateDisplay :dateString="post.updated" />
+            </div>
+        </section>
+
+        <section
+            class="markdown"
+            v-html="formatMarkdown(post.markdown)"
+        ></section>
+
+        <script src="/prism.js" />
+    </article>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";
-import PostView from "~/components/PostView.vue";
+import Pill from "~/components/Pill.vue";
+import DateDisplay from "~/components/DateDisplay.vue";
 import { getHost, routes } from "@/constants";
+import { calculateReadTime, formatDate, formatMarkdown } from "~/functions";
 
 export default Vue.extend({
-    name: "ThePostRoute",
+    name: "Post",
 
-    components: {
-        PostView,
-    },
+    components: { Pill, DateDisplay },
 
     async asyncData({ params, store }) {
         // Call to the API to get post data
@@ -25,21 +45,22 @@ export default Vue.extend({
             throw { statusCode: 404 };
         }
 
-        // Set the navbar breadcrumbs
-        store.commit("ui/SET_BREADCRUMBS", [
-            { emoji: "🏡", name: "Home", link: "/" },
-            { emoji: "📎", name: "Posts", link: "/posts" },
-            {
-                emoji: post.emoji,
-                name: post.title,
-                link: `/${post.slug}`,
-            },
-        ]);
-
         // Merge async data into component data
         return {
             post,
         };
+    },
+
+    methods: {
+        formatDate(dateString: string): string {
+            return formatDate(dateString);
+        },
+        formatMarkdown(markdown: string): string {
+            return formatMarkdown(markdown);
+        },
+        calculateReadTime(text: string): string {
+            return calculateReadTime(text);
+        },
     },
 });
 </script>
