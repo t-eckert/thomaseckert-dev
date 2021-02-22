@@ -1,7 +1,7 @@
 <template>
-  <section class="container p-4">
-    <PostView :post="post" class="mt-8" />
-  </section>
+    <section class="container">
+        <PostView :post="post" />
+    </section>
 </template>
 
 <script lang="ts">
@@ -11,35 +11,35 @@ import PostView from "~/components/PostView.vue";
 import { getHost, routes } from "@/constants";
 
 export default Vue.extend({
-  name: "ThePostRoute",
+    name: "ThePostRoute",
 
-  components: {
-    PostView,
-  },
+    components: {
+        PostView,
+    },
 
-  async asyncData({ params, store }) {
-    // Call to the API to get post data
-    const { data: post } = await axios.get(routes.POSTS + params.post);
+    async asyncData({ params, store }) {
+        // Call to the API to get post data
+        const { data: post } = await axios.get(routes.POSTS + params.post);
 
-    if (!post) {
-      throw { statusCode: 404 };
-    }
+        if (!post) {
+            throw { statusCode: 404 };
+        }
 
-    // Set the navbar breadcrumbs
-    store.commit("ui/SET_BREADCRUMBS", [
-      { emoji: "🏡", name: "Home", link: "/" },
-      { emoji: "📎", name: "Posts", link: "/posts" },
-      {
-        emoji: post.emoji,
-        name: post.title,
-        link: `/${post.slug}`,
-      },
-    ]);
+        // Set the navbar breadcrumbs
+        store.commit("ui/SET_BREADCRUMBS", [
+            { emoji: "🏡", name: "Home", link: "/" },
+            { emoji: "📎", name: "Posts", link: "/posts" },
+            {
+                emoji: post.emoji,
+                name: post.title,
+                link: `/${post.slug}`,
+            },
+        ]);
 
-    // Merge async data into component data
-    return {
-      post,
-    };
-  },
+        // Merge async data into component data
+        return {
+            post,
+        };
+    },
 });
 </script>

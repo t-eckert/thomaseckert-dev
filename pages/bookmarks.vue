@@ -1,11 +1,11 @@
 <template>
-  <div class="container grid grid-grow gg-4 mt-16">
-    <BookmarkCategory
-      v-for="(category, index) in bookmarks"
-      :key="index"
-      :category="category"
-    />
-  </div>
+    <div class="container">
+        <BookmarkCategory
+            v-for="(category, index) in bookmarks"
+            :key="index"
+            :category="category"
+        />
+    </div>
 </template>
 
 <script lang="ts">
@@ -15,25 +15,25 @@ import BookmarkCategory from "~/components/BookmarkCategory.vue";
 import { routes } from "~/constants";
 
 export default Vue.extend({
-  name: "TheBookmarksPage",
+    name: "TheBookmarksPage",
 
-  components: {
-    BookmarkCategory,
-  },
+    components: {
+        BookmarkCategory,
+    },
 
-  async asyncData() {
-    const { data: bookmarks } = await axios.get(routes.BOOKMARKS);
+    async asyncData() {
+        const { data: bookmarks } = await axios.get(routes.BOOKMARKS);
 
-    return {
-      bookmarks,
-    };
-  },
+        return {
+            bookmarks,
+        };
+    },
 
-  mounted() {
-    this.$store.commit("ui/SET_BREADCRUMBS", [
-      { emoji: "🏡", name: "Home", link: "/" },
-      { emoji: "✨", name: "Bookmarks", link: "/bookmarks" },
-    ]);
-  },
+    mounted() {
+        this.$store.commit("ui/SET_BREADCRUMBS", [
+            { emoji: "🏡", name: "Home", link: "/" },
+            { emoji: "✨", name: "Bookmarks", link: "/bookmarks" },
+        ]);
+    },
 });
 </script>

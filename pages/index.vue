@@ -1,8 +1,8 @@
 <template>
-  <div class="container flex flex-col my-8 mxw-160">
-    <TheIntroduction />
-    <ThePostGallery :posts="posts" />
-  </div>
+    <div class="container">
+        <TheIntroduction />
+        <ThePostGallery :posts="posts" />
+    </div>
 </template>
 
 <script lang="ts">
@@ -13,24 +13,24 @@ import TheIntroduction from "~/components/TheIntroduction.vue";
 import ThePostGallery from "~/components/ThePostGallery.vue";
 
 export default Vue.extend({
-  name: "Homepage",
+    name: "Homepage",
 
-  components: {
-    TheIntroduction,
-    ThePostGallery,
-  },
+    components: {
+        TheIntroduction,
+        ThePostGallery,
+    },
 
-  async asyncData() {
-    const { data: posts } = await axios.get(routes.POSTS);
-    return {
-      posts,
-    };
-  },
+    async asyncData() {
+        const { data: posts } = await axios.get(routes.POSTS);
+        return {
+            posts,
+        };
+    },
 
-  mounted() {
-    this.$store.commit("ui/SET_BREADCRUMBS", [
-      { emoji: "🏡", name: "Home", link: "/" },
-    ]);
-  },
+    mounted() {
+        this.$store.commit("ui/SET_BREADCRUMBS", [
+            { emoji: "🏡", name: "Home", link: "/" },
+        ]);
+    },
 });
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div />
+    <div />
 </template>
 
 <script lang="js">
@@ -107,10 +107,10 @@ export default Vue.extend({
 
 <style scoped>
 .monaco-editor {
-  border-radius: 0.25rem;
+    border-radius: 0.25rem;
 }
 
 .overflow-guard {
-  border-radius: 0.25rem;
+    border-radius: 0.25rem;
 }
 </style>

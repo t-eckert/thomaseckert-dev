@@ -1,25 +1,20 @@
 <template>
-  <section class="px-4 mb-4">
-    <h3>{{ post.emoji }}</h3>
-    <h3 class="mb-2">
-      <nuxt-link :to="'/posts/' + post.slug" class="no-underline">{{
-        post.title
-      }}</nuxt-link>
-    </h3>
-    <div class="flex flex-wrap items-baseline">
-      <Pill
-        v-for="(tag, index) in post.tags"
-        :text="tag"
-        :key="index"
-        class="mb-2"
-      />
-    </div>
-    <div>{{ post.preview }}</div>
-    <div class="text-secondary">
-      {{ calculateReadTime(post.markdown) }} read • Updated
-      <DateDisplay :dateString="post.updated" />
-    </div>
-  </section>
+    <section class="post-preview">
+        <h3>{{ post.emoji }}</h3>
+        <h3 class="mb-2">
+            <nuxt-link :to="'/posts/' + post.slug" class="post-preview--title">
+                {{ post.title }}
+            </nuxt-link>
+        </h3>
+        <div class="pills">
+            <Pill v-for="(tag, index) in post.tags" :text="tag" :key="index" />
+        </div>
+        <div>{{ post.preview }}</div>
+        <div class="text-secondary">
+            {{ calculateReadTime(post.markdown) }} read • Updated
+            <DateDisplay :dateString="post.updated" />
+        </div>
+    </section>
 </template>
 
 <script lang="ts">
@@ -30,34 +25,34 @@ import { calculateReadTime, formatDate, formatTimespan } from "~/functions";
 import { Post } from "~/interfaces";
 
 export default Vue.extend({
-  name: "PostPreview",
+    name: "PostPreview",
 
-  components: {
-    Pill,
-    DateDisplay,
-  },
+    components: {
+        Pill,
+        DateDisplay,
+    },
 
-  props: {
-    post: {
-      type: Object as () => Post,
-      required: true,
+    props: {
+        post: {
+            type: Object as () => Post,
+            required: true,
+        },
     },
-  },
 
-  data() {
-    return { fullDate: false };
-  },
+    data() {
+        return { fullDate: false };
+    },
 
-  methods: {
-    formatDate(dateString: string): string {
-      return formatDate(dateString);
+    methods: {
+        formatDate(dateString: string): string {
+            return formatDate(dateString);
+        },
+        commonDate(dateString: string): string {
+            return formatTimespan(new Date(dateString));
+        },
+        calculateReadTime(text: string): string {
+            return calculateReadTime(text);
+        },
     },
-    commonDate(dateString: string): string {
-      return formatTimespan(new Date(dateString));
-    },
-    calculateReadTime(text: string): string {
-      return calculateReadTime(text);
-    },
-  },
 });
 </script>
