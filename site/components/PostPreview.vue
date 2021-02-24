@@ -1,7 +1,6 @@
 <template>
     <section class="post-preview">
-        <h3>{{ post.emoji }}</h3>
-        <h3 class="mb-2">
+        <h3>
             <nuxt-link :to="'/posts/' + post.slug" class="post-preview--title">
                 {{ post.title }}
             </nuxt-link>
