@@ -21,7 +21,7 @@ def read(doc_type: Document, slug: str) -> Optional[Document]:
 
         body = f.read()
 
-    return doc_type.from_file(body)
+    return doc_type.from_text(body)
 
 
 def write(document: Document) -> Path:
