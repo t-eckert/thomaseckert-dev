@@ -9,3 +9,16 @@ def format_as_slug(string: str) -> str:
     """
 
     return string.lower().replace(" ", "-")
+
+
+def comma_separated_to_list(comma_separated: str) -> list:
+    """Takes a string of comma separated values and parses it to a list of strings
+
+    Args:
+        comma_separated (str):  a string of comma separated values
+
+    Returns:
+        list:                   a list of strings
+    """
+
+    return [value.strip() for value in comma_separated.split(",")]
