@@ -7,7 +7,6 @@ import pytest
 @pytest.fixture()
 def mock_post() -> Post:
     return Post(
-        id="aed56534-b8c8-4e91-943e-8c95f0a52a54",
         slug="a-test-post",
         title="A Test Post",
         tags=["test", "post"],
