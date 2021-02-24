@@ -17,11 +17,5 @@
 import Vue from "vue";
 export default Vue.extend({
     props: { error: Object },
-
-    mounted() {
-        this.$store.commit("ui/SET_BREADCRUMBS", [
-            { emoji: "🏡", name: "Home", link: "/" },
-        ]);
-    },
 });
 </script>

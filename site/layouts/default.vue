@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <TheNavBar />
+            <Navigation />
             <nuxt />
         </div>
         <TheFooter v-if="shouldHaveFooter()" />
@@ -10,14 +10,14 @@
 
 <script lang="ts">
 import Vue from "vue";
-import TheNavBar from "~/components/TheNavBar.vue";
+import Navigation from "~/components/Navigation.vue";
 import TheFooter from "~/components/TheFooter.vue";
 
 export default Vue.extend({
     name: "Default",
 
     components: {
-        TheNavBar,
+        Navigation,
         TheFooter,
     },
 
