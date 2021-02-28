@@ -1,23 +1,36 @@
-from te.config import URL
-from te.models.post import Post
-from typing import Optional
+from requests import Response
+from te import cli
+from te.api import get_posts
+from te.models import Post
+from te.io import write
 
 import click
-import requests
 
 
-@click.command()
-def get_posts(slug: str = None) -> Optional[list[Post]]:
+@cli.group()
+def posts():
+    ...
 
-    if not slug:
-        response = requests.get(URL + "/posts")
-    else:
-        response = requests.get(URL + "/posts/" + slug)
 
-    if response.status_code == 200:
-        posts = [Post.from_json(post) for post in response.json]
-    else:
-        click.echo("Host returned " + str(response.status_code), err=True)
-        posts = None
+@posts.command()
+@click.argument("slug", required=False)
+def get(slug: str = None):
 
-    return posts
+    response: Response = get_posts(slug)
+
+    if response.status_code != 200:
+        click.echo(f"Getting posts failed with {response.status_code} {response.text}.", err=True)
+
+    posts = [Post.from_json(body) for body in response.json()]
+
+    for post in posts:
+        write(post)
+
+
+@posts.command()
+@click.argument("title")
+def create(title: str):
+
+    post = Post.create(title)
+
+    write(post)
