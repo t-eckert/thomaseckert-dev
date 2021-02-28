@@ -65,7 +65,6 @@ postsRouter.post("/", verify, async (req, res) => {
         const postModel = new PostModel({
             _id: post._id || uuid(),
             slug: post.slug,
-            emoji: post.emoji,
             title: post.title,
             created: post.created || new Date().toString(),
             updated: new Date().toString(),
