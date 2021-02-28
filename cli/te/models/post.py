@@ -48,10 +48,15 @@ preview: {self.preview}
             "slug": self.slug,
             "title": self.title,
             "tags": self.tags,
-            "is_published": self.is_published,
+            "isPublished": self.is_published,
             "preview": self.preview,
             "markdown": self.markdown,
         }
+
+    @staticmethod
+    def create(title: str) -> "Post":
+
+        return Post(format_as_slug(title), title, [], False, "", "")
 
     @staticmethod
     def from_text(body: str) -> "Post":
@@ -87,4 +92,4 @@ preview: {self.preview}
             Post:               the post generated from JSON
         """
 
-        return Post(post["slug"], post["title"], post["tags"], post["is_published"], post["preview"], post["markdown"])
+        return Post(post["slug"], post["title"], post["tags"], post["isPublished"], post["preview"], post["markdown"])
