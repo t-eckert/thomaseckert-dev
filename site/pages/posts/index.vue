@@ -14,7 +14,7 @@ import TheIntroduction from "~/components/TheIntroduction.vue";
 import ThePostGallery from "~/components/ThePostGallery.vue";
 
 export default Vue.extend({
-    name: "Homepage",
+    name: "Posts",
 
     components: {
         TheIntroduction,

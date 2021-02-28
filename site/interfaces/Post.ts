@@ -13,9 +13,6 @@ interface Post {
      * Derived from the title as all lowercase with dashes replacing spaces */
     slug: string;
 
-    /** Emoji used for decorating the post */
-    emoji: string;
-
     /** Title of the post */
     title: string;
 

@@ -29,17 +29,18 @@ import Vue from "vue";
 import axios from "axios";
 import Pill from "~/components/Pill.vue";
 import DateDisplay from "~/components/DateDisplay.vue";
-import { getHost, routes } from "@/constants";
-import { calculateReadTime, formatDate, formatMarkdown } from "~/functions";
+import { routes } from "@/constants";
+import { calculateReadTime, formatMarkdown } from "~/functions";
 
 export default Vue.extend({
     name: "Post",
 
     components: { Pill, DateDisplay },
 
-    async asyncData({ params, store }) {
+    async asyncData({ params }) {
         // Call to the API to get post data
-        const { data: post } = await axios.get(routes.POSTS + params.post);
+        const { data: posts } = await axios.get(routes.POSTS + params.post);
+        const post = posts[0];
 
         if (!post) {
             throw { statusCode: 404 };
@@ -52,9 +53,6 @@ export default Vue.extend({
     },
 
     methods: {
-        formatDate(dateString: string): string {
-            return formatDate(dateString);
-        },
         formatMarkdown(markdown: string): string {
             return formatMarkdown(markdown);
         },
