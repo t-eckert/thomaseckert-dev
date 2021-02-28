@@ -1,1 +1,1 @@
-from te.commands.posts import get_posts
+from te.commands.posts import posts
