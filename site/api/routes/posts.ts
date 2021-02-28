@@ -83,22 +83,6 @@ postsRouter.post("/", verify, async (req, res) => {
     }
 });
 
-/** Update a post's markdown */
-postsRouter.patch("/:slug/markdown", verify, async (req, res) => {
-    const slug = req.params["slug"];
-    const markdown = req.body.markdown;
-
-    try {
-        await PostModel.updateOne(
-            { slug },
-            { markdown, updated: new Date().toString() }
-        );
-        res.sendStatus(200);
-    } catch (err) {
-        console.log(err);
-    }
-});
-
 /** Delete a post by its `_id`. */
 postsRouter.delete("/:id", verify, async (req, res) => {
     const _id = req.params["id"];
