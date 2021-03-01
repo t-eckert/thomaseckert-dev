@@ -14,20 +14,6 @@ hr {
     border-color: var(--neutral-50);
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    height: 44.8px;
-    background-color: var(--page-background);
-}
-
-nav ul {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-    margin-bottom: 0;
-}
-
 .page-enter-active,
 .page-leave-active {
     transition: opacity 0.25s;

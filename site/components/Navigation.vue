@@ -18,12 +18,16 @@ export default Vue.extend({
         return {
             navLinks: [
                 {
-                    name: "Home",
+                    name: "🏡 Home",
                     path: "/",
                 },
                 {
-                    name: "Writing",
+                    name: "✏️ Writing",
                     path: "/posts",
+                },
+                {
+                    name: "👋 About",
+                    path: "/about",
                 },
             ],
         };

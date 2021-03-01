@@ -1,115 +1,132 @@
 button,
 .btn {
-  text-decoration: none;
-  line-height: normal;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  background-color: var(--neutral-10);
+    text-decoration: none;
+    line-height: normal;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--neutral-10);
 }
 
 button:hover {
-  background-color: var(--neutral-20);
+    background-color: var(--neutral-20);
 }
 
 .btn-small {
-  padding: 0.25rem 1rem;
+    padding: 0.25rem 1rem;
 }
 
 .btn-transparent {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .card {
-  padding: 1rem;
-  border-radius: 0.25rem;
-  background-color: var(--card-background);
-  box-shadow: var(--shadow-primary);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-primary);
 }
 
 .scrollable {
-  overflow: scroll;
+    overflow: scroll;
 }
 
 .introduction {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
 }
 
 .introduction--links {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-
 .breadcrumbs {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
 }
 
 .breadcrumbs > ul {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--page-background);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+nav li:not(:last-child) {
+    margin-right: 1rem;
 }
 
 .post-preview {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .post-preview--title {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .post-preview--title:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .pills {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
 }
 
 .pills > * {
-  margin-right: 0.25rem;
+    margin-right: 0.25rem;
 }
 
 .pill {
-  border-radius: 1rem;
-  padding: 0.15rem 0.65rem;
-  background-color: var(--pill-color);
+    border-radius: 1rem;
+    padding: 0.15rem 0.65rem;
+    background-color: var(--pill-color);
 }
 
 .pill-red {
-  --pill-color: var(--red);
+    --pill-color: var(--red);
 }
 
 .pill-blue {
-  --pill-color: var(--blue);
+    --pill-color: var(--blue);
 }
 
 .pill-yellow {
-  --pill-color: var(--yellow);
+    --pill-color: var(--yellow);
 }
 
 .pill-purple {
-  --pill-color: var(--purple);
+    --pill-color: var(--purple);
 }
 
 .pill-orange {
-  --pill-color: var(--orange);
+    --pill-color: var(--orange);
 }
 
 .pill-green {
-  --pill-color: var(--green);
+    --pill-color: var(--green);
 }
 
 .post > section {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 footer {
-  padding: 1rem;
-  margin-top: 2rem;
+    padding: 1rem;
+    margin-top: 2rem;
 }
