@@ -1,5 +1,5 @@
 <template>
-    <footer class="container" id="footer">
+    <footer>
         <div v-if="$nuxt.route != ''" class="link-display">
             🏡&nbsp;<nuxt-link to="/">Return home</nuxt-link>
         </div>
@@ -10,6 +10,6 @@
 import Vue from "vue";
 
 export default Vue.extend({
-    name: "TheFooter",
+    name: "Footer",
 });
 </script>

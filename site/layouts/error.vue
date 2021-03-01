@@ -1,5 +1,5 @@
 <template>
-    <div class="container h-center">
+    <div class="h-center">
         <div v-if="error.statusCode === 404" class="mt-4 mb-8">
             <h1 class="text-center display-1 shiny">404</h1>
         </div>
