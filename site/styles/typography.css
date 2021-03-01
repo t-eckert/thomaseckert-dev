@@ -1,111 +1,154 @@
+@font-face {
+    font-family: "iAWriter Quattro";
+    src: url("/fonts/iAWriterQuattroS-Regular.woff2") format("woff2"),
+        url("/fonts/iAWriterQuattroS-Regular.woff") format("woff"),
+        url("/fonts/iAWriterQuattroS-Regular.eot") format("eot");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "iAWriter Quattro";
+    src: url("/fonts/iAWriterQuattroS-Bold.woff2") format("woff2"),
+        url("/fonts/iAWriterQuattroS-Bold.woff") format("woff"),
+        url("/fonts/iAWriterQuattroS-Bold.eot") format("eot");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "iAWriter Quattro";
+    src: url("/fonts/iAWriterQuattroS-Italic.woff2") format("woff2"),
+        url("/fonts/iAWriterQuattroS-Italic.woff") format("woff"),
+        url("/fonts/iAWriterQuattroS-Italic.eot") format("eot");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "iAWriter Quattro";
+    src: url("/fonts/iAWriterQuattroS-BoldItalic.woff2") format("woff2"),
+        url("/fonts/iAWriterQuattroS-BoldItalic.woff") format("woff"),
+        url("/fonts/iAWriterQuattroS-BoldItalic.eot") format("eot");
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+    font-family: "iAWriter Quattro", ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 h1 {
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 2rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 h4 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid var(--neutral-50);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--neutral-50);
 }
 
 h5 {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 h6 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
+    font-size: 0.75rem;
+    text-transform: uppercase;
 }
 
 .display-1 {
-  font-size: clamp(10rem, 30vw, 30rem);
+    font-size: clamp(10rem, 30vw, 30rem);
 }
 
 .display-2 {
-  font-size: clamp(8rem, 24vw, 24rem);
+    font-size: clamp(8rem, 24vw, 24rem);
 }
 
 .display-3 {
-  font-size: clamp(6rem, 18vw, 18rem);
+    font-size: clamp(6rem, 18vw, 18rem);
 }
 
 .display-4 {
-  font-size: clamp(4rem, 12vw, 12rem);
+    font-size: clamp(4rem, 12vw, 12rem);
 }
 
 .display-5 {
-  font-size: clamp(2rem, 6vw, 6rem);
+    font-size: clamp(2rem, 6vw, 6rem);
 }
 
 .display-6 {
-  font-size: clamp(1rem, 6vw, 6rem);
+    font-size: clamp(1rem, 6vw, 6rem);
 }
 
 .shiny {
-  border: 0;
-  background-image: var(--gradient);
-  background-clip: text;
-  color: transparent;
-  background-size: 1000%;
-  animation: bg-animation 100s infinite alternate;
+    border: 0;
+    background-image: var(--gradient);
+    background-clip: text;
+    color: transparent;
+    background-size: 1000%;
+    animation: bg-animation 100s infinite alternate;
 }
 
 @keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
 }
 
 .text-secondary {
-  color: var(--text-secondary);
+    color: var(--text-secondary);
 }
 
 p {
-  line-height: 1.5;
-  margin-top: 0;
-  margin-bottom: var(--text-spacer);
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: var(--text-spacer);
 }
 
 .minutae {
-  font-size: 0.8rem;
-  font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 blockquote {
-  padding: 1rem;
-  background-color: var(--neutral-10);
-  margin-bottom: var(--text-spacer);
-  border-radius: 0.25rem;
+    padding: 1rem;
+    background-color: var(--neutral-10);
+    margin-bottom: var(--text-spacer);
+    border-radius: 0.25rem;
 }
 
 blockquote p {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* Code display (excluding syntax highlighting which is handled in `prism.css`) */
 p code {
-  padding: 0.2em 0.4em;
-  font-size: 85%;
-  background-color: var(--neutral-20);
-  border-radius: 0.25em;
+    padding: 0.2em 0.4em;
+    font-size: 85%;
+    background-color: var(--neutral-20);
+    border-radius: 0.25em;
 }
 
 h1 code,
@@ -114,56 +157,56 @@ h3 code,
 h4 code,
 h5 code,
 h6 code {
-  padding: 0.1em 0.4em;
-  font-size: 85%;
-  background-color: var(--neutral-20);
-  border-radius: 0.25em;
+    padding: 0.1em 0.4em;
+    font-size: 85%;
+    background-color: var(--neutral-20);
+    border-radius: 0.25em;
 }
 
 .code-toolbar {
-  font-size: 0.9rem;
-  margin-bottom: var(--text-spacer);
+    font-size: 0.9rem;
+    margin-bottom: var(--text-spacer);
 }
 
 pre code {
-  font-size: 0.9rem;
-  background-color: var(--neutral-10);
-  margin-bottom: var(--text-spacer);
-  border-radius: 0.25rem;
+    font-size: 0.9rem;
+    background-color: var(--neutral-10);
+    margin-bottom: var(--text-spacer);
+    border-radius: 0.25rem;
 }
 /* Markdown specific formatting */
 
 /* Table */
 .markdown table thead tr th {
-  padding: 0.25rem 1rem;
-  font-weight: 500;
-  text-align: left;
-  vertical-align: baseline;
-  border-bottom: solid 1px var(--opaque-divider);
-  border-top: solid 1px var(--opaque-divider);
+    padding: 0.25rem 1rem;
+    font-weight: 500;
+    text-align: left;
+    vertical-align: baseline;
+    border-bottom: solid 1px var(--opaque-divider);
+    border-top: solid 1px var(--opaque-divider);
 }
 
 .markdown table thead tr th {
-  border-left: solid 1px var(--opaque-divider);
+    border-left: solid 1px var(--opaque-divider);
 }
 
 .markdown table thead tr th:first-of-type {
-  border-left: none;
+    border-left: none;
 }
 
 .markdown table tbody tr td {
-  padding: 0.25rem 1rem;
-  font-weight: 400;
-  vertical-align: baseline;
-  border-bottom: solid 1px var(--opaque-divider);
+    padding: 0.25rem 1rem;
+    font-weight: 400;
+    vertical-align: baseline;
+    border-bottom: solid 1px var(--opaque-divider);
 }
 
 .markdown table tbody tr td {
-  border-left: solid 1px var(--opaque-divider);
+    border-left: solid 1px var(--opaque-divider);
 }
 
 .markdown table tbody tr td:first-of-type {
-  border-left: none;
+    border-left: none;
 }
 
 .markdown h1,
@@ -172,41 +215,41 @@ pre code {
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  margin-bottom: 1rem;
-  padding-bottom: 0.2rem;
-  border-bottom: 1px solid var(--neutral-20);
+    margin-bottom: 1rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--neutral-20);
 }
 
 .markdown table thead tr th {
-  padding: 0.25rem 1rem;
-  font-weight: 400;
-  border-bottom: solid 1px var(--opaque-divider);
-  border-top: solid 1px var(--opaque-divider);
+    padding: 0.25rem 1rem;
+    font-weight: 400;
+    border-bottom: solid 1px var(--opaque-divider);
+    border-top: solid 1px var(--opaque-divider);
 }
 
 .markdown table thead tr th {
-  border-left: solid 1px var(--opaque-divider);
+    border-left: solid 1px var(--opaque-divider);
 }
 
 .markdown table thead tr th:first-of-type {
-  border-left: none;
+    border-left: none;
 }
 
 .markdown table tbody tr td {
-  padding: 0.25rem 1rem;
-  font-weight: 400;
-  border-bottom: solid 1px var(--opaque-divider);
+    padding: 0.25rem 1rem;
+    font-weight: 400;
+    border-bottom: solid 1px var(--opaque-divider);
 }
 
 .markdown table tbody tr td {
-  border-left: solid 1px var(--opaque-divider);
+    border-left: solid 1px var(--opaque-divider);
 }
 
 .markdown table tbody tr td:first-of-type {
-  border-left: none;
+    border-left: none;
 }
 
 .markdown table {
-  margin: auto;
-  margin-bottom: var(--text-spacer);
+    margin: auto;
+    margin-bottom: var(--text-spacer);
 }
