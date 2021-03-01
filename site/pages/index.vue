@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <TheIntroduction />
-        <ThePostGallery :posts="posts" />
+        <PostGallery :posts="posts" />
     </div>
 </template>
 
@@ -10,14 +10,14 @@ import Vue from "vue";
 import axios from "axios";
 import { routes } from "~/constants";
 import TheIntroduction from "~/components/TheIntroduction.vue";
-import ThePostGallery from "~/components/ThePostGallery.vue";
+import PostGallery from "~/components/PostGallery.vue";
 
 export default Vue.extend({
     name: "Homepage",
 
     components: {
         TheIntroduction,
-        ThePostGallery,
+        PostGallery,
     },
 
     async asyncData() {
@@ -25,12 +25,6 @@ export default Vue.extend({
         return {
             posts,
         };
-    },
-
-    mounted() {
-        this.$store.commit("ui/SET_BREADCRUMBS", [
-            { emoji: "🏡", name: "Home", link: "/" },
-        ]);
     },
 });
 </script>

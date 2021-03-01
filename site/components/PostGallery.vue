@@ -15,7 +15,7 @@ import PostPreview from "~/components/PostPreview.vue";
 import { Post } from "~/interfaces";
 
 export default Vue.extend({
-    name: "ThePostGallery",
+    name: "PostGallery",
 
     components: {
         PostPreview,
