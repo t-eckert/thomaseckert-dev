@@ -42,8 +42,8 @@ html {
 }
 
 h1 {
-    font-size: 2.5rem;
-    font-weight: 400;
+    font-size: 4rem;
+    font-weight: normal;
     margin-bottom: 1rem;
 }
 
@@ -129,7 +129,7 @@ p {
 
 .minutae {
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 blockquote {
@@ -175,6 +175,15 @@ pre code {
     border-radius: 0.25rem;
 }
 /* Markdown specific formatting */
+
+article {
+    display: grid;
+    grid-template-columns: 1fr min(65ch, 100%) 1fr;
+}
+
+article > * {
+    grid-column: 2;
+}
 
 /* Table */
 .markdown table thead tr th {

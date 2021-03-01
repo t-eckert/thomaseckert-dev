@@ -1,6 +1,6 @@
 <template>
-    <article class="container post">
-        <section>
+    <div class="container post">
+        <header>
             <h1>{{ post.title }}</h1>
             <div class="pills">
                 <Pill
@@ -13,15 +13,15 @@
                 {{ calculateReadTime(post.markdown) }} read • Updated
                 <DateDisplay :dateString="post.updated" />
             </div>
-        </section>
+        </header>
 
-        <section
+        <article
             class="markdown"
             v-html="formatMarkdown(post.markdown)"
-        ></section>
+        ></article>
 
         <script src="/prism.js" />
-    </article>
+    </div>
 </template>
 
 <script lang="ts">
