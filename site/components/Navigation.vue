@@ -26,6 +26,10 @@ export default Vue.extend({
                     path: "/posts",
                 },
                 {
+                    name: "✨ Bookmarks",
+                    path: "/bookmarks",
+                },
+                {
                     name: "👋 About",
                     path: "/about",
                 },
