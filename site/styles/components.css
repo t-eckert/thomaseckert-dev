@@ -30,17 +30,6 @@ button:hover {
     overflow: scroll;
 }
 
-.introduction {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 1rem;
-}
-
-.introduction--links {
-    display: flex;
-    flex-direction: column;
-}
-
 .breadcrumbs {
     display: flex;
     justify-content: space-between;
@@ -71,11 +60,16 @@ nav li:not(:last-child) {
 }
 
 .post header {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .post-preview {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 65ch;
+}
+
+.post-preview > * {
+    margin-bottom: 0.5rem;
 }
 
 .post-preview--title {
