@@ -1,10 +1,16 @@
 <template>
-    <div class="container">
-        <BookmarkCategory
-            v-for="(category, index) in bookmarks"
-            :key="index"
-            :category="category"
-        />
+    <div class="bookmarks">
+        <h1>Bookmarks</h1>
+        <p class="text-secondary">
+            Some of my favorite things from around the Internet.
+        </p>
+        <section class="bookmark-categories">
+            <BookmarkCategory
+                v-for="(category, index) in bookmarks"
+                :key="index"
+                :category="category"
+            />
+        </section>
     </div>
 </template>
 
@@ -15,8 +21,6 @@ import BookmarkCategory from "~/components/BookmarkCategory.vue";
 import { routes } from "~/constants";
 
 export default Vue.extend({
-    name: "TheBookmarksPage",
-
     components: {
         BookmarkCategory,
     },
@@ -27,13 +31,6 @@ export default Vue.extend({
         return {
             bookmarks,
         };
-    },
-
-    mounted() {
-        this.$store.commit("ui/SET_BREADCRUMBS", [
-            { emoji: "🏡", name: "Home", link: "/" },
-            { emoji: "✨", name: "Bookmarks", link: "/bookmarks" },
-        ]);
     },
 });
 </script>

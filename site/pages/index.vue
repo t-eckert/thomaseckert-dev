@@ -1,7 +1,10 @@
 <template>
     <div class="container">
-        <TheIntroduction />
-        <PostGallery :posts="posts" />
+        <Introduction />
+        <div>
+            <strong class="text-secondary">Posts</strong>
+            <PostGallery :posts="posts" />
+        </div>
     </div>
 </template>
 
@@ -9,19 +12,18 @@
 import Vue from "vue";
 import axios from "axios";
 import { routes } from "~/constants";
-import TheIntroduction from "~/components/TheIntroduction.vue";
+import Introduction from "~/components/Introduction.vue";
 import PostGallery from "~/components/PostGallery.vue";
 
 export default Vue.extend({
-    name: "Homepage",
-
     components: {
-        TheIntroduction,
+        Introduction,
         PostGallery,
     },
 
     async asyncData() {
         const { data: posts } = await axios.get(routes.POSTS);
+
         return {
             posts,
         };
