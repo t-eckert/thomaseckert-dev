@@ -1,11 +1,6 @@
 <template>
-    <section class="flex flex-col">
-        <PostPreview
-            v-for="(post, index) in posts"
-            :key="index"
-            :post="post"
-            class="mb-6"
-        />
+    <section>
+        <PostPreview v-for="(post, index) in posts" :key="index" :post="post" />
     </section>
 </template>
 
