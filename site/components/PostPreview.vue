@@ -1,14 +1,17 @@
 <template>
     <section class="post-preview">
-        <h3>
+        <h2>
             <nuxt-link :to="'/posts/' + post.slug" class="post-preview--title">
                 {{ post.title }}
             </nuxt-link>
-        </h3>
+        </h2>
+
         <div class="pills">
             <Pill v-for="(tag, index) in post.tags" :text="tag" :key="index" />
         </div>
+
         <div>{{ post.preview }}</div>
+
         <div class="text-secondary">
             {{ calculateReadTime(post.markdown) }} read • Updated
             <DateDisplay :dateString="post.updated" />
