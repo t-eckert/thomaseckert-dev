@@ -22,7 +22,7 @@ export default Vue.extend({
                     path: "/",
                 },
                 {
-                    name: "✏️ Writing",
+                    name: "✏️ Posts",
                     path: "/posts",
                 },
                 {
