@@ -1,2 +1,24 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script context="module">
+	import fetchWritings from '../actions/fetchWritings';
+
+  export async function load() {
+		const writings = await fetchWritings()
+    return { props: { writings }}
+  }
+</script>
+
+<script>
+	import Introduction from "../sections/Introduction.svelte";
+	import Writing from "../sections/Writing.svelte"
+
+	export let writings
+</script>
+
+<svelte:head>
+	<title>Thomas Eckert</title>
+</svelte:head>
+
+<section class="mx-auto pt-12 max-w-3xl flex flex-col gap-8">
+	<Introduction/>
+	<Writing {writings}/>
+</section>
