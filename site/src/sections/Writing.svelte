@@ -1,8 +1,7 @@
-<script lang="typescript">
+<script>
 	import Tag from "../components/Tag.svelte"
-	import type Writings from "../types/Writings"
 
-	export let writings: Writings
+	export let writings
 </script>
 
 <section>
