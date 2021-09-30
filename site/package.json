@@ -35,6 +35,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"encoding": "^0.1.13"
+		"encoding": "^0.1.13",
+		"stream": "^0.0.2"
 	}
 }
