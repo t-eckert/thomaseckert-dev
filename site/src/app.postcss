@@ -3,3 +3,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+img {
+	@apply rounded-xl object-cover;
+}
+
+.markdown {
+	@apply w-full flex flex-col gap-3 justify-start text-left;
+}
+
+.markdown * {
+	@apply mx-auto;
+}
+
+.markdown p {
+	@apply max-w-xl;
+}
+
+.markdown ol {
+	@apply list-decimal;
+}
+
+.markdown ul {
+	@apply list-disc;
+}

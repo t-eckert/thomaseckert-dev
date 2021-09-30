@@ -5,6 +5,9 @@ const config = {
 	purge: [
 		"./src/**/*.{html,js,svelte,ts}",
 	],
+	plugins: [
+		require('@tailwindcss/typography')
+	],
 	theme: {
 		extend: {
 			fontFamily: {

@@ -22,6 +22,7 @@
 		"eslint-plugin-svelte3": "^3.2.1",
 		"graphql": "^15.6.0",
 		"graphql-request": "^3.5.0",
+		"mdsvex": "^0.9.8",
 		"postcss": "^8.3.6",
 		"postcss-load-config": "^3.1.0",
 		"prettier": "^2.4.1",
@@ -35,7 +36,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@tailwindcss/typography": "^0.4.1",
 		"encoding": "^0.1.13",
+		"marked": "^3.0.4",
 		"stream": "^0.0.2"
 	}
 }
