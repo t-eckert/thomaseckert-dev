@@ -2,4 +2,5 @@
 directory = "site/"
 command = "npm run build"
 publish = "build/"
+functions = "functions/"
 
