@@ -9,7 +9,7 @@
 
 <script>
 	import Introduction from "../sections/Introduction.svelte";
-	import Writing from "../sections/Writing.svelte"
+	import WritingList from "../sections/WritingList.svelte"
 
 	export let writings
 </script>
@@ -20,5 +20,5 @@
 
 <section class="mx-auto pt-12 max-w-3xl flex flex-col gap-8">
 	<Introduction/>
-	<Writing {writings}/>
+	<WritingList {writings}/>
 </section>

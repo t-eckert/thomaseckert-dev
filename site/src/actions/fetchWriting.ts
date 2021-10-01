@@ -1,9 +1,9 @@
 import { gql } from "graphql-request"
 
 import client from "../client"
-import type Writings from "../types/Writings"
+import type Writing from "../types/Writing"
 
-const fetchWritings = async (slug: string): Promise<Writings> => {
+const fetchWriting = async (slug: string): Promise<Writing> => {
 	const query = gql`
       query {
 				writings(where: {slug: "${slug}"}) {
@@ -22,4 +22,4 @@ const fetchWritings = async (slug: string): Promise<Writings> => {
 	return writings
 }
 
-export default fetchWritings
+export default fetchWriting
