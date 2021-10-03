@@ -1,12 +1,12 @@
 import { gql } from "graphql-request"
 
 import client from "../client"
-import type Writings from "../types/Writings"
+import type Writing from "../types/Writing"
 
-const fetchWritings = async (): Promise<Writings> => {
+const fetchWritings = async (): Promise<Writing[]> => {
 	const query = gql`
       query {
-				writings {
+				writings(where: {indexed: true}) {
 					title
 					slug
 					tags
