@@ -1,7 +1,7 @@
 <script>
 	import "../app.postcss"
-	import Nav from "../sections/Nav.svelte"
+	import NavBar from "../sections/NavBar.svelte"
 </script>
 
-<Nav />
-<slot></slot>
+<NavBar />
+<slot />
