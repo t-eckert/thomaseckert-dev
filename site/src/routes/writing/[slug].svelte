@@ -25,7 +25,7 @@
 {#if scrolled > headerHeight}
 	<div
 		transition:fade
-		class="invisible sm:visible pointer-events-none z-20 fixed top-0 w-screen pt-2 px-2 flex justify-start sm:justify-center font-medium text-gray-900"
+		class="invisible sm:visible pointer-events-none z-20 fixed top-0 w-screen pt-1 px-2 flex justify-start sm:justify-center font-medium text-gray-900"
 	>
 		{writing.title}
 	</div>
