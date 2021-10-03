@@ -1,8 +1,4 @@
 <script context="module">
-	import marked from "marked"
-
-	import Date from "../../components/Date.svelte"
-	import Tag from "../../components/Tag.svelte"
 	import fetchWriting from "../../actions/fetchWriting"
 
 	export async function load({ page }) {
@@ -12,6 +8,10 @@
 </script>
 
 <script>
+	import marked from "marked"
+
+	import Date from "../../components/Date.svelte"
+	import Tag from "../../components/Tag.svelte"
 	import { fade } from "svelte/transition"
 
 	export let writing

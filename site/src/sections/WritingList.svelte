@@ -5,7 +5,7 @@
 	export let writings
 </script>
 
-<section class="flex flex-col gap-4 sm:gap-1">
+<section class="flex flex-col gap-4 sm:gap-2">
 	{#each writings as writing}
 		<div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
 			<a class="transition hover:underline leading-tight" href={"/writing/" + writing.slug}
