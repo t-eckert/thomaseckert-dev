@@ -21,7 +21,7 @@
 	<title>Thomas Eckert</title>
 </svelte:head>
 
-<section class="mx-auto px-2 pt-4 sm:pt-20 max-w-xl flex flex-col gap-6">
+<section class="mx-auto px-2 pt-4 sm:pt-12 max-w-xl flex flex-col gap-6">
 	<div class="pb-6 border-b border-gray-200">
 		<Introduction {intro} />
 	</div>

@@ -4,6 +4,6 @@
 	export let intro
 </script>
 
-<section class="markdown">
+<section class="prose text-gray-900">
 	{@html marked(intro)}
 </section>

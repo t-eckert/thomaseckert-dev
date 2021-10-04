@@ -1,33 +1,15 @@
-@import url('https://rsms.me/inter/inter.css');
+@import url("https://rsms.me/inter/inter.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-	scroll-behavior: smooth;
-}
+@layer components {
+	html {
+		scroll-behavior: smooth;
+	}
 
-img {
-	@apply rounded-xl object-cover;
-}
-
-.markdown {
-	@apply w-full flex flex-col gap-3 justify-start text-left;
-}
-
-.markdown * {
-	@apply mx-auto;
-}
-
-.markdown p {
-	@apply max-w-xl;
-}
-
-.markdown ol {
-	@apply list-decimal;
-}
-
-.markdown ul {
-	@apply list-disc;
+	img {
+		@apply rounded-xl object-cover;
+	}
 }

@@ -9,6 +9,7 @@
 
 <script>
 	import marked from "marked"
+	import { onMount } from "svelte"
 
 	import Date from "../../components/Date.svelte"
 	import Tag from "../../components/Tag.svelte"
@@ -18,6 +19,12 @@
 
 	let headerHeight
 	let scrolled
+
+	onMount(() => {
+		let script = document.createElement("script")
+		script.src = "/prism.js"
+		document.head.append(script)
+	})
 </script>
 
 <svelte:window bind:scrollY={scrolled} />
@@ -46,6 +53,6 @@
 	</div>
 </header>
 
-<main class="markdown px-2 mb-24">
+<main class="mx-auto mb-12 prose text-gray-900">
 	{@html marked(writing.content)}
 </main>
