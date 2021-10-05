@@ -6,7 +6,7 @@ import type Writing from "../types/Writing"
 const fetchWritings = async (): Promise<Writing[]> => {
 	const query = gql`
       query {
-				writings(where: {indexed: true}) {
+				writings(where: {indexed: true}, orderBy: updatedAt_DESC) {
 					title
 					slug
 					tags
