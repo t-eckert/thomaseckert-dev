@@ -53,6 +53,6 @@
 	</div>
 </header>
 
-<main class="mx-auto mb-12 prose text-gray-900">
-	{@html marked(writing.content)}
+<main class="mx-auto px-1 mb-12 prose text-gray-900">
+	{@html marked(writing.content || "")}
 </main>
