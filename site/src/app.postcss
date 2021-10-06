@@ -12,4 +12,24 @@
 	img {
 		@apply rounded-xl object-cover;
 	}
+
+	.prose a.token.url-link {
+		@apply text-gray-100;
+	}
+
+	.prose a {
+		@apply no-underline text-blue-600 hover:underline hover:text-blue-800;
+	}
+
+	.prose code {
+		@apply p-0.5 bg-gray-100 rounded-md;
+	}
+
+	.prose code::before {
+		content: none;
+	}
+
+	.prose code::after {
+		content: none;
+	}
 }
