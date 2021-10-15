@@ -12,8 +12,6 @@
 			includedDomains: ["thomaseckert.dev"]
 		})
 	})
-
-	$: $page.path, browser && Fathom.trackPageview()
 </script>
 
 <NavBar />

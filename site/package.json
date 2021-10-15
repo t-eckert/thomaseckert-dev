@@ -1,6 +1,6 @@
 {
-	"name": "site",
-	"version": "0.0.1",
+	"name": "thomaseckert-dev",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -38,6 +38,7 @@
 	"dependencies": {
 		"@tailwindcss/typography": "^0.4.1",
 		"encoding": "^0.1.13",
+		"fathom-client": "^3.2.0",
 		"marked": "^3.0.4",
 		"stream": "^0.0.2"
 	}
