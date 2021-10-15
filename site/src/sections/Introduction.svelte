@@ -4,6 +4,6 @@
 	export let intro
 </script>
 
-<section class="prose text-gray-900">
+<section class="prose text-gray-900 leading-normal">
 	{@html marked(intro)}
 </section>
