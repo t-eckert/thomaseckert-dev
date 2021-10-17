@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte"
-	import { browser } from "$app/env"
+	import { fade } from "svelte/transition"
 	import { page } from "$app/stores"
 	import * as Fathom from "fathom-client"
 
@@ -8,11 +8,13 @@
 	import NavBar from "../sections/NavBar.svelte"
 
 	onMount(() => {
-		Fathom.load("JUVSFRPV", {
-			includedDomains: ["thomaseckert.dev"]
-		})
+		Fathom.load("JUVSFRPV", { includedDomains: ["thomaseckert.dev"] })
 	})
 </script>
 
 <NavBar />
-<slot />
+{#key $page.path}
+	<section in:fade={{ duration: 200 }}>
+		<slot />
+	</section>
+{/key}
