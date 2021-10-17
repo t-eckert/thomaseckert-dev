@@ -13,7 +13,7 @@
 	export let bookmarkCategories
 </script>
 
-<section class="mx-auto  px-2 flex flex-col max-w-6xl">
+<section class="mx-auto px-2 flex flex-col max-w-6xl">
 	<header class="my-4 sm:my-16 flex flex-col gap-2 sm:gap-4">
 		<h1 class="font-semibold text-2xl sm:text-6xl text-gray-900">Bookmarks</h1>
 		<p class="text-sm text-gray-700">Some of my favorite things across the Internet.</p>

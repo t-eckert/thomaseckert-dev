@@ -13,7 +13,7 @@
 	export let writings
 </script>
 
-<section class="mx-auto px-2 flex flex-col gap-4 max-w-4xl">
+<section class="mx-auto px-2 flex flex-col max-w-4xl">
 	<header class="flex my-4 sm:my-16 flex-col gap-2 sm:gap-4">
 		<h1 class="font-semibold text-2xl sm:text-6xl text-gray-900">Writing</h1>
 		<p class="text-sm text-gray-700">

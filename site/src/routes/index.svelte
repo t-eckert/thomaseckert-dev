@@ -10,7 +10,7 @@
 </script>
 
 <script>
-	import Introduction from "../components/Introduction.svelte"
+	import Markdown from "../components/Markdown.svelte"
 	import WritingPreview from "../components/WritingPreview.svelte"
 
 	export let intro
@@ -23,7 +23,7 @@
 
 <section class="mx-auto px-2 pt-4 sm:pt-12 max-w-xl flex flex-col gap-6">
 	<div class="pb-6 border-b border-gray-200">
-		<Introduction {intro} />
+		<Markdown markdown={intro} />
 	</div>
 	<div class="flex flex-col gap-2">
 		<h2 class="font-medium">Recent Writings</h2>

@@ -5,7 +5,7 @@
 	import * as Fathom from "fathom-client"
 
 	import "../app.postcss"
-	import NavBar from "../sections/NavBar.svelte"
+	import NavBar from "../components/NavBar.svelte"
 
 	onMount(() => {
 		Fathom.load("JUVSFRPV", { includedDomains: ["thomaseckert.dev"] })
