@@ -1,5 +1,5 @@
 
-const week = 604800
+const week = 604800000
 
 const isNew = (date: string): boolean => {
 	const now = new Date()
