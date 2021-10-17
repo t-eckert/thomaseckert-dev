@@ -20,7 +20,7 @@
 			Here I share some of my thoughts and other things I've learned.
 		</p>
 	</header>
-	<section class="flex flex-col gap-4 sm:gap-2">
+	<section class="flex flex-col gap-8 sm:gap-2">
 		{#each writings as writing}
 			<WritingPreview {writing} />
 		{/each}

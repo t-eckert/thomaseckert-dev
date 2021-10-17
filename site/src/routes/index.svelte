@@ -22,12 +22,12 @@
 </svelte:head>
 
 <section class="mx-auto px-2 pt-4 sm:pt-12 max-w-xl flex flex-col gap-6">
-	<div class="pb-6 border-b border-gray-200">
+	<div class="pb-6">
 		<Markdown markdown={intro} />
 	</div>
 	<div class="flex flex-col gap-2">
 		<h2 class="font-medium">Recent Writings</h2>
-		<section class="flex flex-col gap-4 sm:gap-2">
+		<section class="flex flex-col gap-8 sm:gap-2">
 			{#each writings as writing}
 				<WritingPreview {writing} />
 			{/each}
