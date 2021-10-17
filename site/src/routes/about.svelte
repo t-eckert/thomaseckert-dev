@@ -8,7 +8,7 @@
 </script>
 
 <script>
-	import Introduction from "../sections/Introduction.svelte"
+	import Introduction from "../components/Introduction.svelte"
 
 	export let intro
 </script>

@@ -10,8 +10,8 @@
 </script>
 
 <script>
-	import Introduction from "../sections/Introduction.svelte"
-	import WritingList from "../sections/WritingList.svelte"
+	import Introduction from "../components/Introduction.svelte"
+	import WritingPreview from "../components/WritingPreview.svelte"
 
 	export let intro
 	export let writings
@@ -27,6 +27,10 @@
 	</div>
 	<div class="flex flex-col gap-2">
 		<h2 class="font-medium">Recent Writings</h2>
-		<WritingList {writings} />
+		<section class="flex flex-col gap-4 sm:gap-2">
+			{#each writings as writing}
+				<WritingPreview {writing} />
+			{/each}
+		</section>
 	</div>
 </section>
