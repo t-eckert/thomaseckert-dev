@@ -32,4 +32,16 @@
 	.prose code::after {
 		content: none;
 	}
+
+	.bookmark {
+		@apply text-gray-700;
+	}
+
+	.bookmark ul {
+		@apply flex flex-col gap-1 sm:gap-2;
+	}
+
+	.bookmark a {
+		@apply transition hover:underline;
+	}
 }

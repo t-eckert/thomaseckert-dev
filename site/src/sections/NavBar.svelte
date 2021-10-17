@@ -10,6 +10,10 @@
 			href: "/writing"
 		},
 		{
+			name: "Bookmarks",
+			href: "/bookmarks"
+		},
+		{
 			name: "About",
 			href: "/about"
 		}
