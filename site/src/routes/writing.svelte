@@ -1,5 +1,5 @@
 <script context="module">
-	import fetchWritings from "../../actions/fetchWritings"
+	import fetchWritings from "../actions/fetchWritings"
 
 	export async function load() {
 		const writings = await fetchWritings()
@@ -8,7 +8,7 @@
 </script>
 
 <script>
-	import WritingPreview from "../../components/WritingPreview.svelte"
+	import WritingPreview from "../components/WritingPreview.svelte"
 
 	export let writings
 </script>
