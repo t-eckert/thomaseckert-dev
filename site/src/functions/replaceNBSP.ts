@@ -1,4 +1,4 @@
-const replaceNBSP = (str: string) => {
+const replaceNBSP = (str: string): string => {
 	return str.replace(/\s/g, ' ');
 }
 

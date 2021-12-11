@@ -1,4 +1,3 @@
-
 const week = 604800000
 
 const isNew = (date: string): boolean => {
