@@ -5,13 +5,13 @@ import netlify from '@sveltejs/adapter-netlify'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-    "extensions": [".svelte", ...mdsvexConfig.extensions],
+	"extensions": [".svelte", ...mdsvexConfig.extensions],
 
-    preprocess: [preprocess({
+	preprocess: [preprocess({
 		postcss: true
 	}), mdsvex(mdsvexConfig)],
 
-    kit: {
+	kit: {
 		adapter: netlify(),
 		target: '#svelte'
 	}
