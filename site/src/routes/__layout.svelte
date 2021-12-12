@@ -12,7 +12,7 @@
 	})
 </script>
 
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen bg-gray-50 pb-20">
 	<NavBar />
 	{#key $page.path}
 		<section in:fade={{ duration: 200 }}>
