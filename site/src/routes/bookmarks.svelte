@@ -3,6 +3,7 @@
 
 	export async function load() {
 		const bookmarkCategories = await fetchBookmarkCategories()
+		bookmarkCategories.sort((a, b) => a.priority - b.priority)
 		return { props: { bookmarkCategories } }
 	}
 </script>

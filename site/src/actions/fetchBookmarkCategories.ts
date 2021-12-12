@@ -8,6 +8,7 @@ const fetchBookmarkCategories = async (): Promise<BookmarkCategory[]> => {
       query {
 				bookmarkCategories {
 					category
+					priority
 					bookmarks {
 						description
 						link
