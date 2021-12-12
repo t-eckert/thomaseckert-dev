@@ -5,9 +5,5 @@ publish = "build/"
 [functions]
 directory = "functions/"
 
-[[redirects]]
-from = "/api/*"
-to = "/.netlify/functions/:splat"
-
 [dev]
 command = "npm run dev"
