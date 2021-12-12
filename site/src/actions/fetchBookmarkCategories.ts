@@ -8,7 +8,10 @@ const fetchBookmarkCategories = async (): Promise<BookmarkCategory[]> => {
       query {
 				bookmarkCategories {
 					category
-					bookmarks
+					bookmarks {
+						description
+						link
+					}
 				}
       }
     `

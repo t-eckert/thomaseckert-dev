@@ -1,6 +1,8 @@
+import type Bookmark from "./Bookmark"
+
 type BookmarkCategory = {
 	title: string
-	bookmarks: string
+	bookmarks: Bookmark[]
 }
 
 export default BookmarkCategory

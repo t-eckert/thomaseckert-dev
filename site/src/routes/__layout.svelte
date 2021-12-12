@@ -12,9 +12,11 @@
 	})
 </script>
 
-<NavBar />
-{#key $page.path}
-	<section in:fade={{ duration: 200 }}>
-		<slot />
-	</section>
-{/key}
+<div class="min-h-screen bg-gray-50">
+	<NavBar />
+	{#key $page.path}
+		<section in:fade={{ duration: 200 }}>
+			<slot />
+		</section>
+	{/key}
+</div>
