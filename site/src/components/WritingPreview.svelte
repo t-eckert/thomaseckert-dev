@@ -10,10 +10,16 @@
 <div class="flex flex-col">
 	<div class="flex flex-row items-center gap-1">
 		{#if isNew(writing.publishedAt)}
-			<span class="px-1 py-0.5 rounded-md font-medium text-xs text-blue-800 bg-blue-200">New!</span>
+			<span class="px-1 py-0.5 rounded-md font-medium text-xs text-rose-800 bg-rose-200">New!</span>
 		{/if}
-		<a class="transition hover:underline leading-tight" href={"/writing/" + writing.slug}
-			>{replaceNBSP(writing.title)}</a
+		{#if isNew(writing.updatedAt)}
+			<span class="px-1 py-0.5 rounded-md font-medium text-xs text-rose-800 bg-rose-200"
+				>Recently updated!</span
+			>
+		{/if}
+		<a
+			class="transition hover:underline leading-tight font-medium text-xl"
+			href={"/writing/" + writing.slug}>{replaceNBSP(writing.title)}</a
 		>
 	</div>
 	<div class="flex flex-row gap-1">
