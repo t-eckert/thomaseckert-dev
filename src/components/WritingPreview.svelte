@@ -17,7 +17,7 @@
 			>
 		{/if}
 		<a
-			class="font-medium transition underline decoration-2 decoration-sky-400 hover:text-sky-700 text-gray-900"
+			class="font-medium transition underline decoration-2 decoration-sky-400 hover:text-sky-600 hover:decoration-sky-500 text-gray-900"
 			href={"/writing/" + writing.slug}>{replaceNBSP(writing.title)}</a
 		>
 	</div>

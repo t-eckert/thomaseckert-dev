@@ -24,8 +24,13 @@
 	<section class="pb-6 sm:pb-12 flex flex-col max-w-sm gap-4">
 		<h1 class="text-6xl font-semibold">Hi,</h1>
 		<p>
-			my name is Thomas Eckert. I live outside of Washington D.C. with my wife Sophia and our corgi
-			Winona. I work at HashiCorp on Consul integration with Kubernetes.
+			my name is Thomas Eckert. I live outside of Washington D.C. with my wife <a
+				href="https://sophiaross.me"
+				target="blank_"
+				rel="noopener noreferrer">Sophia</a
+			>
+			and our corgi
+			<a href="/winona">Winona</a>. I work at HashiCorp on Consul integration with Kubernetes.
 		</p>
 		<p>Welcome to my hypertext garden.</p>
 	</section>
@@ -43,26 +48,19 @@
 				You can also find me on <a
 					href="https://twitter.com/thomaseckert_"
 					target="blank_"
-					rel="noopener noreferrer"
-					class="link-external">Twitter</a
+					rel="noopener noreferrer">Twitter</a
 				>,
-				<a
-					href="https://github.com/t-eckert"
-					target="blank_"
-					rel="noopener noreferrer"
-					class="link-external">GitHub</a
-				>, and
+				<a href="https://github.com/t-eckert" target="blank_" rel="noopener noreferrer">GitHub</a>,
+				and
 				<a
 					href="https://www.linkedin.com/in/thomas-eckert/"
 					target="blank_"
-					rel="noopener noreferrer"
-					class="link-external">LinkedIn</a
+					rel="noopener noreferrer">LinkedIn</a
 				>. The source code for this site is in
 				<a
 					href="https://github.com/t-eckert/thomaseckert-dev"
 					target="blank_"
 					rel="noopener noreferrer"
-					class="link-external"
 				>
 					this repo
 				</a>

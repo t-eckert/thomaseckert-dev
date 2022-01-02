@@ -28,7 +28,6 @@
 
 <script>
 	import Browser from "../../components/Browser.svelte"
-	import { fade } from "svelte/transition"
 
 	export let minnote
 
