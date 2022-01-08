@@ -8,7 +8,7 @@
 </script>
 
 <script>
-	import marked from "marked"
+	import { marked } from "marked"
 	import { onMount } from "svelte"
 
 	import Date from "../../components/Date.svelte"
