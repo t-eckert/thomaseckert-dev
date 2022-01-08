@@ -3,7 +3,7 @@
 	import MenuButton from "../components/MenuButton.svelte"
 	import PillLink from "../components/PillLink.svelte"
 
-	const menuButtonBreakpoint = 640
+	const menuButtonBreakpoint = 840
 	const links = [
 		{
 			name: "Writing",
@@ -33,7 +33,7 @@
 <section
 	class="z-10 sticky top-0 border-b border-gray-50 bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg"
 >
-	<nav class="mx-auto max-w-6xl py-1 flex flex-row justify-between items-center">
+	<nav class="mx-auto max-w-6xl p-1 flex flex-row justify-between items-center">
 		<PillLink href="/">Thomas Eckert</PillLink>
 		{#if pageWidth < menuButtonBreakpoint}
 			<div class="px-2 flex flex-row justify-end">

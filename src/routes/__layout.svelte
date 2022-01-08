@@ -5,7 +5,7 @@
 	import * as Fathom from "fathom-client"
 
 	import "../app.postcss"
-	import NavBar from "../components/NavBar.svelte"
+	import NavBar from "../sections/NavBar.svelte"
 
 	onMount(() => {
 		Fathom.load("JUVSFRPV", { includedDomains: ["thomaseckert.dev"] })
@@ -18,7 +18,7 @@
 
 <body class="bg-gray-50 min-h-screen pb-20">
 	<NavBar />
-	{#key $page.path}
+	{#key $page.url.pathname}
 		<section in:fade={{ duration: 200 }}>
 			<slot />
 		</section>
