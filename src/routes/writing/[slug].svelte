@@ -1,8 +1,8 @@
 <script context="module">
 	import fetchWriting from "../../actions/fetchWriting"
 
-	export async function load({ page }) {
-		const writing = (await fetchWriting(page.params.slug))[0]
+	export async function load({ params }) {
+		const writing = (await fetchWriting(params.slug))[0]
 		return { props: { writing } }
 	}
 </script>
@@ -13,6 +13,7 @@
 
 	import Date from "../../components/Date.svelte"
 	import Tag from "../../components/Tag.svelte"
+	import Markdown from "../../components/Markdown.svelte"
 	import { fade } from "svelte/transition"
 
 	export let writing
@@ -54,5 +55,5 @@
 </header>
 
 <main class="mx-auto px-1 mb-12 prose text-gray-900">
-	{@html marked(writing.content || "")}
+	<Markdown markdown={writing.content} />
 </main>
