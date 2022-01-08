@@ -3,7 +3,7 @@
 </script>
 
 <a
-	class="text-sm font-medium px-2 py-0.5 rounded-full text-gray-700 animate hover:text-gray-900 hover:bg-gray-100 decoration-transparent hover:decoration-transparent"
+	class="text-sm font-medium px-2 py-0.5 rounded-full text-gray-700 animate hover:text-gray-900 decoration-transparent hover:decoration-transparent"
 	{href}
 >
 	<slot />
