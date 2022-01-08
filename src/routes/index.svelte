@@ -16,10 +16,6 @@
 	export let writings, bookmarks
 </script>
 
-<svelte:head>
-	<title>Thomas Eckert</title>
-</svelte:head>
-
 <div class="mx-auto px-2 pt-4 sm:pt-40 max-w-6xl flex flex-col gap-6">
 	<!-- Intro -->
 	<section class="pb-6 sm:pb-12 flex flex-col max-w-sm gap-4">
@@ -43,6 +39,11 @@
 			{#each writings as writing}
 				<WritingPreview {writing} />
 			{/each}
+
+			<a
+				class="font-medium transition underline decoration-2 decoration-sky-400 hover:text-sky-600 hover:decoration-sky-500 text-gray-900"
+				href="/writing">More...</a
+			>
 		</section>
 
 		<section class="max-w-md flex flex-col gap-4">
@@ -78,11 +79,15 @@
 		</section>
 
 		<!-- Bookmarks -->
-		<section class="flex flex-col gap-4 sm:gap-2">
+		<section class="flex flex-col gap-4 sm:gap-2 items-start">
 			<h2 class="font-medium text-4xl">Recent bookmarks</h2>
 			{#each bookmarks as bookmark}
 				<Bookmark {...bookmark} />
 			{/each}
+			<a
+				class="font-medium transition underline decoration-2 decoration-rose-400 text-gray-900 hover:text-rose-600 hover:decoration-rose-500"
+				href="/bookmarks">More...</a
+			>
 		</section>
 	</div>
 </div>

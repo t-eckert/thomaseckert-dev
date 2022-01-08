@@ -12,11 +12,15 @@
 	})
 </script>
 
-<div class="min-h-screen bg-gray-50 pb-20">
+<svelte:head>
+	<title>Thomas Eckert</title>
+</svelte:head>
+
+<body class="bg-gray-50 min-h-screen pb-20">
 	<NavBar />
 	{#key $page.path}
 		<section in:fade={{ duration: 200 }}>
 			<slot />
 		</section>
 	{/key}
-</div>
+</body>
