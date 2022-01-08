@@ -16,6 +16,10 @@
 	export let writings, bookmarks
 </script>
 
+<div
+	class="fixed -top-24 -left-10 opacity-5 -rotate-6 bg-gradient-to-r from-rose-500 via-sky-500 to-yellow-400 pointer-events-none w-[1800px] h-96"
+/>
+
 <div class="mx-auto px-2 pt-4 sm:pt-40 max-w-6xl flex flex-col gap-6">
 	<!-- Intro -->
 	<section class="pb-6 sm:pb-12 flex flex-col max-w-sm gap-4">
