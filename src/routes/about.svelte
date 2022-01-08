@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="fixed -top-24 -left-10 opacity-5 -rotate-6 bg-gradient-to-b from-yellow-500 to-yellow-400 pointer-events-none w-[1800px] h-96"
+	class="absolute -top-24 -left-10 opacity-5 -rotate-6 bg-gradient-to-b from-yellow-500 to-yellow-400 pointer-events-none w-[1800px] h-96"
 />
 <section class="mx-auto px-2 py-4 sm:py-20 max-w-xl">
 	<header class="my-4 sm:my-10 flex flex-col gap-2 sm:gap-4">

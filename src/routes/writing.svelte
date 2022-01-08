@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="fixed -top-24 -left-10 opacity-5 -rotate-6  bg-gradient-to-b from-sky-500 to-sky-400 pointer-events-none w-[1800px] h-96"
+	class="absolute -top-24 -left-10 opacity-5 -rotate-6  bg-gradient-to-b from-sky-500 to-sky-400 pointer-events-none w-[1800px] h-96"
 />
 
 <section class="mx-auto px-2 flex flex-col max-w-6xl">
