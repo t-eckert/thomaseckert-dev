@@ -8,12 +8,11 @@
 </script>
 
 <script>
-	import { onMount } from "svelte"
+	import { fade, fly, slide } from "svelte/transition"
 
 	import Date from "../../components/Date.svelte"
 	import Tag from "../../components/Tag.svelte"
 	import Markdown from "../../components/Markdown.svelte"
-	import { fade } from "svelte/transition"
 
 	export let writing
 
@@ -37,13 +36,16 @@
 {/if}
 
 <header
-	class="px-2 pt-4 sm:pt-12 pb-8 mx-auto max-w-4xl flex flex-col gap-2"
+	class="px-2 pt-4 sm:pt-48 pb-20 mx-auto max-w-4xl flex flex-col gap-2"
 	bind:clientHeight={headerHeight}
 >
-	<h1 class="text-3xl leading-2 sm:text-5xl sm:leading-tight tracking-tight font-semibold">
+	<h1
+		class="text-3xl leading-2 sm:text-5xl sm:leading-tight tracking-tight font-semibold"
+		in:fly={{ y: 50 }}
+	>
 		{writing.title.replace(/\s/g, " ")}
 	</h1>
-	<div class="text-gray-500 text-sm flex flex-row gap-2">
+	<div class="text-gray-500 text-sm flex flex-row gap-2" in:fade={{ delay: 200, duration: 500 }}>
 		<Date date={writing.updatedAt} />
 		{#each writing.tags as tag}
 			<Tag {tag} />
@@ -51,7 +53,7 @@
 	</div>
 </header>
 
-<main class="px-2 mx-auto max-w-4xl mb-12">
+<main class="px-2 mx-auto max-w-4xl mb-12" in:fade={{ delay: 200, duration: 500 }}>
 	<article>
 		<Markdown markdown={writing.content} />
 	</article>
