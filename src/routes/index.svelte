@@ -2,6 +2,7 @@
 	import fetchWritings from "../actions/fetchWritings"
 	import fetchRecentBookmarks from "../actions/fetchRecentBookmarks"
 	import Bookmark from "../components/Bookmark.svelte"
+	import Repo from "../components/Repo.svelte"
 
 	export async function load() {
 		const writings = await fetchWritings()
@@ -80,6 +81,26 @@
 				if you see something you'd like to borrow. It is built using SvelteKit, TailwindCSS, and deployed
 				on Netlify.
 			</p>
+		</section>
+
+		<section>
+			<h2 class="font-medium text-4xl">Projects</h2>
+			<div class="pt-4 grid grid-cols-2 gap-4 items-start">
+				<Repo
+					name="Minnote"
+					image="https://media.graphcms.com/NJULIZayRWmks4YRU4nf?_ga=2.260083021.1165652680.1642485566-1677687917.1631473825"
+					description="A small, local text editor for the web."
+					repo="https://github.com/t-eckert/minnote"
+					site="https://minnote.io/"
+				/>
+				<Repo
+					name="50ph1a"
+					image="https://raw.githubusercontent.com/t-eckert/50ph1a/main/screenshots/v0.0.3-python.png"
+					description="VS Code Theme: It's snowing at night while you're coding."
+					repo="https://github.com/t-eckert/50ph1a"
+					site="https://marketplace.visualstudio.com/items?itemName=ThomasEckert.50ph1a"
+				/>
+			</div>
 		</section>
 
 		<!-- Bookmarks -->
