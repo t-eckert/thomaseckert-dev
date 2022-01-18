@@ -21,7 +21,7 @@
 </svelte:head>
 
 <div
-	class="absolute -top-24 -left-10 opacity-5 -rotate-6 bg-gradient-to-b from-rose-500 to-rose-400 pointer-events-none w-[1800px] h-96"
+	class="absolute overflow-hidden -top-28 -left-10 opacity-10 -rotate-6 bg-gradient-to-r from-rose-500 to-rose-400 pointer-events-none w-[110%] h-96"
 />
 
 <section class="mx-auto px-4 flex flex-col max-w-6xl">
