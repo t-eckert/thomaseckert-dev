@@ -8,7 +8,6 @@
 </script>
 
 <script>
-	import { marked } from "marked"
 	import { onMount } from "svelte"
 
 	import Date from "../../components/Date.svelte"
@@ -20,13 +19,11 @@
 
 	let headerHeight
 	let scrolled
-
-	onMount(() => {
-		let script = document.createElement("script")
-		script.src = "/prism.js"
-		document.head.append(script)
-	})
 </script>
+
+<svelte:head>
+	<title>{writing.title}</title>
+</svelte:head>
 
 <svelte:window bind:scrollY={scrolled} />
 
@@ -43,10 +40,10 @@
 	class="px-2 pt-4 sm:pt-12 pb-8 mx-auto max-w-4xl flex flex-col gap-2"
 	bind:clientHeight={headerHeight}
 >
-	<h1 class="text-3xl sm:text-6xl tracking-tight leading-tight font-semibold">
+	<h1 class="text-3xl leading-2 sm:text-5xl sm:leading-tight tracking-tight font-semibold">
 		{writing.title.replace(/\s/g, " ")}
 	</h1>
-	<div class="flex flex-row gap-1">
+	<div class="text-gray-500 text-sm flex flex-row gap-2">
 		<Date date={writing.updatedAt} />
 		{#each writing.tags as tag}
 			<Tag {tag} />
@@ -54,6 +51,8 @@
 	</div>
 </header>
 
-<main class="mx-auto px-1 mb-12 prose text-gray-900">
-	<Markdown markdown={writing.content} />
+<main class="px-2 mx-auto max-w-4xl mb-12">
+	<article>
+		<Markdown markdown={writing.content} />
+	</article>
 </main>
