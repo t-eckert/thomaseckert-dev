@@ -31,7 +31,7 @@
 <svelte:window bind:innerWidth={pageWidth} />
 
 <section
-	class="z-10 sticky top-0 border-b border-gray-50 bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg"
+	class="z-10 fixed top-0 w-full border-b border-gray-50 bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg"
 >
 	<nav class="mx-auto max-w-6xl p-1 flex flex-row justify-between items-center">
 		<PillLink href="/">Thomas Eckert</PillLink>
