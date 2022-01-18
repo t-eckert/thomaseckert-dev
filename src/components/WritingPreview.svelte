@@ -9,10 +9,10 @@
 <div class="flex flex-col">
 	<div class="flex flex-row items-center gap-2">
 		{#if isNew(writing.publishedAt)}
-			<span class="px-1 py-0.5 rounded-md font-medium text-xs text-rose-800 bg-rose-200">New!</span>
+			<span class="px-1 py-0.5 rounded-md font-medium text-xs text-rose-800 bg-rose-100">New!</span>
 		{/if}
 		{#if isNew(writing.updatedAt) && !isNew(writing.publishedAt)}
-			<span class="px-1 py-0.5 rounded-md font-medium text-xs text-rose-800 bg-rose-200"
+			<span class="px-1 py-0.5 rounded-md font-medium text-xs text-rose-800 bg-rose-100"
 				>Recently updated!</span
 			>
 		{/if}
@@ -22,7 +22,7 @@
 			href={"/writing/" + writing.slug}>{replaceNBSP(writing.title)}</a
 		>
 	</div>
-	<div class="flex flex-row gap-1">
+	<div class="text-gray-500 text-sm flex flex-row gap-2">
 		{#each writing.tags as tag}
 			<Tag {tag} />
 		{/each}
