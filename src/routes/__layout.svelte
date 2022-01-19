@@ -16,8 +16,8 @@
 	<title>Thomas Eckert</title>
 </svelte:head>
 
-<body class="bg-gray-50 min-h-screen overflow-x-hidden  pb-20">
-	<NavBar />
+<NavBar />
+<body class="bg-gray-50 min-h-screen overflow-x-hidden pb-20">
 	{#key $page.url.pathname}
 		<section in:fade={{ duration: 200 }}>
 			<slot />
