@@ -2,13 +2,17 @@
 	import fetchWriting from "../../actions/fetchWriting"
 
 	export async function load({ params }) {
-		const writing = (await fetchWriting(params.slug))[0]
+		const writings = await fetchWriting(params.slug)
+		if (!writings) {
+			throw new Error("Not found")
+		}
+		const writing = writings[0]
 		return { props: { writing } }
 	}
 </script>
 
 <script>
-	import { fade, fly, slide } from "svelte/transition"
+	import { fade, fly } from "svelte/transition"
 
 	import Date from "../../components/Date.svelte"
 	import Tag from "../../components/Tag.svelte"
@@ -36,7 +40,7 @@
 {/if}
 
 <header
-	class="px-2 pt-4 sm:pt-48 pb-20 mx-auto max-w-4xl flex flex-col gap-2"
+	class="px-2 pt-4 sm:pt-36 pb-20 mx-auto max-w-4xl flex flex-col gap-1"
 	bind:clientHeight={headerHeight}
 >
 	<h1

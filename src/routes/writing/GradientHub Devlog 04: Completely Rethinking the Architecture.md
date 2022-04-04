@@ -1,0 +1,37 @@
+---
+title: "GradientHub Devlog 04: Completely Rethinking the Architecture"
+slug: "gradienthub-devlog-04-completely-rethinking-the-architecture"
+tags: ["gradienthub", "devlog", "supabase"]
+---
+
+I started this project with the goal of practicing my Kubernetes. I have gotten to do that a bit and enjoyed it. I came up with this idea of \"GradientHub\" as a gossamer veneer to wrap around the Kubernetes body of the project. However, I unexpectedly fell in love with the idea and I want to pursue it with my full energy. It never really made sense to overengineer the backend except for the purposes of learning. Now I want to change my focus to cutting out the complexity and running towards this project.
+
+So I'm going to do things differently. I'll keep the NextJS frontend I wrote and instead host it on [Netlify](https://www.netlify.com/). They will handle scaling and SSL certs and everything that I would have handled with the Kubernetes route. I can implement a backend within Next if I want to use TypeScript or using Lambda functions if I want to use something else. The backend was going to be very simple anyways -- mostly just a CRUD API.
+
+I'm excited.
+
+## Deploying to Netlify
+
+I removed the Kubernetes deployment files and the Terraform to set up a Kubernetes cluster. I already host my website and one other project on Netlify so I just created a new project there and pointed it at the GitHub repository where this project is hosted.
+
+I then changed the nameservers on Namecheap to use Netlify's nameservers. I can finish setting up the domain after that change propogates. For now, I have a randomly generated URL of https://serene-curran-2b1915.netlify.app/.
+
+## Connecting to a Database
+
+Now I want to set up a database have the frontend display gradients stored in that database. I'm going to use Supabase as the database because I heard the CEO, Paul Copplestone, on [an episode of The Changelog](https://changelog.com/podcast/476) recently and he made the product sound so cool! It also uses Postgres and I like Postgres.
+
+I was able to log in easily with GitHub. (As a sidenote, I think I'm going to use the \"magic link\" sign in method for GradientHub. So much less to think about and there isn't a point to connecting this to another SSO or having email and password.)
+
+I really like the user experience here. A lot of the things I don't need immediately are just out of the way. There is a little callout \"If your dashboard hasn't connected within 2 minutes, send us an email: support@supabase.io\". That gives me so much confidence that they care and are paying attention. (Azure Kubernetes Service's 1 hour to deploy a PVC can see me after class.)
+
+There is a reference repository for NextJS auth. Cool. I added the `supabase` package to the project. Browsing the reference repository, I wasn't quite sure which changes I needed to make to get up and running with my project so I found [Nader Dabit's video on Magic Link Auth](https://www.youtube.com/watch?v=oXWImFqsQF4)
+
+That was a super helpful video. I highly recommend it. I was able to take that walkthrough and add magic link auth very easily!
+
+Now there is a sign in page.
+
+![Webpage which allows a user to sign in with a magic link](https://media.graphcms.com/uOJ08X4FQtCndnmSaGS7)
+
+When a user clicks their magic link, they will be redirected to the \"profile\" page of the site. For now this just lists a bunch of gradients and allows a user to sign out.
+
+![Mocked up profile page with a bunch of gradients and a sign out button](https://media.graphcms.com/Jh8ahvjSJ6GGeF7ddHKV)

@@ -1,0 +1,35 @@
+---
+title: Roll Your Own Color Scheme in Windows Terminal
+slug: roll-your-own-color-scheme-in-windows-terminal
+updatedAt: 25 June 2019
+tags:
+  - Windows Terminal
+---
+
+At Build 2019, Microsoft announced an
+[open source terminal for Windows](https://devblogs.microsoft.com/commandline/introducing-windows-terminal/).
+On 21 June 2019, it became available for
+[preview in the Microsoft Store](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
+I have been playing with it since and while its features are laudable, every
+developer knows the most important aspect of a terminal is its color scheme.
+
+Luckily, it's easy to write your own. From the Windows Terminal, select the
+dropdown at the right edge of the tabs. Select `Settings`. Alternatively, the
+default keybinding for accessing settings is `Ctrl`+`,`.
+
+![A Windows Terminal window showing the user accessing settings by the dropdown at the right edge of the tabs.](https://thepracticaldev.s3.amazonaws.com/i/e718c4kv327nsre6jhla.png)
+
+This will open up a JSON file with the settings for your Terminal in the default editor. 
+
+![The JSON file for editing Windows Terminal settings edited using Visual Studio Code.](https://thepracticaldev.s3.amazonaws.com/i/7x8d6ot6zagt18rat108.png)
+
+Navigate to the "schemes" key. Here a list of JSON objects map standard Unix
+terminal colors (except for `magenta` which is called `purple`) to HEX codes.
+Copy an existing scheme and paste it into this list. Now, you can edit the
+colors as you like. I chose to implement a color scheme from
+[flatuicolors.com](https://flatuicolors.com/) called V1. You can find the
+implementation in a Gist [here](https://gist.github.com/t-eckert/9fd7c587c470e8312f07d8e65182644f). 
+
+Give your scheme a unique "name" value and set the "profiles" to use that scheme.
+
+Happy hacking!

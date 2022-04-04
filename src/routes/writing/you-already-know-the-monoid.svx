@@ -1,0 +1,5 @@
+---
+title: You Already Know the Monoid
+slug: you-already-know-the-monoid
+indexed: false
+---
