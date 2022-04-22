@@ -1,7 +1,11 @@
 ---
 title: "GradientHub Devlog 05: Gradients in the Database"
-slug: "gradienthub-devlog-05-gradients-in-the-database"
-tags: ["gradienthub", "design", "supabase", "NextJS"]
+published: 18 Feb 2022
+tags:
+- GradientHub
+- Design
+- Supabase
+- NextJS
 ---
 
 Now that we have authentication set up with Supabase, I'm going to create a table in the database of gradients. For now, I'll just replicate the gradients used to mock up the site. Later, I'll need to add in functionality around \"ownership\" of gradients and figuring out which users favorited which gradients.

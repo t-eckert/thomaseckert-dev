@@ -1,21 +1,29 @@
 ---
 title: Basketball for Nerds
-tags: ["Programming", "Python", "Math"]
-slug: "basketball-for-nerds"
+published: 10 April 2019
+tags:
+- Programming
+- Python
+- Math
 ---
 
-> Inspired by a question in Gayle Laakmann McDowell's [Cracking the Coding Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=sr_1_1?ie=UTF8).  
+> Inspired by a question in Gayle Laakmann McDowell's
+> [Cracking the Coding Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=sr_1_1?ie=UTF8).  
 
-Let's say a friend challenges you to choose one of two games on the basketball court:
+Let's say a friend challenges you to choose one of two games on the basketball
+court:
 
 1. You have one chance to make one shot.
 2. You have three chances to make two or more shots.
 
-You want to win and you know the exact probability of making a shot `p`. Which game do you have a better chance of winning?
+You want to win and you know the exact probability of making a shot `p`. Which
+game do you have a better chance of winning?
 
 ## Chance of Winning Game One
 
-This game consists of one chance to make one shot. Because the likelihood of making a shot is known to be `p`, the chance of winning is also `p`. Let's write this as
+This game consists of one chance to make one shot. Because the likelihood of
+making a shot is known to be `p`, the chance of winning is also `p`. Let's write
+this as
 
 ```
 s_1(p) = p
@@ -26,7 +34,8 @@ where `s_1(p)` is the likelihood of winning the first game.
 ## Chance of Winning Game Two
 
 
-Here, the math gets trickier. Because you must make _at least_ two of the three shots, there are four ways to win this game:
+Here, the math gets trickier. Because you must make _at least_ two of the three 
+shots, there are four ways to win this game:
 
 | First | Second | Third |
 | :---: | :----: | :---: |
@@ -35,7 +44,8 @@ Here, the math gets trickier. Because you must make _at least_ two of the three 
 |   🏀   |        |   🏀   |
 |   🏀   |   🏀    |   🏀   |
 
-The probability of making all three shots is the probability of making the first shot _times_ making the second shot _times_ making the third shot, `p^3`.
+The probability of making all three shots is the probability of making the first
+ shot _times_ making the second shot _times_ making the third shot, `p^3`.
 
 The probability of making two out of three shots is the probability of making two shots, `p^2`, times the probability of not making one shot `1 - p`. There are three chances for this to happen. So combined, this is `3p^2(1 - p)`.
 
@@ -131,8 +141,8 @@ two_by_three_shot_probs = [two_of_three_shot_probability(p) for p in p_range]
 
 plt.plot(p_range, one_shot_probs, label=\"One of One to Win\")
 plt.plot(p_range, two_by_three_shot_probs, label=\"Two of Three to Win\")
-plt.ylabel(\"Probability of Winning Game\")
-plt.xlabel(\"Probability of Making a Single Shot\")
+plt.ylabel("Probability of Winning Game")
+plt.xlabel("Probability of Making a Single Shot")
 plt.legend()
 plt.show()
 ```

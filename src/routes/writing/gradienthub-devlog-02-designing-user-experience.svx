@@ -1,8 +1,13 @@
 ---
 title: "GradientHub Devlog 02: Designing User Experience"
-slug: "devlog-02-designing-user-experience"
-tags: ["gradienthub", "kubernetes", "devlog"]
+published: 5 Feb 2022
+tags: 
+- GradientHub
+- Kubernetes
+- Devlog
+previous: gradienthub-devlog-01-changing-clouds
 ---
+
 Now I want to begin sketching out what the site will be like for a user. I have a lot of ideas floating around in my head, but I need to give them some form so I can see what works well and what doesn't.
 
 I like to begin with the mobile experience -- what is it like to use the site on a phone. This is the most constrained experience so it helps with removing extrenuous information.

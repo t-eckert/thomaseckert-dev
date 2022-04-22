@@ -1,5 +1,6 @@
 ---
 title: Autogenerating Gossip Encryption on Kubernetes
-slug: autogenerating-gossip-encryption-on-kubernetes
-index: false
+tags:
+- Consul
+- Kubernetes
 ---

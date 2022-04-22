@@ -1,11 +1,18 @@
 ---
 title: "GradientHub Devlog 00: Starting from Overengineered"
-slug: "gradienthub-devlog-00-starting-from-overengineered"
-tags: ["gradienthub", "kubernetes", "devlog"]
+published: 25 Jan 2022
+tags:
+- GradientHub
+- Kubernetes
+- Devlog
 ---
-When starting a project, it is best to begin with an idea and implement it as simply as possible to get it to market quickly. I am not doing that.
 
-I was inspired to make a project that was at least complicated enough that I could use Kubernetes in production, have to think about scaling, and optimistically add Consul to the deployment. I work on Consul's integration with Kubernetes, but I've never operated a production Kubernetes cluster. I think I should.
+When starting a project, it is best to begin with an idea and implement it as
+simply as possible to get it to market quickly. I am not doing that.
+
+I was inspired to make a project that was at least complicated enough that I
+could use Kubernetes in production, have to think about scaling, and
+:optimistically add Consul to the deployment. I work on Consul's integration with Kubernetes, but I've never operated a production Kubernetes cluster. I think I should.
 
 Today, I had the idea for this sufficiently complicated project that was still simple enough that I could build it on my own and write about it.
 
@@ -58,27 +65,27 @@ Yay!
 Using TailwindCSS, I made a splash screen.
 
 ``` html
-<div className=\"pt-40 flex flex-col items-center justify-center\">
-  <h1 className=\"mb-4 text-7xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500\">
+<div className="pt-40 flex flex-col items-center justify-center">
+  <h1 className="mb-4 text-7xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500">
     GradientHub
   </h1>
   <p>This is a work in progress.</p>
   <p>
-    Check the{\" \"}
+    Check the{" "}
     <a
-        href=\"https://github.com/t-eckert/gradienthub\"
-        target=\"_blank\"
-        rel=\"noopener noreferrer\"
-        className=\"font-medium bg-clip-text bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 hover:text-transparent  transition\"
+        href="https://github.com/t-eckert/gradienthub"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium bg-clip-text bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 hover:text-transparent  transition"
     >
         GitHub repository
-    </a>{\" \"}
+    </a>{" "}
     for more info.
   </p>
 </div>
 ```
 
-![A splash screen which reads \"GradientHub/ This is a work in progress./ Check the GitHub repository for more info.\"](https://media.graphcms.com/CKhQqF9BTFSlfOwKPaQc)
+![A splash screen which reads 'GradientHub This is a work in progress. Check the GitHub repository for more info.'](https://media.graphcms.com/CKhQqF9BTFSlfOwKPaQc)
 
 ## Containerizing
 

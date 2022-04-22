@@ -1,7 +1,10 @@
 ---
 title: "GradientHub Devlog 04: Completely Rethinking the Architecture"
-slug: "gradienthub-devlog-04-completely-rethinking-the-architecture"
-tags: ["gradienthub", "devlog", "supabase"]
+published: 5 Feb 2022
+tags:
+- GradientHub
+- Design
+- Supabase
 ---
 
 I started this project with the goal of practicing my Kubernetes. I have gotten to do that a bit and enjoyed it. I came up with this idea of \"GradientHub\" as a gossamer veneer to wrap around the Kubernetes body of the project. However, I unexpectedly fell in love with the idea and I want to pursue it with my full energy. It never really made sense to overengineer the backend except for the purposes of learning. Now I want to change my focus to cutting out the complexity and running towards this project.

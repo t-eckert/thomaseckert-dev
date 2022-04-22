@@ -5,24 +5,24 @@
 @tailwind utilities;
 
 @layer components {
-	::selection {
-		@apply bg-rose-500 text-white;
-	}
-
 	html {
 		scroll-behavior: smooth;
 	}
 
 	img {
-		@apply rounded-xl object-cover;
+		@apply rounded object-cover;
 	}
 
-	a {
+	a.external {
 		@apply font-medium underline decoration-2 decoration-gray-400 text-gray-900 hover:decoration-gray-900 transition;
 	}
 
-	/* Styling for writings */
-	article {
+	a.writing {
+		@apply font-medium underline decoration-2 decoration-sky-400 text-sky-900 hover:decoration-sky-900 transition;
+	}
+
+	/* Styling for writing */
+	.writing {
 		@apply leading-normal text-gray-900;
 
 		h1,

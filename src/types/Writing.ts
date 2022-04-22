@@ -1,10 +1,9 @@
 type Writing = {
-	slug: string
 	title: string
-	content?: string
+	slug: string
 	tags: string[]
-	publishedAt: string
-	updatedAt: string
+	published: Date
+	updated?: Date
 }
 
 export default Writing

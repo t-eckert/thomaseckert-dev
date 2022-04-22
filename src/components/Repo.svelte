@@ -3,7 +3,7 @@
 	export let image = ""
 </script>
 
-<div class="flex flex-col shadow hover:shadow-violet-200 rounded-md transition">
+<div class="flex flex-col border-violet-200 border rounded-md transition">
 	{#if image !== ""}
 		<div class="w-full">
 			<img src={image} class="rounded-md rounded-b-none" alt="" />
@@ -24,7 +24,7 @@
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-4 w-4 text-gray-600 group-hover:rotate-12 group-hover:text-violet-600 transition"
+						class="h-4 w-4 text-gray-600  group-hover:text-violet-600 transition"
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke="currentColor"
@@ -51,7 +51,7 @@
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-4 w-4 text-gray-600 group-hover:rotate-12 group-hover:text-violet-600 transition"
+						class="h-4 w-4 text-gray-600  group-hover:text-violet-600 transition"
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke="currentColor"

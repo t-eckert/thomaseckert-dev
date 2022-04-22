@@ -1,7 +1,10 @@
 ---
 title: "GradientHub Devlog 01: Changing Clouds"
-slug: "gradienthub-devlog-01-changing-clouds"
-tags: ["gradienthub", "kubernetes", "devlog"]
+published: 25 Jan 2022
+tags:
+- GradientHub
+- Kubernetes
+- Devlog
 ---
 
 Google Cloud is too expensive for me. After running yesterday's deployment for 24 hours, I've run up a bill of $2. Extrapolating, that is $730/year. That's too steep for me for a side project. While I know Kubernetes is more expensive to run than serverless or individual VMs, I feel pretty confident I can get Kubernetes up and running for cheaper.

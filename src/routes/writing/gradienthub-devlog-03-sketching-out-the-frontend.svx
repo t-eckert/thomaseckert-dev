@@ -1,7 +1,10 @@
 ---
 title: "GradientHub Devlog 03: Sketching out the Frontend"
-slug: "devlog-03-sketching-out-the-frontend"
-tags: ["gradienthub", "devlog", "kubernetes"]
+published: 5 Feb 2022
+tags:
+- GradientHub
+- Devlog
+- Kubernetes
 ---
 
 ## Homepage

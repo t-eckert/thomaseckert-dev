@@ -8,16 +8,16 @@ const getTags = (searchParams: URLSearchParams) => {
 
 export async function get({ url }) {
 	// Proxy to the writing API
-	url.href = url.href.replace("/writing", "/api/writing")
+	url.href = url.href.replace("/notes", "/api/notes")
 
 	const searchTags = getTags(url.searchParams)
 
 	const response = await fetch(url)
-	const writing = (await response.json())["writing"]
+	const notes = (await response.json())["notes"]
 
 	return {
 		body: {
-			writing,
+			notes,
 			tags: searchTags,
 		}
 	}

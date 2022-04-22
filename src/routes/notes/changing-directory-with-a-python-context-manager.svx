@@ -1,6 +1,8 @@
 ---
-slug: changing-directory-with-a-python-context-manager
-published: 9-28-21
+title: Changing Directory with a Python Context Manager
+order: 20
+tags:
+- Python
 ---
 
 In my latest project, I've added Tailwind and Vue to a Flask app. This requires
@@ -9,7 +11,9 @@ that Python is already present on the server by the time the build step occurs,
 I decided to write the build script in Python.
 
 Those who have written build scripts before may be familiar with the pattern of
-changing into a directory, executing commands, then returning to the original directory to start the next set of commands. That was exactly what I needed to do here:
+changing into a directory, executing commands, then returning to the original 
+directory to start the next set of commands. That was exactly what I needed to
+do here:
 
 1. Change directory to `./tailwind`
    1. Execute `npm install` to install dependencies

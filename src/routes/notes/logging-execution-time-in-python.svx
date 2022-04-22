@@ -1,8 +1,9 @@
 ---
-title: "Logging Execution Time in Python"
-slug: "logging-execution-time-in-python"
+title: Logging Execution Time in Python
+order: 10
 tags: ["Programming", "Python"]
 ---
+
 Here is a decorator for logging execution time for a Python function:
 
 ``` python
@@ -17,12 +18,12 @@ def print_execution_time(function):
 
         execution_time = time_end - time_start
 
-        arguments = \", \".join(
-            [str(arg) for arg in args] + [\"{}={}\".format(k, kw[k]) for k in kw]
+        arguments = ", ".join(
+            [str(arg) for arg in args] + ["{}={}".format(k, kw[k]) for k in kw]
         )
 
         print(
-            \"{} ms {}({})\".format(
+            "{} ms {}({})".format(
                 str(execution_time * 1000), function.__name__, arguments
             )
         )
