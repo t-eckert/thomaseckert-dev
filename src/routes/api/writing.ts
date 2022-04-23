@@ -1,7 +1,5 @@
 import pMap from "p-map"
 
-import staticWriting from "../../../static/writing.json"
-
 import type Writing from "src/types/Writing"
 
 export async function get({ url }: { url: URL }) {
@@ -17,7 +15,7 @@ export async function get({ url }: { url: URL }) {
 
 	// Fetch, filter, and structure the writing
 	const writing: Writing[] =
-		(staticWriting as any[])
+		((await (await fetch(host + "/writing.json")).json()) as Writing[])
 			/* This was failing on Netlify
 			(await pMap(
 				Object.entries(modules),
