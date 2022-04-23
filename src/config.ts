@@ -14,6 +14,10 @@ const configure = (env: string): Config => {
 			return {
 				URL: "https://thomaseckert.dev"
 			}
+		default:
+			return {
+				URL: "http://localhost:3000"
+			}
 	}
 }
 

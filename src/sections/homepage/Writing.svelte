@@ -1,7 +1,9 @@
-<script>
-	import WritingPreview from "../../components/WritingPreview.svelte"
+<script lang="ts">
+	import WritingPreview from "src/components/WritingPreview.svelte"
 
-	export let writing
+	import type Writing from "src/types/Writing"
+
+	export let writing: Writing[]
 </script>
 
 <section class="flex flex-col gap-4 selection:bg-sky-600 items-start">

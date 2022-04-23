@@ -11,6 +11,7 @@ export async function get({ url }: { url: URL }) {
 
 	const modules = import.meta.glob("../writing/*.{svx,svelte}")
 
+	// Fetch, filter, and structure the writing
 	const writing: Writing[] = (await pMap(
 		Object.entries(modules),
 		async function ([filename, module]) {

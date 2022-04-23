@@ -29,6 +29,7 @@ const config = {
 			resolve: {
 				alias: {
 					"src": "./src",
+					"$": "./src",
 				}
 			}
 		}

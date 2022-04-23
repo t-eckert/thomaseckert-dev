@@ -1,16 +1,12 @@
 import pMap from "p-map"
 
-const getTags = (searchParams: URLSearchParams) => {
-	const tags = searchParams.get("tags")
-	if (tags) {
-		return tags.split(",")
-	}
-	return []
-}
 
-export async function get({ url }) {
-	const take = parseInt(url.searchParams.get("take"), 10) || undefined
-	const searchTags = getTags(url.searchParams)
+export async function get({ url }: { url: URL }) {
+	const takeParam = url.searchParams.get("take")
+	const take = takeParam ? parseInt(takeParam) : undefined
+
+	const tagsParam = url.searchParams.get("tags")
+	const tags = tagsParam ? tagsParam.split(",") : []
 
 	const modules = import.meta.glob("../notes/*.{svx,svelte}")
 
@@ -28,21 +24,21 @@ export async function get({ url }) {
 		}
 	))
 		.filter(({ order }) => order !== undefined)
-		.filter(({ tags }) => {
-			if (searchTags.length === 0) {
+		.filter(({ tags: notesTags }) => {
+			if (tags.length === 0) {
 				return true
 			}
-			if (tags.length === 0) {
+			if (notesTags.length === 0) {
 				return false
 			}
-			return tags.some(tag => searchTags.includes(tag))
+			return notesTags.some((tag: string) => tags.includes(tag))
 		})
-		.slice(0, take)
 		.sort((a, b) => {
 			return a.order < b.order ? 1 : -1
 		})
+		.slice(0, take)
 
 	return {
-		body: { notes, tags: searchTags },
+		body: { notes, tags },
 	}
 }

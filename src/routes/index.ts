@@ -1,16 +1,33 @@
-export async function get() {
+export async function get({ url }: { url: URL }) {
+	const host = url.origin
 
 	let writing = []
 	try {
-		const response = await fetch("http://localhost:3000/api/writing")
-		writing = await response.json()
+		const response = await fetch(host + "/api/writing?take=3")
+		writing = (await response.json())["writing"]
+	} catch (error) {
+		console.log(error)
+	}
+
+	let bookmarks = []
+	try {
+		const response = await fetch(host + "/api/recentBookmarks")
+		bookmarks = await response.json()
+	} catch (error) {
+		console.log(error)
+	}
+
+	let notes = []
+	try {
+		const response = await fetch(host + "/api/notes")
+		notes = await response.json()
 	} catch (error) {
 		console.log(error)
 	}
 
 	return {
 		body: {
-			writing,
+			writing, bookmarks, notes
 		}
 	}
 }
