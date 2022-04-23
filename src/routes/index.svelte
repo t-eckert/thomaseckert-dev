@@ -4,6 +4,4 @@
 
 <svelte:head><title>Thomas Eckert</title></svelte:head>
 
-<pre>
-	{JSON.stringify(writing, null, 2)}
-</pre>
+<pre>{JSON.stringify(writing, null, 2)}</pre>

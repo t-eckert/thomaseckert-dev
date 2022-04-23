@@ -2,7 +2,7 @@ type Writing = {
 	title: string
 	slug: string
 	tags: string[]
-	published: Date
+	published?: Date
 	updated?: Date
 }
 

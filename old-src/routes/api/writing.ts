@@ -1,6 +1,6 @@
 import pMap from "p-map"
 
-import type Writing from "../../types/Writing"
+import type Writing from "../../../src/types/Writing"
 
 const getTags = (searchParams: URLSearchParams) => {
 	const tags = searchParams.get("tags")
