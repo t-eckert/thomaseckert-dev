@@ -11,7 +11,7 @@ export async function get({ url }: { url: URL }) {
 	const tagsParam = url.searchParams.get("tags")
 	const tags = tagsParam ? tagsParam.split(",") : []
 
-	const modules = import.meta.glob("../writing/*.{svx,svelte}")
+	// const modules = import.meta.glob("../writing/*.{svx,svelte}")
 
 	// Fetch, filter, and structure the writing
 	const writing: Writing[] =
