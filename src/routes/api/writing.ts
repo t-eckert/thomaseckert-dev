@@ -1,36 +1,31 @@
-// import pMap from "p-map"
+import pMap from "p-map"
 
 import type Writing from "src/types/Writing"
 
 export async function get({ url }: { url: URL }) {
-	const host = url.origin
-
 	const takeParam = url.searchParams.get("take")
 	const take = takeParam ? parseInt(takeParam) : undefined
 
 	const tagsParam = url.searchParams.get("tags")
 	const tags = tagsParam ? tagsParam.split(",") : []
 
-	// const modules = import.meta.glob("../writing/*.{svx,svelte}")
+	const modules = import.meta.glob("../writing/*.{svx,svelte}")
 
 	// Fetch, filter, and structure the writing
 	const writing: Writing[] =
-		((await (await fetch(host + "/writing.json")).json()) as Writing[])
-			/* This was failing on Netlify
-			(await pMap(
-				Object.entries(modules),
-				async function ([filename, module]) {
-					const { metadata } = await module()
-		
-					return {
-						title: metadata?.title,
-						slug: filename.replace("../writing/", "").replace(".svx", "").replace(".svelte", ""),
-						published: metadata?.published ? new Date(metadata.published) : undefined,
-						tags: metadata?.tags || [],
-					}
+		(await pMap(
+			Object.entries(modules),
+			async function ([filename, module]) {
+				const { metadata } = await module()
+
+				return {
+					title: metadata?.title,
+					slug: filename.replace("../writing/", "").replace(".svx", "").replace(".svelte", ""),
+					published: metadata?.published ? new Date(metadata.published) : undefined,
+					tags: metadata?.tags || [],
 				}
-			))
-			*/
+			}
+		))
 			// Only published writing
 			.filter(({ published }) => published !== undefined)
 			// Only writing with the specified tags
