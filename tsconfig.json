@@ -5,9 +5,17 @@
 		"checkJs": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"lib": ["es2020", "DOM"],
+		"lib": [
+			"es2020",
+			"DOM"
+		],
 		"moduleResolution": "node",
 		"module": "es2020",
+		"paths": {
+			"src": [
+				"./src"
+			]
+		},
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
