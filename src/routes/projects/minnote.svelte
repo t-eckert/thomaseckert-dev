@@ -1,35 +1,5 @@
-<script context="module">
-	import { gql } from "graphql-request"
-
-	import fetchData from "../../fetchData"
-
-	export async function load() {
-		const { projects } = await fetchData(
-			gql`
-				query {
-					projects(where: { slug: "minnote" }) {
-						slug
-						title
-						description
-						coverImage {
-							url
-						}
-						images {
-							url
-						}
-					}
-				}
-			`
-		)
-
-		return { props: { minnote: projects[0] } }
-	}
-</script>
-
 <script>
 	import Browser from "../../components/Browser.svelte"
-
-	export let minnote
 
 	const toggleHeroImage = () => {
 		heroImage = (heroImage + 1) % 2
@@ -41,15 +11,15 @@
 <article class="px-2">
 	<div class="py-12 w-full flex flex-row justify-center">
 		<section class="text-center">
-			<h1 class="text-6xl font-medium text-gray-900">{minnote.title}</h1>
+			<!-- <h1 class="text-6xl font-medium text-gray-900">{minnote.title}</h1> -->
 			<p class="text-gray-700">A small, local text editor in the browser.</p>
 		</section>
 	</div>
 
 	<section class="mx-auto mb-16 max-w-7xl grid grid-cols-1 sm:grid-cols-3 gap-6">
 		<div class="col-span-1 sm:col-span-2">
-			<Browser url="https://minnote.io" title="Minnote" favicon={minnote.images[2].url}>
-				<img class="rounded-none" src={minnote.images[heroImage].url} alt="" />
+			<!-- <Browser url="https://minnote.io" title="Minnote" favicon={minnote.images[2].url}> -->
+				<!-- <img class="rounded-none" src={minnote.images[heroImage].url} alt="" /> -->
 			</Browser>
 		</div>
 		<div class="sm:col-start-3 max-w-xs flex flex-col gap-4">

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import WritingPreview from "src/components/WritingPreview.svelte"
+	import WritingPreview from "../../components/WritingPreview.svelte"
 
-	import type Writing from "src/types/Writing"
+	import type Writing from "../../types/Writing"
 
 	export let writing: Writing[]
 </script>

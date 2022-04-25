@@ -10,8 +10,8 @@ const mdsvexConfig = {
 	"remarkPlugins": [],
 	"rehypePlugins": [],
 	"layout": {
-		// "writing": "./src/layouts/writing.svelte",
-		// "notes": "./src/layouts/notes.svelte",
+		"writing": "./src/layouts/writing.svelte",
+		"notes": "./src/layouts/notes.svelte",
 	}
 }
 
@@ -28,7 +28,6 @@ const config = {
 		vite: {
 			resolve: {
 				alias: {
-					"src": "./src",
 					"$": "./src",
 				}
 			}

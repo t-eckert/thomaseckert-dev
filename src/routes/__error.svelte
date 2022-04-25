@@ -1,5 +1,5 @@
-<script context="module">
-	export const load = ({ status }) => {
+<script context="module" lang="ts">
+	export const load = ({ status }: {status: any}) => {
 		return {
 			props: {
 				status
@@ -8,8 +8,8 @@
 	}
 </script>
 
-<script>
-	export let status
+<script lang="ts">
+	export let status: any
 </script>
 
 <div class="w-full pt-52 flex items-center justify-center">

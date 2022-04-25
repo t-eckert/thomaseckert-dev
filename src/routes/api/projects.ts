@@ -1,3 +1,3 @@
-export async function get({ url }) {
+export async function get({ url }: { url: URL }) {
 
 }

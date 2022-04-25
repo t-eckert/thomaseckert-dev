@@ -2,10 +2,10 @@
 	import { Icon } from "@steeze-ui/svelte-icon"
 	import { X } from "@steeze-ui/heroicons"
 
-	import NotePreview from "$/components/NotePreview.svelte"
-	import Tag from "$/components/Tag.svelte"
+	import NotePreview from "../../components/NotePreview.svelte"
+	import Tag from "../../components/Tag.svelte"
 
-	export let notes, tags
+	export let notes: any, tags: any
 </script>
 
 <div

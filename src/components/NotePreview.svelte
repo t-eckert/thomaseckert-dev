@@ -1,8 +1,8 @@
-<script>
-	import Date from "$/components/Date.svelte"
-	import Tag from "$/components/Tag.svelte"
+<script lang=ts>
+	import Date from "./Date.svelte"
+	import Tag from "./Tag.svelte"
 
-	export let note
+	export let note: any
 </script>
 
 <div class="flex flex-col">

@@ -4,8 +4,8 @@
 
 	import type Writing from "src/types/Writing"
 
-	import WritingPreview from "$/components/WritingPreview.svelte"
-	import Tag from "$/components/Tag.svelte"
+	import WritingPreview from "../../components/WritingPreview.svelte"
+	import Tag from "../../components/Tag.svelte"
 
 	export let writing: Writing[], tags: string[]
 </script>

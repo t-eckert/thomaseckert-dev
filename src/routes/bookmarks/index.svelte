@@ -1,17 +1,5 @@
-<script context="module">
-	import fetchBookmarkCategories from "../actions/fetchBookmarkCategories"
-
-	export async function load() {
-		const bookmarkCategories = await fetchBookmarkCategories()
-		bookmarkCategories.sort((a, b) => a.priority - b.priority)
-		return { props: { bookmarkCategories } }
-	}
-</script>
-
 <script>
-	import BookmarkCategory from "../sections/BookmarkCategory.svelte"
-
-	export let bookmarkCategories
+	import BookmarkCategory from "../../sections/BookmarkCategory.svelte"
 
 	$: allExpanded = true
 </script>
@@ -45,8 +33,8 @@
 	</header>
 
 	<main class="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-		{#each bookmarkCategories as bookmarkCategory}
+		<!-- {#each bookmarkCategories as bookmarkCategory}
 			<BookmarkCategory {...bookmarkCategory} isExpanded={allExpanded} />
-		{/each}
+		{/each} -->
 	</main>
 </section>

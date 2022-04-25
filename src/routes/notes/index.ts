@@ -6,7 +6,7 @@ const getTags = (searchParams: URLSearchParams) => {
 	return []
 }
 
-export async function get({ url }) {
+export async function get({ url }: { url: any }) {
 	// Proxy to the writing API
 	url.href = url.href.replace("/notes", "/api/notes")
 

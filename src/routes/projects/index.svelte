@@ -1,38 +1,5 @@
-<script context="module">
-	import { gql } from "graphql-request"
-
-	import fetchData from "../../fetchData"
-
-	export async function load() {
-		const { projects } = await fetchData(
-			gql`
-				query {
-					projects {
-						slug
-						title
-						description
-						coverImage {
-							url
-						}
-					}
-				}
-			`
-		)
-
-		return { props: { projects } }
-	}
-</script>
-
 <script>
-	import Repo from "$/components/Repo.svelte"
-
-	export let projects
-
-	const project = (slug) => {
-		return projects.filter((project) => project.slug === slug)[0]
-	}
-
-	export const minnote = project("minnote")
+	import Repo from "../../components/Repo.svelte"
 </script>
 
 <div

@@ -1,13 +1,13 @@
-<script>
-	import Menu from "$/components/Menu.svelte"
-	import MenuButton from "$/components/MenuButton.svelte"
-	import NavLinks from "$/sections/NavLinks.svelte"
+<script lang="ts">
+	import Menu from "../components/Menu.svelte"
+	import MenuButton from "../components/MenuButton.svelte"
+	import NavLinks from "../sections/NavLinks.svelte"
 
 	const menuButtonBreakpoint = 840
 
-	let pageWidth
+	let pageWidth:number
 
-	function toggleMenu(_) {
+	function toggleMenu(_: any) {
 		menuIsOpen = !menuIsOpen
 	}
 

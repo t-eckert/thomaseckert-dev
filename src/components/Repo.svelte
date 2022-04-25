@@ -1,5 +1,5 @@
-<script>
-	export let name, description, repo, site
+<script lang=ts>
+	export let name: any, description: any, repo: any, site: any
 	export let image = ""
 </script>
 

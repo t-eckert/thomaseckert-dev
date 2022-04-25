@@ -1,6 +1,5 @@
 import pMap from "p-map"
 
-
 export async function get({ url }: { url: URL }) {
 	const takeParam = url.searchParams.get("take")
 	const take = takeParam ? parseInt(takeParam) : undefined

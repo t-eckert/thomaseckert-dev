@@ -1,5 +1,5 @@
-<script>
-	export let description, link
+<script lang="ts">
+	export let description: string, link: string
 </script>
 
 <a

@@ -14,6 +14,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
+		"@types/marked": "^4.0.3",
 		"autoprefixer": "^10.4.4",
 		"cssnano": "^5.1.7",
 		"svelte": "^3.44.0",
@@ -24,6 +25,10 @@
 		"typescript": "~4.6.2"
 	},
 	"dependencies": {
+		"@steeze-ui/heroicons": "^1.1.1",
+		"@steeze-ui/svelte-icon": "^1.3.1",
+		"fathom-client": "^3.4.1",
+		"marked": "^4.0.14",
 		"mdsvex": "^0.10.5",
 		"p-map": "4.0.0"
 	}

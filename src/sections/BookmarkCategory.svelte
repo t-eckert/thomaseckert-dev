@@ -1,8 +1,8 @@
-<script>
+<script lang=ts>
 	import { slide } from "svelte/transition"
 	import Bookmark from "../components/Bookmark.svelte"
 
-	export let category, bookmarks, isExpanded
+	export let category: any, bookmarks: any, isExpanded: boolean
 
 	$: isExpanded = isExpanded
 </script>

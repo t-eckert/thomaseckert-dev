@@ -1,7 +1,5 @@
-<script>
-	export let url
-	export let title
-	export let favicon
+<script lang=ts>
+	export let url: string, title: string, favicon: string
 </script>
 
 <div class="flex flex-col bg-gray-800 rounded-md shadow-2xl">

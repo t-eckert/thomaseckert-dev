@@ -1,12 +1,11 @@
-<script>
+<script lang=ts>
 	import { fade, fly } from "svelte/transition"
 
-	import Date from "../components/Date.svelte"
 	import Tag from "../components/Tag.svelte"
 
-	export let title, tags, published
+	export let title: string, tags: string[]
 
-	let headerHeight, scrolled
+	let headerHeight: number, scrolled: number
 </script>
 
 <svelte:head>
@@ -35,9 +34,8 @@
 		{title}
 	</h1>
 	<div class="text-gray-500 text-sm flex flex-row gap-1" in:fade={{ delay: 200, duration: 500 }}>
-		<Date date={published} />
 		{#each tags as tag}
-			<Tag url="/writing" {tag} />
+			<Tag resource="/notes" {tag} />
 		{/each}
 	</div>
 </header>

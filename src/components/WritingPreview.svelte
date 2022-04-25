@@ -1,8 +1,10 @@
-<script>
-	import Date from "$/components/Date.svelte"
-	import Tag from "$/components/Tag.svelte"
+<script lang="ts">
+	import type Writing from "../types/Writing"
 
-	export let writing
+	import Date from "./Date.svelte"
+	import Tag from "./Tag.svelte"
+
+	export let writing: Writing
 </script>
 
 <div class="flex flex-col">
@@ -14,7 +16,9 @@
 		>
 	</div>
 	<div class="text-gray-500 text-sm flex flex-row gap-1 flex-wrap">
+		{#if writing.published}
 		<Date date={writing.published} />
+		{/if}
 		{#each writing.tags as tag}
 			<Tag resource="/writing" {tag} />
 		{/each}

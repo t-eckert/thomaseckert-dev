@@ -1,12 +1,14 @@
 <script lang="ts">
-	// import Intro from "src/sections/homepage/Intro.svelte"
-	// import Writing from "src/sections/homepage/Writing.svelte"
-	// import Socials from "src/sections/homepage/Socials.svelte"
-	// import Bookmarks from "src/sections/homepage/Bookmarks.svelte"
-	// import Projects from "src/sections/homepage/Projects.svelte"
-	// import Notes from "src/sections/homepage/Notes.svelte"
+	import type WritingType from "../types/Writing"
 
-	export let writing: any[], bookmarks:any[], notes:any[]
+	import Intro from "../sections/homepage/Intro.svelte"
+	import Writing from "../sections/homepage/Writing.svelte"
+	import Socials from "../sections/homepage/Socials.svelte"
+	import Bookmarks from "../sections/homepage/Bookmarks.svelte"
+	import Projects from "../sections/homepage/Projects.svelte"
+	import Notes from "../sections/homepage/Notes.svelte"
+
+	export let writing: WritingType[], bookmarks:any[], notes:any[]
 
 	let scroll: number
 </script>
@@ -20,16 +22,13 @@
 />
 
 <div class="mx-auto px-3 pt-4 sm:pt-40 max-w-6xl flex flex-col gap-6">
-	<pre>{JSON.stringify(writing, null, 2)}</pre>
-	<pre>{JSON.stringify(bookmarks, null, 2)}</pre>
-	<pre>{JSON.stringify(notes, null, 2)}</pre>
-	<!-- <Intro /> -->
+	<Intro />
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-		<!-- <Writing {writing} /> -->
-		<!-- <Bookmarks {bookmarks} />
+		<Writing {writing} /> 
+		<Bookmarks {bookmarks} />
 		<Notes {notes} />
 		<Socials />
-		<Projects /> -->
+		<Projects />
 	</div>
 </div>
 

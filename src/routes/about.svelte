@@ -1,16 +1,5 @@
-<script context="module">
-	import fetchCopy from "../actions/fetchCopy"
-
-	export async function load() {
-		const about = await fetchCopy("about")
-		return { props: { about } }
-	}
-</script>
-
 <script>
 	import Markdown from "../components/Markdown.svelte"
-
-	export let about
 </script>
 
 <div
@@ -22,6 +11,5 @@
 		<h1 class="font-semibold text-2xl sm:text-6xl text-gray-900">About</h1>
 	</header>
 	<div class="flex flex-col gap-6">
-		<Markdown markdown={about} />
 	</div>
 </section>
