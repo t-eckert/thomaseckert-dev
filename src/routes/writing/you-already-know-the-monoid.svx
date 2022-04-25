@@ -1,3 +1,0 @@
----
-title: You Already Know the Monoid
----
