@@ -12,8 +12,14 @@
 		"moduleResolution": "node",
 		"module": "es2020",
 		"paths": {
-			"src": [
-				"./src"
+			"src/*": [
+				"./src/*"
+			],
+			"$lib": [
+				"src/lib"
+			],
+			"$lib/*": [
+				"src/lib/*"
 			]
 		},
 		"resolveJsonModule": true,
