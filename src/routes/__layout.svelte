@@ -6,6 +6,8 @@
 
 	import "src/app.css"
 
+	import Bar from "src/components/Bar.svelte"
+
 	onMount(() => {
 		Fathom.load("JUVSFRPV", { includedDomains: ["thomaseckert.dev"] })
 	})
@@ -14,6 +16,7 @@
 <svelte:head><title>Thomas Eckert</title></svelte:head>
 
 <div class="selection:bg-gray-700 selection:text-white">
+	<Bar />
 	<body class="bg-gray-50 min-h-screen overflow-x-hidden pb-20">
 		{#key $page.url.pathname}
 			<section in:fade={{ duration: 200 }}>
