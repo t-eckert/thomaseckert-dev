@@ -35,6 +35,7 @@
   },
   "type": "module",
   "dependencies": {
-    "fathom-client": "^3.4.1"
+    "fathom-client": "^3.4.1",
+    "marked": "^4.0.14"
   }
 }
