@@ -16,7 +16,7 @@
 	class="z-50 sticky top-0 w-full border-b border-gray-50 bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg"
 >
 	<div class="mx-auto max-w-6xl p-1 flex flex-row justify-between items-center">
-		<a href="/" class="text-md sm:text-xs font-medium text-gray-700 animate hover:text-gray-900">
+		<a href="/" class="text-md sm:text-sm font-medium text-gray-700 animate hover:text-gray-900">
 			Thomas Eckert
 		</a>
 		{#if width < breakpoint}
@@ -38,7 +38,7 @@
 				</svg>
 			</button>
 		{:else}
-			<div class="text-xs font-medium flex flex-row gap-2">
+			<div class="text-sm font-medium flex flex-row gap-3">
 				<Nav />
 			</div>
 		{/if}
