@@ -1,1 +1,4 @@
-export interface Bookmark { }
+export interface Bookmark {
+    description: string
+    link: string
+}
