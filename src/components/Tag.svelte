@@ -1,10 +1,10 @@
-<script lang="ts">
+<script>
 	const resourceClass = new Map([
 		["writing", "bg-sky-100 text-sky-900 hover:bg-sky-200"],
 		["note", "bg-emerald-100 text-emerald-900 hover:bg-emerald-200"]
 	])
 
-	export let tag: string,
+	export let tag,
 		resource = "tags"
 </script>
 

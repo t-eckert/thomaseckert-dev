@@ -1,6 +1,4 @@
-<script lang="ts">
-	import type { Writing, Note, Bookmark, Project } from "src/interfaces"
-
+<script>
 	import Intro from "src/sections/homepage/Intro.svelte"
 	import WritingSection from "src/sections/homepage/Writing.svelte"
 	import NotesSection from "src/sections/homepage/Notes.svelte"
@@ -8,9 +6,9 @@
 	import BookmarksSection from "src/sections/homepage/Bookmarks.svelte"
 	import Socials from "src/sections/homepage/Socials.svelte"
 
-	let scroll: number
+	let scroll
 
-	export let writing: Writing[], notes: Note[], bookmarks: Bookmark[]
+	export let writing, notes, bookmarks
 </script>
 
 <svelte:window bind:scrollY={scroll} />

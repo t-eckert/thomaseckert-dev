@@ -1,11 +1,5 @@
-<script lang="ts">
-	import { page } from "$app/stores"
-	type Link = {
-		name: string
-		href: string
-		class: string
-	}
-	const links: Link[] = [
+<script>
+	const links = [
 		{
 			name: "Writing",
 			href: "/writing",

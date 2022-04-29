@@ -1,11 +1,11 @@
-<script lang="ts">
+<script>
 	import { slide, fly } from "svelte/transition"
 
 	import Nav from "src/components/Nav.svelte"
 
 	const breakpoint = 640
 
-	let width: number
+	let width
 
 	$: open = true
 </script>

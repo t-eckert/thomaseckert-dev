@@ -1,7 +1,5 @@
-<script lang="ts">
-	type LinkStyle = "none" | "external" | "writing" | "bookmarks" | "notes" | "projects" | "about"
-
-	const classStyle = (style: LinkStyle): string => {
+<script>
+	const classStyle = (style) => {
 		switch (style) {
 			case "none":
 				return "decoration-gray-700"
@@ -20,8 +18,8 @@
 		}
 	}
 
-	export let href: string,
-		style: LinkStyle = "none"
+	export let href,
+		style = "none"
 </script>
 
 <a

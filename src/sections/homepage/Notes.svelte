@@ -1,9 +1,7 @@
-<script lang="ts">
-	import type { Note } from "src/interfaces"
-
+<script>
 	import NotePreview from "src/components/previews/Note.svelte"
 
-	export let notes: Note[]
+	export let notes
 </script>
 
 <section class="flex flex-col gap-4 selection:bg-emerald-600">

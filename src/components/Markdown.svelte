@@ -1,9 +1,9 @@
-<script lang="ts">
+<script>
 	import { marked } from "marked"
 
 	import "src/markdown.css"
 
-	export let markdown: string
+	export let markdown
 </script>
 
 {@html marked(markdown)}

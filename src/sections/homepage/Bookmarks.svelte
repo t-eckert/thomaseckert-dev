@@ -1,8 +1,7 @@
-<script lang="ts">
+<script>
 	import BookmarkPreview from "src/components/Bookmark.svelte"
-	import type { Bookmark } from "src/interfaces"
 
-	export let bookmarks: Bookmark[]
+	export let bookmarks
 </script>
 
 <!-- Bookmarks -->

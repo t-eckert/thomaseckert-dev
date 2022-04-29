@@ -1,5 +1,5 @@
-<script lang="ts">
-	export let date: Date
+<script>
+	export let date
 </script>
 
 <span>{new Date(date).toDateString()}</span>
