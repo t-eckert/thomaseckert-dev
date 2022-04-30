@@ -1,0 +1,235 @@
+---
+title: "GradientHub Devlog 05: Gradients in the Database"
+published: 18 Feb 2022
+tags:
+- GradientHub
+- Design
+- Supabase
+- NextJS
+---
+
+Now that we have authentication set up with Supabase, I'm going to create a table in the database of gradients. For now, I'll just replicate the gradients used to mock up the site. Later, I'll need to add in functionality around \"ownership\" of gradients and figuring out which users favorited which gradients.
+
+I formatted \"likes\" as a signed 4 byte int. This will be fine so long as I don't have more than 2 trillion users. While I like to believe in myself, I don't foresee this as being an issue. If it is, there will be other, larger, problems to solve.
+
+I also added a field for \"isDeleted\" as a soft delete functionality. If there is some kind of mobbing of the site with inappropriate content, perhaps spamming something in the title of the gradients, I can quickly perform a soft delete of all potentially inappropriate content with a script without fear that I would inadvertently delete someone's legitimate content permanently.
+
+Supabase has a great interface for adding tables.
+
+![Creating the Gradient table](https://media.graphcms.com/n37DlR7RuOx5IdovMkV0)
+
+## Fetching the Gradients
+
+I'm going to fetch the gradients by creating a function in the \"actions\" directory (they way I structure my React code, actions are functions which are usually asynchronous and could fail as they depend on external sources). That function will take a string which must match the Sort type:
+
+``` ts
+type Sort = \"MostPopular\" | \"LeastPopular\" | \"Newest\" | \"Oldest\" | \"A-Z\" | \"Z-A\"
+```
+
+And that will select which private function in the `fetchGradient` module gets called.
+
+For this request to work, I had to turn off row level security. I'm not sure why. 
+
+I was able to replace the API endpoint with this clever little code.
+
+``` ts
+const db = \"gradients\"
+
+type Order = {
+\tcolumn: string,
+\tascending: boolean
+}
+
+const sortOrders = new Map<Sort, Order>(
+\t[
+\t\t[\"MostPopular\", { column: \"likes\", ascending: false }],
+\t\t[\"LeastPopular\", { column: \"likes\", ascending: true }],
+\t\t[\"Newest\", { column: \"createdAt\", ascending: false }],
+\t\t[\"Oldest\", { column: \"createdAt\", ascending: true }],
+\t\t[\"A-Z\", { column: \"name\", ascending: true }],
+\t\t[\"Z-A\", { column: \"name\", ascending: false }]
+\t]
+)
+
+
+export default async (sort: Sort): Promise<Gradient[] | null> => {
+\tconst order = sortOrders.get(sort)
+
+\tif (!order) {
+\t\treturn null
+\t}
+
+\tconst { data } = await client.from(db).select().order(order.column, { ascending: order.ascending })
+\treturn data
+}
+```
+
+## Replicating Supabase locally
+
+To get this work done, I want to replicate the Supabase environment in my local development environment. Supabase does provide a way to do so, but I'm stuck on this error when I try to clone the database down.
+
+``` text 
+Error: ERROR: prepared statement \"lrupsc_1_0\" already exists (SQLSTATE 42P05)
+```
+
+I took a break and [opened an issue](https://github.com/supabase/cli/issues/168) on the Supabase CLI repository (which support the local development environment) and got such a clear answer so quickly.
+
+Working with Supabase locally is amazing once you figure it out. There are still some things I had to figure out on my own, but once I got the hang of it, I was able to get a nice replica of my database with some seed data.
+
+With some seeded data, I really love how the site is shaping up.
+
+![The homepage of GradientHub with many cool gradients in a minimalistic overall feel.](https://media.graphcms.com/SQo3bmS9jKlnfmePbAjP)
+
+## Copying Gradients to the Clipboard
+
+This is one of the main features of the site. A creator should be able to copy any gradient to use in their own projects. I added an \"action\" called \"copy\" which will just copy the gradient to the clipboard. It's relatively simple and I'm not sure it even makes sense to abstract it out into a separate module, but whatever. At least if I need to modify it for browsers which haven't implemented this API yet, I can do that easily.
+
+``` ts
+export default async (text: string): Promise<boolean> => {
+\ttry {
+\t\tawait navigator.clipboard.writeText(text)
+\t\treturn true
+\t} catch (error) {
+\t\treturn false
+\t}
+}
+```
+
+In the gradient preview component, when a user clicks the clipboard button, this function will be called, but I haven't figured out how to run it async from there. It works and I will come back to make it better. 
+
+I also want the user to get some feedback when they click the copy button so I added an `Alerts` component to the site which sits on every page and listens for alerts using a `useState` hook. However, the `Alerts` component isn't rendering the alerts when they are added to the list of alerts. I'm betting it's just not getting the trigger to rerender. 
+
+To get this working, I can do one of several things in order of increasing complexity
+
+- Pass the state down through the components.
+- Create a context manually.
+- Use a state manager like Mobx or Redux.
+
+I think a state manager is overkill at this point because the only state I need so far is for alerts. User state is stored in local storage so I don't need it for that. I think the context method would be cleaner than passing the state around everywhere and more extensible.
+
+I made a context which contains the alerts and a function which will be wired up to a `useState` hook to update the alerts.
+
+``` ts
+type Ctx = {
+\talerts: Alert[],
+\tsetAlerts: (alerts: Alert[]) => void,
+}
+
+const AlertsContext = createContext<Ctx>({ alerts: [], setAlerts: () => { } })
+```
+
+I can then use the `AlertsContext` provider to wrap all of the components in the site.
+
+``` tsx
+const [alerts, setAlerts] = useState<AlertType[]>([])
+
+return (
+\t<QueryClientProvider client={queryClient}>
+\t\t<Head>
+\t\t\t<title>GradientHub</title>
+\t\t</Head>
+\t\t<AlertsContext.Provider value={{ alerts, setAlerts }}>
+\t\t\t<Component {...pageProps} />
+\t\t\t<Alerts />
+\t\t</AlertsContext.Provider>
+\t</QueryClientProvider>
+)
+```
+
+I can then use this context from within the `useAlerts` hook.
+
+``` ts
+export default function useAlerts(): { alerts: Alert[], addAlert: (alert: Alert) => void } {
+\tconst { alerts, setAlerts } = useContext(AlertsContext)
+
+\tconst addAlert = (alert: Alert) => {
+\t\tsetAlerts(alerts.concat(alert))
+\t}
+
+\treturn { alerts, addAlert }
+}
+```
+
+With this problem solved, it is clearly time to solve the problem of automatically removing the alert after a timeout.
+
+![Alerts which do not disappear fill up the entire vertical space of the screen](https://media.graphcms.com/xTawLmcURI6X8UDNYFw6)
+
+For this, I need to give each `Alert` a unique id. I thought I could get away with just using the index of the alert in the array, but I couldn't figure out a way for that to work. I'll just give each one a cute little random id and filter on that when I remove the alert.
+
+I made a function which can generate an id. I'll keep it in a different module so I can reuse it later. It's sufficiently random for my case.
+
+``` ts
+export default function generateId(): string {
+\treturn Math.random().toString(36)
+}
+```
+
+Hm, actually, after going down this road for a bit, I realized that it only makes sense to show the latest alert at any given time. Alerts are used on this site to let you know the last thing you did. It doesn't really make sense to stack them and that adds other complexities for rendering, animation, etc. So I'm just going to have a single alert that will disappear after a time or get overwritten if a new alert comes in. Cool.
+
+I changed `useAlert` to this.
+
+``` ts
+export default function useAlert(): { alert: Alert | null, setAlert: (message: string) => void } {
+\tconst { alert, setAlert } = useContext(AlertsContext)
+
+\tconst setAlertFromString = (message: string) => {
+\t\tconst id = Math.random().toString(26).slice(2)
+\t\tsetAlert({ id, message })
+\t\t// TODO: there is a bug here. If the user clicks a second copy button, the alert will still be cleared by the first call.
+\t\tsetTimeout(() => setAlert(null), 2500)
+\t}
+
+\treturn { alert, setAlert: setAlertFromString }
+}
+```
+
+As you can see, I noted a little bug on that timeout code that I'll come back and fix. If a user clicks \"copy\" on one gradient a 2.5 second timeout to clear the alert will begin. If the user then clicks another gradient to copy within that window, the alert will be cleared by the first timeout. It's worth fixing, but it's ok to ship for this small project.
+
+## Animating the Alert
+
+I want the alert to scale in and fade out. In the past, I've used React Spring for animations, but I've been hearing a lot about Framer Motion and I want to check that out.
+
+Framer Motion was very easy to set up and run. Now the `Alert` section looks like this.
+
+``` tsx
+export default function Alert() {
+\tconst { alert } = useAlert()
+
+\treturn (
+\t\t<section className=\"pointer-events-none fixed bottom-4 z-10 flex w-full flex-col items-center gap-2\">
+\t\t\t<AnimatePresence>
+\t\t\t\t{alert && (
+\t\t\t\t\t<motion.span
+\t\t\t\t\t\tinitial={{ opacity: 0, scale: 0.1 }}
+\t\t\t\t\t\tanimate={{ opacity: 1, scale: 1, transition: { duration: 0.2 } }}
+\t\t\t\t\t\texit={{ opacity: 0 }}
+\t\t\t\t\t\tclassName=\"border border-slate-700 bg-white/10 px-4 py-2 font-medium text-slate-900 backdrop-blur-3xl\"
+\t\t\t\t\t>
+\t\t\t\t\t\t{alert.message}
+\t\t\t\t\t</motion.span>
+\t\t\t\t)}
+\t\t\t</AnimatePresence>
+\t\t</section>
+\t)
+}
+```
+
+## Designing a Logo
+
+The logo for GradientHub was pretty obvious to me from the start. I want to use the [gradient](https://en.wikipedia.org/wiki/Gradient) symbol from math, the nabla: ∇. It's a nice visual pun. The design is simple with a downward pointing triangle. It's sometimes rendered with the right downward side of the triangle thinner than the other two. This add some character.
+
+I'm going to design it in in Figma as an SVG. That way, down the line I can improve the look of the logo by having it act as a frame for a gradient. I'll mock up some illustrations of this to show what I mean.
+
+I started by making the logo with 2 triangles to get the angles just right. I then traced the outline with rectangle shapes in order to get a shape that can be drawn with a transparent center.
+
+![Tracing the logo in rectangle shapes.](https://media.graphcms.com/PJBEuyrQGi2aqycXz7gs)
+
+Here is the final product with some demo images of what the logo looks like as a frame for different gradients. One of my stretch goals for the project is to have the logo be filled with a different random gradient from a creator at some regular interval. Just to add some spice.
+
+![Layout of logos resembling a downwards facing triangle with gradient backgrounds.](https://media.graphcms.com/xxLu4k0SRJGZHlr6pIPE)
+
+I have to say I'm not crazy about how the favicon looks in use. It falls a little flat and looks unprofessional. But, I'll come back to it. We are still working our way towards a minimum viable product.
+
+![Insert of the favicon in use in the browser.](https://media.graphcms.com/8xHILnGgS6WNloVNj8f3)
+
+I think I'll wrap up there for now. There is still a lot to do before I can call this a minimum viable product, but I like the progress I'm making so far.
