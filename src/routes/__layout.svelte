@@ -4,7 +4,7 @@
 	import { page } from "$app/stores"
 	import * as Fathom from "fathom-client"
 
-	import "src/app.css"
+	import "src/app.postcss"
 
 	import Bar from "src/components/Bar.svelte"
 
