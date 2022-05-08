@@ -14,17 +14,17 @@
 			name: "Notes",
 			href: "/notes",
 			class: "hover:text-emerald-600 transition"
-		},
-		{
-			name: "Projects",
-			href: "/projects",
-			class: "hover:text-violet-600 transition"
-		},
-		{
-			name: "About",
-			href: "/about",
-			class: "hover:text-yellow-600 transition"
 		}
+		// {
+		// 	name: "Projects",
+		// 	href: "/projects",
+		// 	class: "hover:text-violet-600 transition"
+		// },
+		// {
+		// 	name: "About",
+		// 	href: "/about",
+		// 	class: "hover:text-yellow-600 transition"
+		// }
 	]
 </script>
 
