@@ -1,7 +1,5 @@
 <script>
 	import { fade, fly } from "svelte/transition"
-	import { Icon } from "@steeze-ui/svelte-icon"
-	import { ArrowLeft } from "@steeze-ui/heroicons"
 
 	import Date from "src/components/Date.svelte"
 	import Link from "src/components/Link.svelte"
@@ -33,7 +31,6 @@
 >
 	<Link href="/writing" resource="writing">
 		<div class="flex flex-row items-center gap-0 group">
-			<Icon src={ArrowLeft} class="h-4 w-4 group-hover:-translate-x-1 transition text-sky-500" />
 			<div>Writing</div>
 		</div>
 	</Link>
