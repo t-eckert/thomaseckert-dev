@@ -1,30 +1,23 @@
 <script>
-	const classStyle = (style) => {
-		switch (style) {
-			case "none":
-				return "decoration-gray-700"
-			case "external":
-				return "decoration-sky-600"
-			case "writing":
-				return "decoration-rose-600"
-			case "bookmarks":
-				return "decoration-emerald-600"
-			case "notes":
-				return "decoration-violet-600"
-			case "projects":
-				return "decoration-yellow-600"
-			case "about":
-				return "decoration-gray-600"
-		}
-	}
+	const resourceStyle = new Map([
+		[
+			"writing",
+			"decoration-sky-400 hover:text-sky-600 hover:decoration-sky-500 text-gray-900 focus:text-sky-600"
+		]
+	])
 
-	export let href,
-		style = "none"
+	const className = (resource) =>
+		`font-medium underline decoration-2 text-gray-900 transition ${resourceStyle.get(resource)}`
+
+	export let href, resource
 </script>
 
-<a
-	{href}
-	class={`font-medium underline decoration-2  text-gray-900  transition ${classStyle(style)}`}
->
-	<slot />
-</a>
+{#if href[0] === "/"}
+	<a {href} class={className(resource)}>
+		<slot />
+	</a>
+{:else}
+	<a {href} class={className(resource)} target="blank_" rel="noopener noreferrer">
+		<slot />
+	</a>
+{/if}

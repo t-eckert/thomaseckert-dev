@@ -18,9 +18,9 @@
 	style={`transform: translate3d(0, ${scroll * 0.5}px, 0) rotate(-6deg)`}
 />
 
-<div class="mx-auto px-3 pt-20 sm:pt-40 max-w-6xl flex flex-col gap-6">
+<div class="mx-auto px-4 pt-4 sm:pt-12 max-w-6xl flex flex-col gap-6">
 	<Intro />
-	<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+	<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
 		<WritingSection {writing} />
 		<Socials />
 		<NotesSection {notes} />

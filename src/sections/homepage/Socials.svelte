@@ -1,4 +1,4 @@
-<section class="max-w-md flex flex-col gap-4">
+<section class="max-w-md flex flex-col gap-4 sm:pt-10">
 	<!-- Socials -->
 	<p>
 		You can also find me on <a

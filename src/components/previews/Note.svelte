@@ -15,7 +15,7 @@
 	</div>
 	<div class="text-gray-500 text-sm flex flex-row gap-1 flex-wrap">
 		{#each note.tags as tag}
-			<Tag resource="/notes" {tag} />
+			<Tag resource="note" {tag} />
 		{/each}
 	</div>
 </div>

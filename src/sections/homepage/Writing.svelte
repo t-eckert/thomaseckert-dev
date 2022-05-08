@@ -4,9 +4,9 @@
 	export let writing
 </script>
 
-<section class="flex flex-col gap-4 selection:bg-sky-600 items-start">
+<section class="flex flex-col gap-3 selection:bg-sky-600 items-start">
 	<h2 class="font-semibold text-gray-900 text-2xl">Writing</h2>
-	<div class="flex flex-col gap-1">
+	<div class="flex flex-col gap-2">
 		{#each writing as w}
 			<WritingPreview writing={w} />
 		{/each}

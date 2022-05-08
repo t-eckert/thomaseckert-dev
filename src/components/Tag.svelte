@@ -10,7 +10,7 @@
 
 <a
 	href={resource + "?tags=" + tag}
-	class={`decoration-transparent px-1 py-0.5 text-xs hover:decoration-transparent  ${resourceClass.get(
+	class={`decoration-transparent rounded font-medium px-1 py-0.5 text-xs hover:decoration-transparent transition ${resourceClass.get(
 		resource
 	)}`}>{tag}</a
 >
