@@ -1,6 +1,7 @@
 <script>
 	import { fade, fly } from "svelte/transition"
 
+	import ArrowLeft from "src/components/icons/ArrowLeft.svelte"
 	import Date from "src/components/Date.svelte"
 	import Link from "src/components/Link.svelte"
 	import Tag from "src/components/Tag.svelte"
@@ -31,6 +32,7 @@
 >
 	<Link href="/writing" resource="writing">
 		<div class="flex flex-row items-center gap-0 group">
+			<ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition text-sky-500" />
 			<div>Writing</div>
 		</div>
 	</Link>
