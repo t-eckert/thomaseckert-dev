@@ -1,10 +1,10 @@
 <script>
-	import NotePreview from "../../components/NotePreview.svelte"
+	import NotePreview from "src/components/previews/Note.svelte"
 
 	export let notes
 </script>
 
-<section class="flex flex-col gap-2 selection:bg-emerald-600">
+<section class="flex flex-col gap-4 selection:bg-emerald-600">
 	<h2 class="font-semibold text-gray-900 text-2xl">Notes</h2>
 	{#each notes as note}
 		<NotePreview {note} />

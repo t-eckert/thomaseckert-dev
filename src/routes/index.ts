@@ -1,20 +1,33 @@
-import config from "../config"
+export async function get({ url }: { url: URL }) {
+    const host = url.origin
 
-export async function get() {
-	const writingResponse = await fetch(config.URL + "/api/writing?take=3")
-	const writing = (await writingResponse.json())["writing"]
+    let writing = []
+    try {
+        const response = await fetch(host + "/api/writing?take=7")
+        writing = (await response.json())["writing"]
+    } catch (error) {
+        console.log(error)
+    }
 
-	const bookmarksResponse = await fetch(config.URL + "/api/recentBookmarks?take=3")
-	const bookmarks = (await bookmarksResponse.json())["bookmarks"]
+    let bookmarks = []
+    try {
+        const response = await fetch(host + "/api/bookmarks?sort=recent&take=7")
+        bookmarks = (await response.json())["bookmarks"]
+    } catch (error) {
+        console.log(error)
+    }
 
-	const notesResponse = await fetch(config.URL + "/api/notes?take=3")
-	const notes = (await notesResponse.json())["notes"]
+    let notes = []
+    try {
+        const response = await fetch(host + "/api/notes?take=7")
+        notes = (await response.json())["notes"]
+    } catch (error) {
+        console.log(error)
+    }
 
-	return {
-		body: {
-			writing,
-			bookmarks,
-			notes
-		}
-	}
+    return {
+        body: {
+            writing, bookmarks, notes
+        }
+    }
 }

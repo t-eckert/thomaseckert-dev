@@ -1,5 +1,5 @@
 <script>
-	import Repo from "../../components/Repo.svelte"
+	import Repo from "src/components/Repo.svelte"
 </script>
 
 <section class="selection:bg-violet-600">

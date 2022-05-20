@@ -1,8 +1,9 @@
+// @filename: index.js
+import path from "path"
 import { mdsvex } from "mdsvex"
-import preprocess from 'svelte-preprocess'
-import netlify from '@sveltejs/adapter-netlify'
-import { resolve } from "path"
-import svg from '@poppanator/sveltekit-svg'
+
+import adapter from '@sveltejs/adapter-auto';
+import preprocess from 'svelte-preprocess';
 
 const mdsvexConfig = {
 	"extensions": [".md", ".svx"],
@@ -19,19 +20,20 @@ const mdsvexConfig = {
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	"extensions": [".svelte", ...mdsvexConfig.extensions],
+	extensions: [".svelte", ...mdsvexConfig.extensions],
+
 	preprocess: [preprocess({
 		postcss: true
 	}), mdsvex(mdsvexConfig)],
+
 	kit: {
-		adapter: netlify(),
+		adapter: adapter(),
 		vite: {
 			resolve: {
 				alias: {
-					"$": resolve("./src"),
+					src: path.resolve("./src"),
 				}
-			},
-			plugins: [svg()]
+			}
 		}
 	}
 };

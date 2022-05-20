@@ -8,11 +8,11 @@ tags:
 - NextJS
 ---
 
-Now that we have authentication set up with Supabase, I'm going to create a table in the database of gradients. For now, I'll just replicate the gradients used to mock up the site. Later, I'll need to add in functionality around \"ownership\" of gradients and figuring out which users favorited which gradients.
+Now that we have authentication set up with Supabase, I'm going to create a table in the database of gradients. For now, I'll just replicate the gradients used to mock up the site. Later, I'll need to add in functionality around "ownership" of gradients and figuring out which users favorited which gradients.
 
-I formatted \"likes\" as a signed 4 byte int. This will be fine so long as I don't have more than 2 trillion users. While I like to believe in myself, I don't foresee this as being an issue. If it is, there will be other, larger, problems to solve.
+I formatted "likes" as a signed 4 byte int. This will be fine so long as I don't have more than 2 trillion users. While I like to believe in myself, I don't foresee this as being an issue. If it is, there will be other, larger, problems to solve.
 
-I also added a field for \"isDeleted\" as a soft delete functionality. If there is some kind of mobbing of the site with inappropriate content, perhaps spamming something in the title of the gradients, I can quickly perform a soft delete of all potentially inappropriate content with a script without fear that I would inadvertently delete someone's legitimate content permanently.
+I also added a field for "isDeleted" as a soft delete functionality. If there is some kind of mobbing of the site with inappropriate content, perhaps spamming something in the title of the gradients, I can quickly perform a soft delete of all potentially inappropriate content with a script without fear that I would inadvertently delete someone's legitimate content permanently.
 
 Supabase has a great interface for adding tables.
 
@@ -20,10 +20,15 @@ Supabase has a great interface for adding tables.
 
 ## Fetching the Gradients
 
-I'm going to fetch the gradients by creating a function in the \"actions\" directory (they way I structure my React code, actions are functions which are usually asynchronous and could fail as they depend on external sources). That function will take a string which must match the Sort type:
+I'm going to fetch the gradients by creating a function in the "actions" directory (they way I structure my React code, actions are functions which are usually asynchronous and could fail as they depend on external sources). That function will take a string which must match the Sort type:
 
 ``` ts
-type Sort = \"MostPopular\" | \"LeastPopular\" | \"Newest\" | \"Oldest\" | \"A-Z\" | \"Z-A\"
+type Sort = "MostPopular" 
+    | "LeastPopular" 
+    | "Newest" 
+    | "Oldest" 
+    | "A-Z" 
+    | "Z-A"
 ```
 
 And that will select which private function in the `fetchGradient` module gets called.
@@ -33,34 +38,35 @@ For this request to work, I had to turn off row level security. I'm not sure why
 I was able to replace the API endpoint with this clever little code.
 
 ``` ts
-const db = \"gradients\"
+const db = "gradients"
 
 type Order = {
-\tcolumn: string,
-\tascending: boolean
+    column: string,
+    ascending: boolean
 }
 
 const sortOrders = new Map<Sort, Order>(
-\t[
-\t\t[\"MostPopular\", { column: \"likes\", ascending: false }],
-\t\t[\"LeastPopular\", { column: \"likes\", ascending: true }],
-\t\t[\"Newest\", { column: \"createdAt\", ascending: false }],
-\t\t[\"Oldest\", { column: \"createdAt\", ascending: true }],
-\t\t[\"A-Z\", { column: \"name\", ascending: true }],
-\t\t[\"Z-A\", { column: \"name\", ascending: false }]
-\t]
+	[
+		["MostPopular", { column: "likes", ascending: false }],
+		["LeastPopular", { column: "likes", ascending: true }],
+		["Newest", { column: "createdAt", ascending: false }],
+		["Oldest", { column: "createdAt", ascending: true }],
+		["A-Z", { column: "name", ascending: true }],
+		["Z-A", { column: "name", ascending: false }]
+	]
 )
 
 
 export default async (sort: Sort): Promise<Gradient[] | null> => {
-\tconst order = sortOrders.get(sort)
+	const order = sortOrders.get(sort)
 
-\tif (!order) {
-\t\treturn null
-\t}
+	if (!order) {
+		return null
+	}
 
-\tconst { data } = await client.from(db).select().order(order.column, { ascending: order.ascending })
-\treturn data
+	const { data } = await client.from(db).select()
+        .order(order.column, { ascending: order.ascending })
+	return data
 }
 ```
 
@@ -69,7 +75,7 @@ export default async (sort: Sort): Promise<Gradient[] | null> => {
 To get this work done, I want to replicate the Supabase environment in my local development environment. Supabase does provide a way to do so, but I'm stuck on this error when I try to clone the database down.
 
 ``` text 
-Error: ERROR: prepared statement \"lrupsc_1_0\" already exists (SQLSTATE 42P05)
+Error: ERROR: prepared statement "lrupsc_1_0" already exists (SQLSTATE 42P05)
 ```
 
 I took a break and [opened an issue](https://github.com/supabase/cli/issues/168) on the Supabase CLI repository (which support the local development environment) and got such a clear answer so quickly.
@@ -86,12 +92,12 @@ This is one of the main features of the site. A creator should be able to copy a
 
 ``` ts
 export default async (text: string): Promise<boolean> => {
-\ttry {
-\t\tawait navigator.clipboard.writeText(text)
-\t\treturn true
-\t} catch (error) {
-\t\treturn false
-\t}
+	try {
+		await navigator.clipboard.writeText(text)
+		return true
+	} catch (error) {
+		return false
+	}
 }
 ```
 
@@ -111,8 +117,8 @@ I made a context which contains the alerts and a function which will be wired up
 
 ``` ts
 type Ctx = {
-\talerts: Alert[],
-\tsetAlerts: (alerts: Alert[]) => void,
+	alerts: Alert[],
+	setAlerts: (alerts: Alert[]) => void,
 }
 
 const AlertsContext = createContext<Ctx>({ alerts: [], setAlerts: () => { } })
@@ -124,15 +130,15 @@ I can then use the `AlertsContext` provider to wrap all of the components in the
 const [alerts, setAlerts] = useState<AlertType[]>([])
 
 return (
-\t<QueryClientProvider client={queryClient}>
-\t\t<Head>
-\t\t\t<title>GradientHub</title>
-\t\t</Head>
-\t\t<AlertsContext.Provider value={{ alerts, setAlerts }}>
-\t\t\t<Component {...pageProps} />
-\t\t\t<Alerts />
-\t\t</AlertsContext.Provider>
-\t</QueryClientProvider>
+	<QueryClientProvider client={queryClient}>
+		<Head>
+			<title>GradientHub</title>
+		</Head>
+		<AlertsContext.Provider value={{ alerts, setAlerts }}>
+			<Component {...pageProps} />
+			<Alerts />
+		</AlertsContext.Provider>
+	</QueryClientProvider>
 )
 ```
 
@@ -140,13 +146,13 @@ I can then use this context from within the `useAlerts` hook.
 
 ``` ts
 export default function useAlerts(): { alerts: Alert[], addAlert: (alert: Alert) => void } {
-\tconst { alerts, setAlerts } = useContext(AlertsContext)
+	const { alerts, setAlerts } = useContext(AlertsContext)
 
-\tconst addAlert = (alert: Alert) => {
-\t\tsetAlerts(alerts.concat(alert))
-\t}
+	const addAlert = (alert: Alert) => {
+		setAlerts(alerts.concat(alert))
+	}
 
-\treturn { alerts, addAlert }
+	return { alerts, addAlert }
 }
 ```
 
@@ -160,7 +166,7 @@ I made a function which can generate an id. I'll keep it in a different module s
 
 ``` ts
 export default function generateId(): string {
-\treturn Math.random().toString(36)
+	return Math.random().toString(36)
 }
 ```
 
@@ -169,17 +175,22 @@ Hm, actually, after going down this road for a bit, I realized that it only make
 I changed `useAlert` to this.
 
 ``` ts
-export default function useAlert(): { alert: Alert | null, setAlert: (message: string) => void } {
-\tconst { alert, setAlert } = useContext(AlertsContext)
+export default function useAlert(): { 
+    alert: Alert | null, setAlert: (message: string) => void 
+} {
+	const { alert, setAlert } = useContext(AlertsContext)
 
-\tconst setAlertFromString = (message: string) => {
-\t\tconst id = Math.random().toString(26).slice(2)
-\t\tsetAlert({ id, message })
-\t\t// TODO: there is a bug here. If the user clicks a second copy button, the alert will still be cleared by the first call.
-\t\tsetTimeout(() => setAlert(null), 2500)
-\t}
+	const setAlertFromString = (message: string) => {
+		const id = Math.random().toString(26).slice(2)
+		setAlert({ id, message })
+		/* TODO: there is a bug here.
+           If the user clicks a second copy button,
+           the alert will still be cleared by the first call.
+        */
+		setTimeout(() => setAlert(null), 2500)
+	}
 
-\treturn { alert, setAlert: setAlertFromString }
+	return { alert, setAlert: setAlertFromString }
 }
 ```
 
@@ -193,24 +204,27 @@ Framer Motion was very easy to set up and run. Now the `Alert` section looks lik
 
 ``` tsx
 export default function Alert() {
-\tconst { alert } = useAlert()
+	const { alert } = useAlert()
 
-\treturn (
-\t\t<section className=\"pointer-events-none fixed bottom-4 z-10 flex w-full flex-col items-center gap-2\">
-\t\t\t<AnimatePresence>
-\t\t\t\t{alert && (
-\t\t\t\t\t<motion.span
-\t\t\t\t\t\tinitial={{ opacity: 0, scale: 0.1 }}
-\t\t\t\t\t\tanimate={{ opacity: 1, scale: 1, transition: { duration: 0.2 } }}
-\t\t\t\t\t\texit={{ opacity: 0 }}
-\t\t\t\t\t\tclassName=\"border border-slate-700 bg-white/10 px-4 py-2 font-medium text-slate-900 backdrop-blur-3xl\"
-\t\t\t\t\t>
-\t\t\t\t\t\t{alert.message}
-\t\t\t\t\t</motion.span>
-\t\t\t\t)}
-\t\t\t</AnimatePresence>
-\t\t</section>
-\t)
+	return (
+		<section className="pointer-events-none fixed bottom-4 z-10 flex
+        w-full flex-col items-center gap-2">
+			<AnimatePresence>
+				{alert && (
+					<motion.span
+						initial={{ opacity: 0, scale: 0.1 }}
+						animate={{ opacity: 1, scale: 1, transition: {
+                            duration: 0.2 } }}
+						exit={{ opacity: 0 }}
+						className="border border-slate-700 bg-white/10 px-4
+                        py-2 font-medium text-slate-900 backdrop-blur-3xl"
+					>
+						{alert.message}
+					</motion.span>
+				)}
+			</AnimatePresence>
+		</section>
+	)
 }
 ```
 

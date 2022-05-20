@@ -1,32 +1,31 @@
 <script>
-	import Intro from "$/sections/homepage/Intro.svelte"
-	import Writing from "$/sections/homepage/Writing.svelte"
-	import Socials from "$/sections/homepage/Socials.svelte"
-	import Bookmarks from "$/sections/homepage/Bookmarks.svelte"
-	import Projects from "$/sections/homepage/Projects.svelte"
-	import Notes from "$/sections/homepage/Notes.svelte"
-
-	export let writing, bookmarks, notes
+	import Intro from "src/sections/homepage/Intro.svelte"
+	import WritingSection from "src/sections/homepage/Writing.svelte"
+	import NotesSection from "src/sections/homepage/Notes.svelte"
+	import ProjectsSection from "src/sections/homepage/Projects.svelte"
+	import BookmarksSection from "src/sections/homepage/Bookmarks.svelte"
+	import Socials from "src/sections/homepage/Socials.svelte"
 
 	let scroll
+
+	export let writing, notes, bookmarks
 </script>
 
-<svelte:head><title>Thomas Eckert</title></svelte:head>
 <svelte:window bind:scrollY={scroll} />
 
 <div
-	class="absolute overflow-hidden -top-28 -left-10 opacity-20 -rotate-6 z-10 bg-gradient-to-r pointer-events-none w-[110%] h-96 banner"
+	class="absolute overflow-hidden -top-52 invisible sm:visible sm:-top-28 -left-10 opacity-20 -rotate-6 bg-gradient-to-r pointer-events-none w-[110%] h-96 banner"
 	style={`transform: translate3d(0, ${scroll * 0.5}px, 0) rotate(-6deg)`}
 />
 
-<div class="mx-auto px-3 pt-4 sm:pt-40 max-w-6xl flex flex-col gap-6">
+<div class="mx-auto px-4 pt-4 sm:pt-20 max-w-6xl flex flex-col gap-6">
 	<Intro />
-	<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-		<Writing {writing} />
-		<Bookmarks {bookmarks} />
-		<Notes {notes} />
+	<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
+		<WritingSection {writing} />
 		<Socials />
-		<Projects />
+		<NotesSection {notes} />
+		<BookmarksSection {bookmarks} />
+		<ProjectsSection />
 	</div>
 </div>
 
