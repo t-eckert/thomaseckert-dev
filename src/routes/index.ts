@@ -12,7 +12,7 @@ export async function get({ url }: { url: URL }) {
     let bookmarks = []
     try {
         const response = await fetch(host + "/api/bookmarks?sort=recent&take=7")
-        bookmarks = await response.json()
+        bookmarks = (await response.json())["bookmarks"]
     } catch (error) {
         console.log(error)
     }
@@ -20,7 +20,7 @@ export async function get({ url }: { url: URL }) {
     let notes = []
     try {
         const response = await fetch(host + "/api/notes?take=7")
-        notes = await response.json()
+        notes = (await response.json())["notes"]
     } catch (error) {
         console.log(error)
     }

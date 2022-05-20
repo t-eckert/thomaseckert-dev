@@ -1,5 +1,7 @@
 <script>
+	import ArrowLeft from "src/components/icons/ArrowLeft.svelte"
 	import BookmarkCategory from "src/sections/BookmarkCategory.svelte"
+	import Link from "src/components/Link.svelte"
 
 	export let bookmarkCategories
 
@@ -16,6 +18,12 @@
 
 <section class="mx-auto px-4 flex flex-col max-w-6xl">
 	<header class="my-4 sm:my-12 flex flex-col">
+		<Link href="/" resource="">
+			<div class="flex flex-row items-center gap-0.5 group">
+				<ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition text-gray-500" />
+				<div>Home</div>
+			</div>
+		</Link>
 		<h1 class="font-semibold text-2xl sm:text-6xl text-gray-900">Bookmarks</h1>
 	</header>
 

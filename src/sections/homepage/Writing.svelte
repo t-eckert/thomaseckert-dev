@@ -1,5 +1,7 @@
 <script>
+	import ArrowRight from "src/components/icons/ArrowRight.svelte"
 	import WritingPreview from "src/components/previews/Writing.svelte"
+	import Link from "src/components/Link.svelte"
 
 	export let writing
 </script>
@@ -11,8 +13,10 @@
 			<WritingPreview writing={w} />
 		{/each}
 	</div>
-	<a
-		class="font-medium transition underline decoration-2 decoration-sky-400 hover:text-sky-600 hover:decoration-sky-500 text-gray-900"
-		href="/writing">More...</a
-	>
+	<Link href="/writing" resource="writing">
+		<div class="flex flex-row items-center gap-0.5 group">
+			<div>Writing</div>
+			<ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition text-sky-500" />
+		</div>
+	</Link>
 </section>

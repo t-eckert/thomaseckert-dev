@@ -8,30 +8,16 @@
 
 	export let title, tags, published
 
-	let headerHeight, scrolled
+	let headerHeight
 </script>
 
 <svelte:head>
 	<title>{title}</title>
 </svelte:head>
 
-<svelte:window bind:scrollY={scrolled} />
-
-{#if scrolled > headerHeight}
-	<div
-		transition:fade
-		class="invisible sm:visible pointer-events-none z-20 fixed top-0 w-screen pt-1 px-2 flex justify-start sm:justify-center font-medium text-gray-900"
-	>
-		{title}
-	</div>
-{/if}
-
-<header
-	class="px-2 pt-4 sm:pt-20 pb-12 mx-auto max-w-6xl flex flex-col gap-1 items-start"
-	bind:clientHeight={headerHeight}
->
+<header class="px-2 pt-4 sm:pt-20 pb-12 mx-auto max-w-6xl flex flex-col gap-1 items-start">
 	<Link href="/writing" resource="writing">
-		<div class="flex flex-row items-center gap-0 group">
+		<div class="flex flex-row items-center gap-0.5 group">
 			<ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition text-sky-500" />
 			<div>Writing</div>
 		</div>
@@ -44,7 +30,10 @@
 		{title}
 	</h1>
 
-	<div class="text-gray-500 text-sm flex flex-row gap-1" in:fade={{ delay: 200, duration: 500 }}>
+	<div
+		class="text-gray-500 text-sm flex flex-row gap-1.5 items-start"
+		in:fade={{ delay: 200, duration: 500 }}
+	>
 		<Date date={published} />
 		{#each tags as tag}
 			<Tag resource="writing" {tag} />

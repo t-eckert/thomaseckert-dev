@@ -1,5 +1,9 @@
+<script>
+	import ArrowRight from "src/components/icons/ArrowRight.svelte"
+	import Link from "src/components/Link.svelte"
+</script>
+
 <section class="max-w-md flex flex-col gap-4 sm:pt-10">
-	<!-- Socials -->
 	<p>
 		You can also find me on <a
 			href="https://twitter.com/thomaseckert_"
@@ -11,8 +15,6 @@
 			>LinkedIn</a
 		>.
 	</p>
-
-	<!-- Site code -->
 	<p>
 		The source code for this site is in
 		<a
@@ -25,4 +27,10 @@
 		if you see something you'd like to borrow. It is built using SvelteKit, TailwindCSS, and deployed
 		on Netlify.
 	</p>
+	<!-- <Link href="/about" resource="about">
+		<div class="flex flex-row items-center gap-0.5 group">
+			<div>About</div>
+			<ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition text-yellow-500" />
+		</div>
+	</Link> -->
 </section>
