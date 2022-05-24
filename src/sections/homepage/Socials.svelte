@@ -5,25 +5,13 @@
 
 <section class="max-w-md flex flex-col gap-4 sm:pt-10">
 	<p>
-		You can also find me on <a
-			href="https://twitter.com/thomaseckert_"
-			target="blank_"
-			rel="noopener noreferrer">Twitter</a
-		>,
-		<a href="https://github.com/t-eckert" target="blank_" rel="noopener noreferrer">GitHub</a>, and
-		<a href="https://www.linkedin.com/in/thomas-eckert/" target="blank_" rel="noopener noreferrer"
-			>LinkedIn</a
-		>.
+		You can also find me on <Link href="https://twitter.com/thomaseckert_">Twitter</Link>,
+		<Link href="https://github.com/t-eckert">GitHub</Link>, and
+		<Link href="https://www.linkedin.com/in/thomas-eckert/">LinkedIn</Link>.
 	</p>
 	<p>
 		The source code for this site is in
-		<a
-			href="https://github.com/t-eckert/thomaseckert-dev"
-			target="blank_"
-			rel="noopener noreferrer"
-		>
-			this repo
-		</a>
+		<Link href="https://github.com/t-eckert/thomaseckert-dev">this repo</Link>
 		if you see something you'd like to borrow. It is built using SvelteKit, TailwindCSS, and deployed
 		on Netlify.
 	</p>

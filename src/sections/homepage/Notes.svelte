@@ -1,5 +1,7 @@
 <script>
+	import ArrowRight from "src/components/icons/ArrowRight.svelte"
 	import NotePreview from "src/components/previews/Note.svelte"
+	import Link from "src/components/Link.svelte"
 
 	export let notes
 </script>
@@ -10,8 +12,10 @@
 		<NotePreview {note} />
 	{/each}
 
-	<a
-		class="font-medium transition underline decoration-2 decoration-emerald-400 hover:text-emerald-600 hover:decoration-emerald-500 text-gray-900"
-		href="/notes">More...</a
-	>
+	<Link href="/notes" resource="notes">
+		<div class="flex flex-row items-center gap-0.5 group">
+			<div>More</div>
+			<ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition text-emerald-500" />
+		</div>
+	</Link>
 </section>

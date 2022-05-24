@@ -15,7 +15,7 @@
 	</div>
 	<Link href="/writing" resource="writing">
 		<div class="flex flex-row items-center gap-0.5 group">
-			<div>Writing</div>
+			<div>More</div>
 			<ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition text-sky-500" />
 		</div>
 	</Link>
