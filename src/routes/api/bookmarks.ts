@@ -1,7 +1,15 @@
 import { notion } from "src/notion"
 
+const databaseId = "ed3486259e7e4b93a45b7fabcc150760"
+
+
 export async function get({ url }: { url: URL }) {
-    const databaseId = "ed3486259e7e4b93a45b7fabcc150760"
+    if (!notion) {
+        return {
+            status: 500,
+            body: "Notion API is not configured"
+        }
+    }
 
     let response
     try {
