@@ -34,7 +34,11 @@
 		class="text-gray-500 text-sm flex flex-row gap-1.5 items-start"
 		in:fade={{ delay: 200, duration: 500 }}
 	>
-		<Date date={published} />
+		{#if published}
+			<Date date={published} />
+		{:else}
+			<span>Not published</span>
+		{/if}
 		{#each tags as tag}
 			<Tag resource="writing" {tag} />
 		{/each}
