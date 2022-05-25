@@ -9,7 +9,7 @@ export async function get({ url }: { url: URL }) {
             database_id: databaseId,
             sorts: [{
                 property: "Category",
-                direction: "ascending",
+                direction: "descending",
             }]
         })
     }
