@@ -1,16 +1,20 @@
 <script>
 	const resourceStyle = new Map([
 		[
-			"writing",
-			"decoration-sky-400 hover:text-sky-600 hover:decoration-sky-500 text-gray-900 focus:text-sky-600"
-		],
-		[
 			"about",
 			"decoration-yellow-400 hover:text-yellow-600 hover:decoration-yellow-500 text-gray-900 focus:text-yellow-600"
 		],
 		[
 			"bookmarks",
 			"decoration-rose-400 hover:text-rose-600 hover:decoration-rose-500 text-gray-900 focus:text-rose-600"
+		],
+		[
+			"notes",
+			"decoration-emerald-400 hover:text-emerald-600 hover:decoration-emerald-500 text-gray-900 focus:text-emerald-600"
+		],
+		[
+			"writing",
+			"decoration-sky-400 hover:text-sky-600 hover:decoration-sky-500 text-gray-900 focus:text-sky-600"
 		]
 	])
 
