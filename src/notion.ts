@@ -1,6 +1,5 @@
 import { Client } from "@notionhq/client"
+const auth = import.meta.env.VITE_NOTION_TOKEN
 
 // Initializing a client
-export const notion = new Client({
-    auth: import.meta.env.VITE_NOTION_TOKEN,
-})
+export const notion = auth ? new Client({ auth }) : null
