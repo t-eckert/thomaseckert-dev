@@ -13,7 +13,7 @@
 
 <svelte:window bind:scrollY={scroll} />
 
-<div class="mx-auto px-4 pt-4 sm:pt-20 max-w-6xl flex flex-col gap-6">
+<div class="mx-auto px-4 pt-4 sm:pt-40 max-w-6xl flex flex-col gap-6">
 	<Intro />
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
 		<WritingSection {writing} />
