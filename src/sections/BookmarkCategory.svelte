@@ -2,9 +2,8 @@
 	import { slide } from "svelte/transition"
 	import Bookmark from "../components/Bookmark.svelte"
 
-	export let category, bookmarks, isExpanded
-
-	$: isExpanded = isExpanded
+	export let category, bookmarks
+	let isExpanded = true
 </script>
 
 <section class="w-80 rounded">
