@@ -5,36 +5,6 @@
 	import BookmarkCategory from "src/sections/BookmarkCategory.svelte"
 	import Link from "src/components/Link.svelte"
 
-	/*
-	const term = writable("")
-
-	export let bookmarkCategories
-	const items = writable(bookmarkCategories)
-	const filteredBookmarks = derived([term, items], ([$term, $items]) =>
-		$items.filter(({ bookmarks }) => {
-			category.toLowerCase().includes($term.toLowerCase())
-			return true
-		})
-	)
-
-	let searchText = ""
-
-	$: term.set(searchText)
-	*/
-	/*
-	const categories = new Map<string, Bookmark[]>([])
-	bookmarks.forEach((bookmark) => {
-		if (!categories.has(bookmark.category)) {
-			categories.set(bookmark.category, [])
-		}
-		categories.get(bookmark.category)?.push(bookmark)
-	})
-	const bookmarkCategories = Array.from(categories.keys()).map((category) => ({
-		category,
-		bookmarks: categories.get(category)
-	}))
-	*/
-
 	export let bookmarks
 
 	const filter = writable("")
