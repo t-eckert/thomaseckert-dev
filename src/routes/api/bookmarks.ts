@@ -4,6 +4,8 @@ const databaseId = "ed3486259e7e4b93a45b7fabcc150760"
 
 
 export async function get({ url }: { url: URL }) {
+    const take = url.searchParams.get("take")
+
     if (!notion) {
         return {
             status: 500,
@@ -16,9 +18,10 @@ export async function get({ url }: { url: URL }) {
         response = await notion.databases.query({
             database_id: databaseId,
             sorts: [{
-                property: "Category",
+                property: "Date Added",
                 direction: "descending",
-            }]
+            }],
+            page_size: parseInt(take ?? "100")
         })
     }
     catch (error) {
