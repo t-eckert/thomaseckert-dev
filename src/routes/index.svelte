@@ -3,7 +3,6 @@
 	import WritingSection from "src/sections/homepage/Writing.svelte"
 	import NotesSection from "src/sections/homepage/Notes.svelte"
 	import BookmarksSection from "src/sections/homepage/Bookmarks.svelte"
-	import Socials from "src/sections/homepage/Socials.svelte"
 
 	let scroll
 
@@ -16,7 +15,6 @@
 	<Intro />
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
 		<WritingSection {writing} />
-		<Socials />
 		<NotesSection {notes} />
 		<BookmarksSection {bookmarks} />
 	</div>
