@@ -2,7 +2,6 @@
 	import Intro from "src/sections/homepage/Intro.svelte"
 	import WritingSection from "src/sections/homepage/Writing.svelte"
 	import NotesSection from "src/sections/homepage/Notes.svelte"
-	import ProjectsSection from "src/sections/homepage/Projects.svelte"
 	import BookmarksSection from "src/sections/homepage/Bookmarks.svelte"
 	import Socials from "src/sections/homepage/Socials.svelte"
 
@@ -20,6 +19,5 @@
 		<Socials />
 		<NotesSection {notes} />
 		<BookmarksSection {bookmarks} />
-		<ProjectsSection />
 	</div>
 </div>
