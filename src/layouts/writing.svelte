@@ -7,15 +7,13 @@
 	import Tag from "src/components/Tag.svelte"
 
 	export let title, tags, published
-
-	let headerHeight
 </script>
 
 <svelte:head>
 	<title>{title}</title>
 </svelte:head>
 
-<header class="px-2 pt-4 sm:pt-20 pb-12 mx-auto max-w-6xl flex flex-col gap-1 items-start">
+<header class="px-2 pt-4 sm:pt-32 pb-12 sm:pb-24 mx-auto max-w-6xl flex flex-col gap-1 items-start">
 	<Link href="/writing" resource="writing">
 		<div class="flex flex-row items-center gap-0.5 group">
 			<ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition text-sky-500" />
