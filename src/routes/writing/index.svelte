@@ -7,10 +7,6 @@
 	export let writing, tags
 </script>
 
-<div
-	class="absolute overflow-hidden -top-28 -left-10 opacity-10 -rotate-6 bg-gradient-to-r from-sky-500 to-sky-400 pointer-events-none w-[110%] h-96"
-/>
-
 <section class="mx-auto px-4 flex flex-col max-w-6xl">
 	<header class="py-4 sm:py-12 flex flex-col gap-4 items-start">
 		<Link href="/" resource="">

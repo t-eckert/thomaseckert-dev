@@ -20,7 +20,10 @@ Supabase has a great interface for adding tables.
 
 ## Fetching the Gradients
 
-I'm going to fetch the gradients by creating a function in the "actions" directory (they way I structure my React code, actions are functions which are usually asynchronous and could fail as they depend on external sources). That function will take a string which must match the Sort type:
+I'm going to fetch the gradients by creating a function in the "actions"
+directory (the way I structure my React code, actions are functions which
+are usually asynchronous and could fail as they depend on external sources). 
+That function will take a string which must match the `Sort` type:
 
 ``` ts
 type Sort = "MostPopular" 
