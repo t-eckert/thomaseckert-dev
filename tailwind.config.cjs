@@ -9,7 +9,7 @@ module.exports = {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
       maxWidth: {
-        'text': '65ch',
+        'text': '70ch',
       },
     },
   },
