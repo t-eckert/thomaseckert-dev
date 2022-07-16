@@ -9,14 +9,11 @@
 
 <section class="mx-auto px-4 flex flex-col max-w-6xl">
 	<header class="py-4 sm:py-12 flex flex-col gap-4 items-start">
-		<Link href="/" resource="">
-			<div class="flex flex-row items-center gap-0.5 group">
-				<ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition text-gray-500" />
-				<div>Home</div>
-			</div>
-		</Link>
+		<div class="flex flex-row items-baseline gap-2">
+			<Link href="/">Home</Link>
+		</div>
 
-		<h1 class="font-semibold text-2xl sm:text-7xl text-sky-900">Writing</h1>
+		<h1 class="font-semibold text-2xl sm:text-7xl">Writing</h1>
 
 		{#if tags.length !== 0}
 			<div class="flex flex-col gap-1 items-baseline">

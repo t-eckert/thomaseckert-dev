@@ -6,11 +6,14 @@
 	export let notes
 </script>
 
-<section class="flex flex-col gap-4 selection:bg-emerald-600">
+<section class="flex flex-col gap-3 selection:bg-emerald-600 items-start">
 	<h2 class="font-semibold text-gray-900 text-2xl">Notes</h2>
-	{#each notes as note}
-		<NotePreview {note} />
-	{/each}
+
+	<div class="flex flex-col gap-2">
+		{#each notes as note}
+			<NotePreview {note} />
+		{/each}
+	</div>
 
 	<Link href="/notes" resource="notes">
 		<div class="flex flex-row items-center gap-0.5 group">
